@@ -1,0 +1,22 @@
+*{
+  box-sizing: border-box;
+}
+
+.date-picker-container{
+  display: flex;
+  width: 500px;
+  height: 40px;
+  align-items: flex-end;
+}
+.date-picker{
+  margin: 0 20px;
+}
+
+#date-picker{
+  height: 40px;
+}
+#time-picker{
+  padding: auto;
+  border-radius: 10px;
+  height: 40px;
+}

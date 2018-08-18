@@ -1,0 +1,42 @@
+.restaurant-map-container{
+  box-sizing: border-box;
+  width: 1240px;
+  height: 660px;
+  border: 2px solid lightslategray;
+  margin: auto;
+  position: relative;
+
+}
+.table{
+  width: 150px;
+  height: 100px;
+}
+
+.table-map-container{
+  position: absolute;
+  width: 1000px;
+  height: 560px;
+  right: 100px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.live-kitchen{
+  position: absolute;
+  height: 300px;
+  width: 150px;
+  border: 2px solid lightslategray;
+  border-left: 0px;
+  top: 220px;
+}
+
+.entrance{
+  position: absolute;
+  height: 100px;
+  width: 80px;
+  border: 2px solid lightslategray;
+  border-left: 0px;
+  border-right: 0px;
+  top: 20px;
+}

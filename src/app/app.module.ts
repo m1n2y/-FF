@@ -6,17 +6,25 @@ import { DataPickerComponent } from './data-picker/data-picker.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MyDatePickerModule} from 'mydatepicker';
 import { HeadBannerComponent } from './head-banner/head-banner.component';
+import { TableMapComponent } from './table-map/table-map.component';
+import { SquareTableComponent } from './square-table/square-table.component';
+import { CircleTableComponent } from './circle-table/circle-table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DataPickerComponent,
     HeadBannerComponent,
+    TableMapComponent,
+    SquareTableComponent,
+    CircleTableComponent,
+
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MyDatePickerModule
+    MyDatePickerModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
