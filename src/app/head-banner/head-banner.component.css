@@ -14,12 +14,15 @@
   height: 50px;
   width: 50px;
 
+
 }
 
 .banner-icon img{
+  cursor: pointer;
   padding: 10px;
   height: 40px;
   width: 40px;
+
 }
 .app-data-picker{
   flex:5 300px;

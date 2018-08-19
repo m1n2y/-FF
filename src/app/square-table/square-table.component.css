@@ -8,6 +8,7 @@
 }
 
 .square-table{
+  cursor: pointer;
   width: 80px;
   height: 80px;
   border: 1.5px solid lightslategray;
@@ -50,4 +51,9 @@
   height: 25px;
   border: 1px solid darkgray;
 
+}
+
+.square-table:hover {
+  background-color: lightslategray;
+  transition: 0.5s;
 }
