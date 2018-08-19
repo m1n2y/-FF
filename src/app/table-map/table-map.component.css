@@ -40,3 +40,17 @@
   border-right: 0px;
   top: 20px;
 }
+
+.live-kitchen p, .entrance p {
+  color: lightslategray;
+  text-align: center;
+}
+
+.live-kitchen p{
+
+  line-height: 250px;
+}
+
+.entrance p {
+  line-height: 60px;
+}
