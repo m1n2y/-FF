@@ -27,6 +27,7 @@
     "core-js": "^2.5.4",
     "hammerjs": "^2.0.8",
     "mydatepicker": "^2.6.5",
+    "mydaterangepicker": "^4.2.1",
     "postcss-loader": "^3.0.0",
     "raw-loader": "^0.5.1",
     "rxjs": "^6.0.0",

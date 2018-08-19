@@ -12,4 +12,8 @@ export class SquareTableComponent implements OnInit {
   ngOnInit() {
   }
 
+
+
+
+
 }
