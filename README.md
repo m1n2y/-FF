@@ -1,3 +1,35 @@
+# Foodty restaurant booking system
+This is a booking system for small restaurant busniess.
+The key functions are below:
+1. customers can view menu online
+2. customers can log in and booking seats online
+3. the admin user can modify the booking information
+
+## Techonolies
+	+ front-end: Angular2
+	+ back-end: Node.js 
+	+ database: Mongo DB
+	
+## Tables
+````json
+{
+  "id": int,
+  "capacity": int,
+  "mincapacity": int,
+  "status": int,
+  "bookingtimelist": []
+}
+````
+Divede busniess hours into time pieces and presented by unique number, then store the time piece as the booking date plus the unique number into bookingtimelist.
+````json
+{
+  "id": int,
+  "auth": int, // 1 present customer, 2 present admin
+  "name": string,
+  "contract": string,
+}
+````
+
 # BookingSystem
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.2.
