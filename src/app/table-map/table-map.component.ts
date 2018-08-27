@@ -5,6 +5,10 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './table-map.component.html',
   styleUrls: ['./table-map.component.css']
 })
+
+// this component is use for demonstrate table map of restaurant in home page
+
+
 export class TableMapComponent implements OnInit {
 
   constructor() { }

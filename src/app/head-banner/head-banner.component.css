@@ -27,7 +27,10 @@
 .app-data-picker{
   flex:5 300px;
 }
-
+。app-data-picker-title{
+  flex:5 300px;
+  margin-left: 100px;
+}
 
 .Book-btn{
   flex: 0.5 150px;
