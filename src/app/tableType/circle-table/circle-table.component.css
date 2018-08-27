@@ -1,0 +1,101 @@
+.circle-table-container{
+  width: 100px;
+  height: 100px;
+
+  left: 100px;
+  top: 100px;
+  padding: 20px;
+}
+
+.circle-table{
+  position:relative;
+  cursor: pointer;
+  width: 120px;
+  height: 120px;
+  border: 1.5px solid lightslategray;
+  border-radius: 50%;
+}
+
+.circle-table-1{
+  position: absolute;
+  top: -15px;
+  left: 45px;
+  width:  25px;
+  height: 8px;
+  border: 1px solid darkgray;
+}
+
+.circle-table-2{
+  position: absolute;
+  bottom: -15px;
+  left: 45px;
+  width:  25px;
+  height: 8px;
+  border: 1px solid darkgray;
+}
+
+.circle-table-3{
+  position: absolute;
+  top: 55px;
+  left: -25px;
+  width:  25px;
+  height: 8px;
+  border: 1px solid darkgray;
+  transform: rotate(90deg);
+}
+
+.circle-table-4{
+  position: absolute;
+  top: 55px;
+  right: -25px;
+  width:  25px;
+  height: 8px;
+  border: 1px solid darkgray;
+  transform: rotate(90deg);
+}
+
+
+.circle-table-5{
+  position: absolute;
+  top: 5px;
+  right: -2px;
+  width:  25px;
+  height: 8px;
+  border: 1px solid darkgray;
+  transform: rotate(45deg);
+}
+
+.circle-table-6{
+  position: absolute;
+  top: 110px;
+  right: -2px;
+  width:  25px;
+  height: 8px;
+  border: 1px solid darkgray;
+  transform: rotate(-45deg);
+}
+
+.circle-table-7{
+  position: absolute;
+  top: 5px;
+  left: -5px;
+  width:  25px;
+  height: 8px;
+  border: 1px solid darkgray;
+  transform: rotate(-45deg);
+}
+
+.circle-table-8{
+  position: absolute;
+  top: 110px;
+  left: -5px;
+  width:  25px;
+  height: 8px;
+  border: 1px solid darkgray;
+  transform: rotate(45deg);
+}
+
+.circle-table:hover {
+  background-color: lightslategray;
+  transition: 0.5s;
+}

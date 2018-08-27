@@ -1,7 +1,7 @@
 .square-table-container{
   width: 100px;
   height: 100px;
-  position: relative;
+
   left: 100px;
   top: 100px;
   padding: 20px;
@@ -12,6 +12,7 @@
   width: 80px;
   height: 80px;
   border: 1.5px solid lightslategray;
+  ;
 
 }
 
