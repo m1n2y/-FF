@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {IMyDateModel} from 'mydatepicker';
+import {DatePipe} from '@angular/common';
 
 @Component({
   selector: 'app-data-picker',
@@ -11,22 +11,12 @@ import {IMyDateModel} from 'mydatepicker';
 // It is a data picker component use for booking specified time in home page header
 // It is a sub component of head-banner
 export class DataPickerComponent implements OnInit {
-  myDatePickerOptions = {
-    dateFormat: 'yyyy-mm-dd',
-    width: '180px',
-    height: '35px',
-    padding: '10px'
-  };
-
-
+  today: number = Date.now();
+  dayNumber = [0, 1, 2, 3, 4, 5, 6];
   constructor() {
   }
 
   ngOnInit() {
-  }
-
-  onInputFieldChanged(event: IMyDateModel) {
-    console.log(event.date);
   }
 
 

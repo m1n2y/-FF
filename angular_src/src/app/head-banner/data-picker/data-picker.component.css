@@ -1,0 +1,20 @@
+.date-container{
+  display: flex;
+  background-color: #252b30;
+}
+
+.date-container div{
+  padding: 0 20px;
+  text-align: center;
+  line-height: 18px;
+}
+
+.date-container-month{
+  font-size: 10px;
+  color: white;
+}
+
+.date-container-day{
+  font-size: 14px;
+  color: white;
+}

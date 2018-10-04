@@ -1,0 +1,11 @@
+<div class="date-container">
+  <div>
+
+  </div>
+  <div *ngFor="let i of dayNumber">
+    <span class="date-container-month">{{today+(1000*3600*24*i)|date:'MMM dd'}}</span><br>
+    <span class="date-container-day">{{today+(1000*3600*24*i)|date:'E'}}</span>
+  </div>
+
+
+</div>

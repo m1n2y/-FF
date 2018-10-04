@@ -4,7 +4,7 @@ import { ReactiveFormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
-import { DataPickerComponent } from './data-picker/data-picker.component';
+import { DataPickerComponent } from './head-banner/data-picker/data-picker.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MyDatePickerModule} from 'mydatepicker';
 import { HeadBannerComponent } from './head-banner/head-banner.component';
@@ -27,7 +27,7 @@ import {UserService} from './Login_register/~services/user.service';
 import {routing} from './app-routing.module';
 import { JwtInterceptor} from './Login_register/~helpers/jwt.interceptor';
 import {ErrorInterceptor} from './Login_register/~helpers/error.interceptor';
-import { HomepageComponent } from './homepage/homepage.component';
+import { HomepageComponent } from './views/homepage/homepage.component';
 
 @NgModule({
   declarations: [
