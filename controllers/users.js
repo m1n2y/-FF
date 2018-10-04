@@ -5,6 +5,7 @@ const userList = require('../models/user');
 
 //GET HTTP method to /user
 router.get('/',(req,res) => {
+
     userList.getAllUser((err,users)=>{
         if(err){
             res.json({success: false, message:`Failed to load all users. Error: ${err}`})
@@ -15,6 +16,22 @@ router.get('/',(req,res) => {
     })
 
 });
+//
+// //POST HTTP find user by username
+//
+// router.post('/add', (req,res,next) => {
+//     let userName = "allon";
+//
+//     userList.findUserByUsername(userName,(err,user)=>{
+//         if(err){
+//             res.json({success: false, message: `Failed to create a new user. Error: ${err}`})
+//         }else {
+//             res.write(JSON.stringify({success: true, users:user}));
+//             res.end();
+//         }
+//     });
+// });
+
 
 //POST HTTP method to /user
 
@@ -25,13 +42,27 @@ router.post('/', (req,res,next) => {
         firstName:req.body.firstName,
         lastName:req.body.lastName,
     });
-    userList.addUser(newUser,(err,user)=>{
-        if(err){
-            res.json({success: false, message: `Failed to create a new user. Error: ${err}`})
+
+    userList.findUserByUsername(newUser['username'],(err,user)=>{
+        if(err) {
+            res.json({success: false, message: `Failed to add the user. Error: ${err}`});
         }else {
-            res.json({success:true, message: "Added successfully."});
+            if (user){
+                res.json({success: false, message: `${user.username} is already existed`})
+            } else {
+                userList.addUser(newUser,(err,user)=>{
+                    if(err){
+                        res.json({success: false, message: `Failed to create a new user. Error: ${err}`})
+                    }else {
+                        res.json({success:true, message: user.username+" Added successfully."});
+                    }
+                });
+            }
         }
-    });
+
+        });
+
+
 });
 
 //DELETE HTTP method to /user. Here, we pass in a params which is the object id.

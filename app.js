@@ -5,6 +5,7 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const config = require('./config/database');
 const users = require('./controllers/users');
+const tablelist = require('./controllers/tablelist')
 
 mongoose.connect(config.database,{useNewUrlParser: true});
 //Initialize our app variable
@@ -25,7 +26,8 @@ app.use(bodyParser.json());
 */
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/user',users)
+app.use('/api/user',users);
+app.use('/api/tablelist',tablelist);
 
 app.get('/', (req,res) => {
     res.send("Invalid page");
