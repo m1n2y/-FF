@@ -1,13 +1,23 @@
 .date-container{
   display: flex;
-  background-color: #252b30;
+
 }
 
-.date-container div{
-  padding: 0 20px;
+/*css for date picker*/
+
+.date-select-container{
   text-align: center;
   line-height: 18px;
+  background-color: #252b30;
+  padding: 0;
+  cursor: pointer;
+  padding: 0 20px;
 }
+
+.date-select-container:hover span{
+  color:  rgba(31, 249, 14, 0.79);
+}
+
 
 .date-container-month{
   font-size: 10px;
@@ -17,4 +27,27 @@
 .date-container-day{
   font-size: 14px;
   color: white;
+}
+
+
+.date-click{
+  color: rgba(31, 249, 14, 0.79);
+}
+
+
+/*css for time picker*/
+.time-select-container{
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.time-select-container .time-select{
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  background-color: #252b30;
+  border: none;
+  color: rgba(31, 249, 14, 0.79);
+  font-size: 16px;
 }

@@ -1,28 +1,18 @@
 <div class="restaurant-map-container">
   <div class="entrance"><p>Entrance</p></div>
   <div class="live-kitchen"><p>Live kitchen</p></div>
+
   <div class="square-table-map-container" >
     <div class="square-table-container-1">
-    <app-square-table class="square-table"></app-square-table>
-    <app-square-table class="square-table"></app-square-table>
-    <app-square-table class="square-table"></app-square-table>
-    <app-square-table class="square-table"></app-square-table>
-    <app-square-table class="square-table"></app-square-table>
-    <app-square-table class="square-table"></app-square-table>
-      <app-square-table class="square-table"></app-square-table>
-      <app-square-table class="square-table"></app-square-table>
-      <app-square-table class="square-table"></app-square-table>
-      <app-square-table class="square-table"></app-square-table>
-      <app-square-table class="square-table"></app-square-table>
-      <app-square-table class="square-table"></app-square-table>
+    <app-square-table class="square-table"  *ngFor="let tableInfo of allSmallTables" [tableNumber]="tableInfo['tableNumber']"></app-square-table>
+
     </div>
   </div>
 
   <div class="circle-table-map-container">
     <div class="circle-table-container-1">
-      <app-circle-table class="circle-table"></app-circle-table>
-      <app-circle-table class="circle-table"></app-circle-table>
-      <app-circle-table class="circle-table"></app-circle-table>
+      <app-circle-table class="circle-table" *ngFor="let tableInfo of allBigTables" [tableNumber]="tableInfo['tableNumber']"></app-circle-table>
+
 
     </div>
 

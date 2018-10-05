@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-square-table',
@@ -14,6 +14,8 @@ export class SquareTableComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  @Input() tableNumber: String ;
 
 
 

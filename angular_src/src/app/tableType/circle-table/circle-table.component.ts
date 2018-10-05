@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-circle-table',
@@ -14,5 +14,7 @@ export class CircleTableComponent implements OnInit {
 
   ngOnInit() {
   }
+
+  @Input() tableNumber: String ;
 
 }

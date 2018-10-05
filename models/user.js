@@ -24,7 +24,7 @@ const User = module.exports = mongoose.model('User',UserSchema);
 
 //User.find() returns all the users
 module.exports.getAllUser = (callback) => {
-    User.find({},callback);
+    User.find({},{_id:0},callback);
 }
 
 //newList.save is used to insert the document into MongoDB
@@ -35,7 +35,7 @@ module.exports.addUser = (newUser, callback) => {
 //find one user by username
 module.exports.findUserByUsername = (userName, callback) => {
     let query = {username: userName}
-    User.findOne(query,{username:1},callback);
+    User.findOne(query,callback);
 
 }
 

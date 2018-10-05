@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {DatePipe} from '@angular/common';
+import {DatePipe, formatDate} from '@angular/common';
+import {TablelistService} from '../../services/tablelist.service';
+import {TableList} from '../../models/TableList';
 
 @Component({
   selector: 'app-data-picker',
@@ -13,10 +15,51 @@ import {DatePipe} from '@angular/common';
 export class DataPickerComponent implements OnInit {
   today: number = Date.now();
   dayNumber = [0, 1, 2, 3, 4, 5, 6];
-  constructor() {
+  timeNumber = [11,12,13,14,15,16,17,18,19,20,21];
+  datePipe = new DatePipe('en-US');
+  clickDate: number;
+  checkTimeList: number;
+
+  unavailableTable: TableList[] = [];
+
+  constructor(private tableListService: TablelistService) {
   }
 
   ngOnInit() {
+    this.clickDate = this.today;
+
+  }
+
+  public chooseDate(index){
+    let getDateSelect = document.getElementsByClassName('date-select-container');
+    for (let i =0; i<getDateSelect.length;i++){
+      getDateSelect[i].children[0].classList.remove('date-click')
+      getDateSelect[i].children[2].classList.remove('date-click')
+    }
+    getDateSelect[index].children[0].classList.add('date-click')
+    getDateSelect[index].children[2].classList.add('date-click')
+
+
+    this.clickDate = Number(this.datePipe.transform((this.today+1000*3600*24*index),"yyyMMdd"));
+    this.checkTimeList = Number(this.clickDate+((document.getElementById('time-select') as HTMLInputElement).value))
+    this.tableListService.getUnavailableTables(this.checkTimeList).subscribe(
+      response =>{if (response['success'] == true){
+        this.unavailableTable = response['tables']
+      } },
+      error =>{console.log(error)}
+    )
+  }
+
+  public chooseTime(){
+    this.checkTimeList =  Number(this.clickDate+((document.getElementById('time-select') as HTMLInputElement).value))
+    this.tableListService.getUnavailableTables(this.checkTimeList);
+    this.tableListService.getUnavailableTables(this.checkTimeList).subscribe(
+      response =>{if (response['success'] == true){
+        this.unavailableTable = response['tables']
+
+      } },
+      error =>{console.log(error)}
+    )
   }
 
 

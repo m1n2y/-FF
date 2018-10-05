@@ -99,3 +99,10 @@
   background-color: lightslategray;
   transition: 0.5s;
 }
+
+
+.circle-table span{
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}

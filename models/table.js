@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 const  TableSchema = mongoose.Schema({
-    tableNumber:{ type:String},
+    tableNumber:{ type:String ,required:true, unique: true},
     tableType:{
         type:String,
         required:true,
@@ -22,8 +22,31 @@ module.exports.getAllTable = (callback) => {
     Table.find({},callback);
 }
 
+module.exports.getAllSmallTables = (callback) => {
+    Table.find({'tableType': 'small'},callback);
+}
+
+module.exports.getAllBigTables = (callback) => {
+    Table.find({'tableType': 'big'},callback);
+}
+
+
+
+
 
 //newList.save is used to insert the document into MongoDB
 module.exports.addTable = (newTable, callback) => {
     newTable.save(callback);
+}
+
+module.exports.updateBooktime = (bookInfo,callback) =>{
+    let query = {tableNumber: bookInfo.tableNumber};
+    let updateTime =  bookInfo.booktimeList
+    Table.update(query, { $push: {booktimeList: updateTime } },'',callback);
+
+}
+
+module.exports.getTableByBooktimeList = (bookTime,callback) =>{
+    let query = {"booktimeList" : bookTime.booktimeList};
+    Table.find(query,{tableNumber:1, _id:0},callback);
 }

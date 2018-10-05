@@ -1,11 +1,14 @@
 <div class="date-container">
-  <div>
+  <div class="time-select-container">
+    <select name="time-select" class="time-select" id="time-select"  (change)="chooseTime()" >
+      <option *ngFor="let time of timeNumber"  value={{time}} >{{time+': 00'}}--{{time+1+': 00'}}</option>
+    </select>
+  </div>
+  <div *ngFor="let i of dayNumber"  class="date-select" >
+    <div class="date-select-container" (click)="chooseDate(i)">
+      <span class="date-container-month">{{today+(1000*3600*24*i)|date:'MMM dd'}}</span><br>
+      <span class="date-container-day">{{today+(1000*3600*24*i)|date:'E'}}</span>
+    </div>
 
   </div>
-  <div *ngFor="let i of dayNumber">
-    <span class="date-container-month">{{today+(1000*3600*24*i)|date:'MMM dd'}}</span><br>
-    <span class="date-container-day">{{today+(1000*3600*24*i)|date:'E'}}</span>
-  </div>
-
-
 </div>
