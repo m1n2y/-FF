@@ -1,5 +1,24 @@
-<div>
-  <app-head-banner></app-head-banner>
-  <app-table-map></app-table-map>
+<div class="container">
+  <div class="row head-banner-container">
+    <div class="col-2">
+      <div class="banner-icon"><img src="../../assets/icons/menu-icon.png" alt=""></div>
+      <div class="banner-icon"><img src="../../assets/icons/homepage-icon.png" alt=""></div>
+    </div>
+    <div class="col-7">
+      <span>
+      <div class="app-data-picker-title">   Choose your booking slot</div>
+          <app-data-picker class="app-data-picker"></app-data-picker>
+      </span>
+    </div>
+    <div class="col-3">
+      <button class="Book-btn"><span>Booking</span></button>
+    </div>
+  </div>
+
+  <app-table-map class="row"></app-table-map>
+
 </div>
-<p><a [routerLink]="['/login']">Logout</a></p>
+
+
+
+<!--<p><a [routerLink]="['/login']">Logout</a></p>-->
