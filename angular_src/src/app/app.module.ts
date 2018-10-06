@@ -9,10 +9,13 @@ import {FormsModule} from '@angular/forms';
 // import material css
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MyDatePickerModule} from 'mydatepicker';
+<<<<<<< HEAD:angular_src/src/app/app.module.ts
 import {MatButtonModule, MatCheckboxModule} from '@angular/material';
 
 
 import { HeadBannerComponent } from './head-banner/head-banner.component';
+=======
+>>>>>>> 7fa0be5014e63bf215488eacde75a1018d04a241:src/app/app.module.ts
 import { TableMapComponent } from './table-map/table-map.component';
 import { SquareTableComponent } from './tableType/square-table/square-table.component';
 import { CircleTableComponent } from './tableType/circle-table/circle-table.component';
@@ -39,7 +42,6 @@ import { SubmitBookingFormComponent } from './components/submit-booking-form/sub
   declarations: [
     AppComponent,
     DataPickerComponent,
-    HeadBannerComponent,
     TableMapComponent,
     SquareTableComponent,
     CircleTableComponent,

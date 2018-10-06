@@ -9,6 +9,10 @@
 
 }
 
+.picker{
+  text-align: center;
+}
+
 .live-kitchen{
   position: absolute;
   height: 300px;
