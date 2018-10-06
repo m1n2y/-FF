@@ -76,6 +76,7 @@ export class SubmitBookingFormComponent implements OnInit {
     // console.log((this.TableService.chooseTime))
     // console.log((this.TableService.chooseDate))
     // console.log((this.choosePeopleNumber))
+    
     let bookingInfo = {
       "tableNumber": this.chooseTable,
       "booktimeList": Number(String(this.TableService.chooseDate)+String(this.TableService.chooseTime)),
