@@ -4,9 +4,10 @@
 
 .date-picker-container{
   display: flex;
-  width: 500px;
+  width: 364px;
   height: 40px;
   align-items: flex-end;
+  margin: 0 auto;
 }
 .date-picker{
   margin: 0 20px;

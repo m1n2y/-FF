@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Booking-System';
+
+  clickBooking(): void {
+    window.location.href = '/login';
+  }
+
 }
