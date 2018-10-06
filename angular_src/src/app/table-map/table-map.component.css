@@ -96,3 +96,13 @@
   float: left;
   margin: 10px 60px;
 }
+
+
+/* css for booking form*/
+.submit-booking-form{
+  position: absolute;
+  right: 0;
+  top: 0px;
+  width: 500px;
+  height: 600px;
+}

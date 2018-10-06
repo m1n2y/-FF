@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, DoCheck } from '@angular/core';
 import {TablelistService} from '../services/tablelist.service';
 
 import {TableList} from '../models/TableList';
@@ -7,7 +7,7 @@ import {TableList} from '../models/TableList';
 @Component({
   selector: 'app-table-map',
   templateUrl: './table-map.component.html',
-  styleUrls: ['./table-map.component.css']
+  styleUrls: ['./table-map.component.css'],
 })
 
 // this component is use for demonstrate table map of restaurant in home page
@@ -15,12 +15,17 @@ import {TableList} from '../models/TableList';
 
 export class TableMapComponent implements OnInit {
 
-  constructor(private tableService: TablelistService) { }
-  public allSmallTables =[];
-  public allBigTables = [];
+  public allSmallTables:TableList[] =[];
+  public allBigTables:TableList[] = [];
+  public unAvailableTables=[];
 
+  constructor(private tableService: TablelistService) {
+    this.unAvailableTables = this.tableService.unAvailableList
+  }
 
   ngOnInit() {
+
+
     //get all small tables
     this.tableService.getAllSmallTables().subscribe(
       response => {
@@ -46,8 +51,17 @@ export class TableMapComponent implements OnInit {
         console.log(error)
       }
     )
+  }
 
+  ngDoCheck(){
+    if (this.unAvailableTables != this.tableService.unAvailableList){
+       this.unAvailableTables = this.tableService.unAvailableList
+    }
+  }
+
+  test(){
 
   }
+
 
 }

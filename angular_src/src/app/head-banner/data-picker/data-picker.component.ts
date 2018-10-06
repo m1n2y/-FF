@@ -17,12 +17,13 @@ export class DataPickerComponent implements OnInit {
   dayNumber = [0, 1, 2, 3, 4, 5, 6];
   timeNumber = [11,12,13,14,15,16,17,18,19,20,21];
   datePipe = new DatePipe('en-US');
-  clickDate: number;
+  clickTime:number=11;
+  clickDate: number=Number(this.datePipe.transform((this.today),"yyyMMdd"));
   checkTimeList: number;
 
   unavailableTable: TableList[] = [];
 
-  constructor(private tableListService: TablelistService) {
+  constructor(public tableListService: TablelistService) {
   }
 
   ngOnInit() {
@@ -41,21 +42,29 @@ export class DataPickerComponent implements OnInit {
 
 
     this.clickDate = Number(this.datePipe.transform((this.today+1000*3600*24*index),"yyyMMdd"));
+    this.tableListService.chooseDate = this.clickDate;
     this.checkTimeList = Number(this.clickDate+((document.getElementById('time-select') as HTMLInputElement).value))
     this.tableListService.getUnavailableTables(this.checkTimeList).subscribe(
       response =>{if (response['success'] == true){
         this.unavailableTable = response['tables']
+        this.tableListService.assignUnavailableList(this.unavailableTable)
+        console.log(this.tableListService.unAvailableList)
+
       } },
       error =>{console.log(error)}
     )
   }
 
   public chooseTime(){
+    this.clickTime=Number((document.getElementById('time-select') as HTMLInputElement).value);
     this.checkTimeList =  Number(this.clickDate+((document.getElementById('time-select') as HTMLInputElement).value))
+    this.tableListService.chooseTime = this.clickTime
     this.tableListService.getUnavailableTables(this.checkTimeList);
     this.tableListService.getUnavailableTables(this.checkTimeList).subscribe(
       response =>{if (response['success'] == true){
         this.unavailableTable = response['tables']
+        this.tableListService.assignUnavailableList(this.unavailableTable)
+        console.log(this.tableListService.unAvailableList)
 
       } },
       error =>{console.log(error)}

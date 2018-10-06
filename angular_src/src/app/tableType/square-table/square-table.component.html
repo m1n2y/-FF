@@ -1,6 +1,6 @@
 <div class="square-table-container">
 
-      <div class="square-table" >
+      <div class="square-table" [ngClass]="{table_unavailable : tableUnavailable}" (click)="onclick()" >
         <span>{{tableNumber}}</span>
         <div class="square-table-desk-up"></div>
         <div class="square-table-desk-down"></div>

@@ -1,0 +1,74 @@
+<div class="submit_container">
+  <div class="submit_top">
+
+    <button class="submit_top_close">Close</button>
+    <button class="submit_top_Submit" (click)="submitBooking()">Submit</button>
+
+  </div>
+
+  <div class="submit_content">
+    <div class="submit_content_userinfo">
+      <div class="submit_content_userinfo_icon">
+        <div>TS</div>
+      </div>
+      <div class="submit_content_userinfo_Info">
+          <div>
+            <span *ngIf="userInfoChange" class="submit_content_userinfo_Info_Username">{{Username.name}}</span>
+            <input type="text" [(ngModel)]="Username.name" *ngIf="!userInfoChange"><br>
+            <span *ngIf="userInfoChange">{{Username.phone}}</span>
+            <input type="text"  [(ngModel)]="Username.phone"  *ngIf="!userInfoChange">
+          </div>
+      </div>
+      <div class="submit_content_userinfo_button" (click)="editUserInfo()">
+        <span >{{userInfoChangeButtonText}}</span>
+      </div>
+
+
+    </div>
+    <div class="submit_content_title">  Booking Info</div>
+
+    <ul class="submit_content_bookinginfo">
+      <li class="submit_date btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" [(ngModel)]="model">
+        <label ngbButtonLabel class="btn-primary" *ngFor="let i of dayNumber"  >
+          <input ngbButton type="radio" [value]="today+(1000*3600*24*i)|date:'yyyMMdd'" value="today+(1000*3600*24*i)|date:'yyyMMdd'" (click)="chooseDate(i)"> {{today+(1000*3600*24*i)|date:'E'}}
+        </label>
+      </li>
+      <li>
+        <div class="submit_time">
+          <label >Time: </label>
+          <select name="time-select" class="submit-time-select" id="submit-time-select"  (change)="chooseTime()" >
+            <option *ngFor="let time of timeNumber"  value={{time}} >{{time+': 00'}}--{{time+1+': 00'}}</option>
+          </select>
+        </div>
+
+        <div class="submit_time">
+          <label >PeopleNum: </label>
+          <select name="time-select" class="people-number" id="people-select"  (change)="choosePeople()" >
+            <option *ngFor="let number of peopleNumber"  value={{number}}>{{number}}</option>
+          </select>
+        </div>
+      </li>
+
+      <li>
+        <label >Table: </label>
+        <div class="submit-table btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" [(ngModel)]="chooseTable">
+          <label ngbButtonLabel class="btn-primary" *ngFor="let tableNumber of availableTable"  >
+            <input ngbButton type="radio" [value]="tableNumber"> {{tableNumber}}
+          </label>
+        </div>
+
+      </li>
+
+
+
+
+    </ul>
+
+    <div class="submit_content_title">  Message</div>
+
+    <div class="submit_content_message">
+
+    </div>
+
+  </div>
+</div>

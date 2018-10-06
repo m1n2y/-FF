@@ -3,22 +3,35 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
 import {TableList} from '../models/TableList';
+import {DatePipe, formatDate} from '@angular/common';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class TablelistService {
 
-  constructor(private http: HttpClient) { }
   private serverAPI = 'http://localhost:3000/api'
-
   private headers = new HttpHeaders().set('Content-Type', 'application/json');
+  datePipe = new DatePipe('en-US');
+  public unAvailableList:TableList[] = []
+  public availableTableList: TableList[] =[]
+  public chooseTime:number = 11;
+  public chooseDate:number =Number(this.datePipe.transform((Date.now()),"yyyMMdd"));
+
+  constructor(private http: HttpClient) {  }
+
+  public assignUnavailableList(tableList:TableList[]){
+    this.unAvailableList = tableList
+  }
+
+
 
   public getAllTables(){
     let URI = `${this.serverAPI}/tablelist`;
     return this.http.get(URI)
-
   }
+
 
 
   public getAllSmallTables(){
@@ -38,6 +51,15 @@ export class TablelistService {
       "booktimeList": bookTime
     })
 
+    return this.http.post(URI,body,{headers : this.headers})
+  }
+
+  public getAvailableTable(postData){
+    let URI = `${this.serverAPI}/tablelist/getTableByBooktimeAndType`;
+    let body = JSON.stringify({
+      "booktimeList": postData.booktimeList,
+      "tableType": postData.tableType,
+    })
     return this.http.post(URI,body,{headers : this.headers})
 
   }

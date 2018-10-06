@@ -5,6 +5,7 @@
     </select>
   </div>
   <div *ngFor="let i of dayNumber"  class="date-select" >
+
     <div class="date-select-container" (click)="chooseDate(i)">
       <span class="date-container-month">{{today+(1000*3600*24*i)|date:'MMM dd'}}</span><br>
       <span class="date-container-day">{{today+(1000*3600*24*i)|date:'E'}}</span>

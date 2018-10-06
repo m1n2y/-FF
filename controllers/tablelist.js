@@ -101,6 +101,22 @@ router.post('/getTableByBooktimeList', (req,res,next) => {
     });
 });
 
+router.post('/getTableByBooktimeAndType', (req,res,next) => {
+    let postData ={
+        booktimeList: req.body.booktimeList,
+        tableType: req.body.tableType
+    }
+
+    tableList.getTableByBooktimeAndType(postData,(err,table)=>{
+        if(err){
+            res.json({success: false, message: `Failed to create a new user. Error: ${err}`})
+        }else {
+            res.write(JSON.stringify({success: true, tables:table},null,2));
+            res.end();
+        }
+    });
+});
+
 
 
 

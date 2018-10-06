@@ -12,6 +12,26 @@
             "element",
             "app",
             "kebab-case"
-        ]
+        ],
+      "no-trailing-whitespace": false,
+      "one-line": [
+        false,
+        "check-open-brace",
+        "check-catch",
+        "check-else",
+        "check-whitespace"
+      ],
+      "comment-format": [
+        false,
+        "check-space"
+      ],
+      "whitespace": [
+        false,
+        "check-branch",
+        "check-decl",
+        "check-operator",
+        "check-separator",
+        "check-type"
+      ]
     }
 }

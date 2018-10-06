@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input,DoCheck } from '@angular/core';
 
 @Component({
   selector: 'app-circle-table',
@@ -9,6 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 // this component is use for demonstrate in home page
 // It is a sub component of table-map
 export class CircleTableComponent implements OnInit {
+  tableUnavailable :boolean ;
 
   constructor() { }
 
@@ -16,5 +17,21 @@ export class CircleTableComponent implements OnInit {
   }
 
   @Input() tableNumber: String ;
+  @Input() unAvailable: [String] ;
+
+  ngDoCheck(){
+    this.checkUnavailableTable()
+
+  }
+
+
+  checkUnavailableTable(){
+    this.tableUnavailable = false;
+    for(let i =0; i<this.unAvailable.length;i++){
+      if (this.tableNumber == this.unAvailable[i]['tableNumber']){
+        this.tableUnavailable = true
+      }
+    }
+  }
 
 }

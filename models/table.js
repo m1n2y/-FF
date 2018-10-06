@@ -19,7 +19,7 @@ const Table = module.exports = mongoose.model('Table',TableSchema);
 
 //Table.find() returns all the tables
 module.exports.getAllTable = (callback) => {
-    Table.find({},callback);
+    Table.find({"tableNumber": "A5",'tableType': 'small'},callback);
 }
 
 module.exports.getAllSmallTables = (callback) => {
@@ -48,5 +48,10 @@ module.exports.updateBooktime = (bookInfo,callback) =>{
 
 module.exports.getTableByBooktimeList = (bookTime,callback) =>{
     let query = {"booktimeList" : bookTime.booktimeList};
+    Table.find(query,{tableNumber:1, _id:0},callback);
+}
+
+module.exports.getTableByBooktimeAndType = (postData,callback) =>{
+    let query = {"booktimeList" : {$ne:postData.booktimeList}, "tableType": postData.tableType};
     Table.find(query,{tableNumber:1, _id:0},callback);
 }

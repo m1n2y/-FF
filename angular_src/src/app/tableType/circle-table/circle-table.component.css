@@ -106,3 +106,12 @@
   top: 50px;
   left: 50px;
 }
+
+
+.table_unavailable {
+  user-select: none;
+  -webkit-user-select: none;
+  pointer-events: none;
+  cursor: not-allowed;
+  background-color: darkorange;
+}

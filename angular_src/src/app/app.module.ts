@@ -5,8 +5,13 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { DataPickerComponent } from './head-banner/data-picker/data-picker.component';
+import {FormsModule} from '@angular/forms';
+// import material css
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MyDatePickerModule} from 'mydatepicker';
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+
+
 import { HeadBannerComponent } from './head-banner/head-banner.component';
 import { TableMapComponent } from './table-map/table-map.component';
 import { SquareTableComponent } from './tableType/square-table/square-table.component';
@@ -28,6 +33,7 @@ import {routing} from './app-routing.module';
 import { JwtInterceptor} from './Login_register/~helpers/jwt.interceptor';
 import {ErrorInterceptor} from './Login_register/~helpers/error.interceptor';
 import { HomepageComponent } from './views/homepage/homepage.component';
+import { SubmitBookingFormComponent } from './components/submit-booking-form/submit-booking-form.component';
 
 @NgModule({
   declarations: [
@@ -42,16 +48,18 @@ import { HomepageComponent } from './views/homepage/homepage.component';
     LoginComponent,
     RegisterComponent,
     HomepageComponent,
+    SubmitBookingFormComponent,
 
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule, MatButtonModule, MatCheckboxModule,
     MyDatePickerModule,
     ReactiveFormsModule,
     HttpClientModule,
     routing,
-    NgbModule
+    NgbModule,
+    FormsModule
 
 
 
@@ -62,6 +70,7 @@ import { HomepageComponent } from './views/homepage/homepage.component';
     AlertService,
     AuthenticationService,
     UserService,
+
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
 
