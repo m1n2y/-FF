@@ -32,6 +32,10 @@ import {ErrorInterceptor} from './Login_register/~helpers/error.interceptor';
 import { HomepageComponent } from './views/homepage/homepage.component';
 import { SubmitBookingFormComponent } from './components/submit-booking-form/submit-booking-form.component';
 import {HeadBannerComponent} from './head-banner/head-banner.component';
+import { BookListPageComponent } from './views/book-list-page/book-list-page.component';
+import { FrameTopComponent } from './components/frame-top/frame-top.component';
+import { FrameBottomComponent } from './components/frame-bottom/frame-bottom.component';
+import { ContentBooklistComponent } from './components/content-booklist/content-booklist.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +50,11 @@ import {HeadBannerComponent} from './head-banner/head-banner.component';
     RegisterComponent,
     HomepageComponent,
     SubmitBookingFormComponent,
-    HeadBannerComponent
+    HeadBannerComponent,
+    BookListPageComponent,
+    FrameTopComponent,
+    FrameBottomComponent,
+    ContentBooklistComponent
 
   ],
   imports: [
