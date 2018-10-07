@@ -50,7 +50,7 @@ export class BookinglistService {
   }
 
   public deleteBooking(postData){
-    let URI = `${this.serverAPI}/booklist/addNewBooking`;
+    let URI = `${this.serverAPI}/booklist/deleteBookList`;
     let body = postData;
     return this.http.post(URI,body,{headers : this.headers})
   }

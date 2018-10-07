@@ -41,7 +41,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"text-center\" *ngIf=\"message\" ngClass=\"{ 'alert': message, 'alert-success': message.type === 'success', 'alert-danger': message.type === 'error' }\">\n      {{message.text}}\n</div>\n"
+module.exports = "<div class=\"text-center\" *ngIf=\"message\" ngClass=\"{ 'alert': message, 'alert-success': message.type === 'success', 'alert-danger': message.type === 'error' }\">\r\n      {{message.text}}\r\n</div>\r\n"
 
 /***/ }),
 
@@ -112,7 +112,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Hi {{currentUser.firstName}}!</h1>\n<p>You're logged in with Angular 6!!</p>\n<h3>All registered users:</h3>\n<ul>\n  <li *ngFor=\"let user of users\">\n    {{user.username}} ({{user.firstName}} {{user.lastName}})\n    - <a (click)=\"deleteUser(user.id)\" class=\"text-danger\">Delete</a>\n  </li>\n</ul>\n<p><a [routerLink]=\"['/login']\">Logout</a></p>\n"
+module.exports = "<h1>Hi {{currentUser.firstName}}!</h1>\r\n<p>You're logged in with Angular 6!!</p>\r\n<h3>All registered users:</h3>\r\n<ul>\r\n  <li *ngFor=\"let user of users\">\r\n    {{user.username}} ({{user.firstName}} {{user.lastName}})\r\n    - <a (click)=\"deleteUser(user.id)\" class=\"text-danger\">Delete</a>\r\n  </li>\r\n</ul>\r\n<p><a [routerLink]=\"['/login']\">Logout</a></p>\r\n"
 
 /***/ }),
 
@@ -196,7 +196,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"login-container\">\n  <h2 class=\"text-center\">Login</h2>\n  <form [formGroup]=\"loginForm\" (ngSubmit)=\"onSubmit()\">\n        <div class=\"form-group\">\n            <label for=\"username\">Username</label>\n            <input type=\"text\" formControlName=\"username\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.username.errors }\" />\n            <div *ngIf=\"submitted && f.username.errors\" class=\"invalid-feedback\">\n                <div *ngIf=\"f.username.errors.required\">Username is required</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"password\">Password</label>\n            <input type=\"password\" formControlName=\"password\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.password.errors }\" />\n            <div *ngIf=\"submitted && f.password.errors\" class=\"invalid-feedback\">\n                <div *ngIf=\"f.password.errors.required\">Password is required</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <button [disabled]=\"loading\" class=\"btn btn-primary\">Login</button>\n            <img *ngIf=\"loading\" src=\"data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==\" />\n            <a [routerLink]=\"['/register']\" class=\"btn btn-link\">Register</a>\n        </div>\n  </form>\n</div>\n"
+module.exports = "<div class=\"login-container\">\r\n  <h2 class=\"text-center\">Login</h2>\r\n  <form [formGroup]=\"loginForm\" (ngSubmit)=\"onSubmit()\">\r\n        <div class=\"form-group\">\r\n            <label for=\"username\">Username</label>\r\n            <input type=\"text\" formControlName=\"username\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.username.errors }\" />\r\n            <div *ngIf=\"submitted && f.username.errors\" class=\"invalid-feedback\">\r\n                <div *ngIf=\"f.username.errors.required\">Username is required</div>\r\n            </div>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label for=\"password\">Password</label>\r\n            <input type=\"password\" formControlName=\"password\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.password.errors }\" />\r\n            <div *ngIf=\"submitted && f.password.errors\" class=\"invalid-feedback\">\r\n                <div *ngIf=\"f.password.errors.required\">Password is required</div>\r\n            </div>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <button [disabled]=\"loading\" class=\"btn btn-primary\">Login</button>\r\n            <img *ngIf=\"loading\" src=\"data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==\" />\r\n            <a [routerLink]=\"['/register']\" class=\"btn btn-link\">Register</a>\r\n        </div>\r\n  </form>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -342,7 +342,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"register-container\">\n  <h2 class=\"text-center\">Register</h2>\n  <form [formGroup]=\"registerForm\" (ngSubmit)=\"onSubmit()\">\n        <div class=\"form-group\">\n            <label for=\"firstName\">First Name</label>\n            <input type=\"text\" formControlName=\"firstName\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.firstName.errors }\" />\n            <div *ngIf=\"submitted && f.firstName.errors\" class=\"invalid-feedback\">\n                <div *ngIf=\"f.firstName.errors.required\">First Name is required</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"lastName\">Last Name</label>\n            <input type=\"text\" formControlName=\"lastName\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.lastName.errors }\" />\n            <div *ngIf=\"submitted && f.lastName.errors\" class=\"invalid-feedback\">\n                <div *ngIf=\"f.lastName.errors.required\">Last Name is required</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"username\">Username</label>\n            <input type=\"text\" formControlName=\"username\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.username.errors }\" />\n            <div *ngIf=\"submitted && f.username.errors\" class=\"invalid-feedback\">\n                <div *ngIf=\"f.username.errors.required\">Username is required</div>\n            </div>\n        </div>\n        <div class=\"form-group\">\n            <label for=\"password\">Password</label>\n            <input type=\"password\" formControlName=\"password\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.password.errors }\" />\n            <div *ngIf=\"submitted && f.password.errors\" class=\"invalid-feedback\">\n                <div *ngIf=\"f.password.errors.required\">Password is required</div>\n                <div *ngIf=\"f.password.errors.minlength\">Password must be at least 6 characters</div>\n            </div>\n        </div>\n              <div class=\"form-group\">\n              <label for=\"phoneNumber\">phoneNumber</label>\n              <input type=\"text\" formControlName=\"phoneNumber\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.username.errors }\" />\n              <div *ngIf=\"submitted && f.username.errors\" class=\"invalid-feedback\">\n                  <div *ngIf=\"f.username.errors.required\">Username is required</div>\n              </div>\n          </div>\n        <div class=\"form-group\">\n            <button [disabled]=\"loading\" class=\"btn btn-primary\">Register</button>\n            <img *ngIf=\"loading\" src=\"data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==\" />\n            <a [routerLink]=\"['/login']\" class=\"btn btn-link\">Cancel</a>\n        </div>\n  </form>\n</div>\n"
+module.exports = "<div class=\"register-container\">\r\n  <h2 class=\"text-center\">Register</h2>\r\n  <form [formGroup]=\"registerForm\" (ngSubmit)=\"onSubmit()\">\r\n        <div class=\"form-group\">\r\n            <label for=\"firstName\">First Name</label>\r\n            <input type=\"text\" formControlName=\"firstName\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.firstName.errors }\" />\r\n            <div *ngIf=\"submitted && f.firstName.errors\" class=\"invalid-feedback\">\r\n                <div *ngIf=\"f.firstName.errors.required\">First Name is required</div>\r\n            </div>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label for=\"lastName\">Last Name</label>\r\n            <input type=\"text\" formControlName=\"lastName\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.lastName.errors }\" />\r\n            <div *ngIf=\"submitted && f.lastName.errors\" class=\"invalid-feedback\">\r\n                <div *ngIf=\"f.lastName.errors.required\">Last Name is required</div>\r\n            </div>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label for=\"username\">Username</label>\r\n            <input type=\"text\" formControlName=\"username\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.username.errors }\" />\r\n            <div *ngIf=\"submitted && f.username.errors\" class=\"invalid-feedback\">\r\n                <div *ngIf=\"f.username.errors.required\">Username is required</div>\r\n            </div>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <label for=\"password\">Password</label>\r\n            <input type=\"password\" formControlName=\"password\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.password.errors }\" />\r\n            <div *ngIf=\"submitted && f.password.errors\" class=\"invalid-feedback\">\r\n                <div *ngIf=\"f.password.errors.required\">Password is required</div>\r\n                <div *ngIf=\"f.password.errors.minlength\">Password must be at least 6 characters</div>\r\n            </div>\r\n        </div>\r\n              <div class=\"form-group\">\r\n              <label for=\"phoneNumber\">phoneNumber</label>\r\n              <input type=\"text\" formControlName=\"phoneNumber\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.username.errors }\" />\r\n              <div *ngIf=\"submitted && f.username.errors\" class=\"invalid-feedback\">\r\n                  <div *ngIf=\"f.username.errors.required\">Username is required</div>\r\n              </div>\r\n          </div>\r\n        <div class=\"form-group\">\r\n            <button [disabled]=\"loading\" class=\"btn btn-primary\">Register</button>\r\n            <img *ngIf=\"loading\" src=\"data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==\" />\r\n            <a [routerLink]=\"['/login']\" class=\"btn btn-link\">Cancel</a>\r\n        </div>\r\n  </form>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -954,6 +954,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Login_register_register_register_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Login_register/register/register.component */ "./src/app/Login_register/register/register.component.ts");
 /* harmony import */ var _Login_register_guards_auth_guard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Login_register/~guards/auth.guard */ "./src/app/Login_register/~guards/auth.guard.ts");
 /* harmony import */ var _views_homepage_homepage_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./views/homepage/homepage.component */ "./src/app/views/homepage/homepage.component.ts");
+/* harmony import */ var _views_book_list_page_book_list_page_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./views/book-list-page/book-list-page.component */ "./src/app/views/book-list-page/book-list-page.component.ts");
+/* harmony import */ var _views_main_page_main_page_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./views/main-page/main-page.component */ "./src/app/views/main-page/main-page.component.ts");
+/* harmony import */ var _views_menu_page_menu_page_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./views/menu-page/menu-page.component */ "./src/app/views/menu-page/menu-page.component.ts");
+
+
+
 
 
 
@@ -961,10 +967,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var appRoutes = [
-    { path: 'HomePage', component: _views_homepage_homepage_component__WEBPACK_IMPORTED_MODULE_5__["HomepageComponent"] },
+    { path: 'HomePage', component: _views_main_page_main_page_component__WEBPACK_IMPORTED_MODULE_7__["MainPageComponent"] },
     { path: 'usermanagement', component: _Login_register_home_home_component__WEBPACK_IMPORTED_MODULE_1__["HomeComponent"], canActivate: [_Login_register_guards_auth_guard__WEBPACK_IMPORTED_MODULE_4__["AuthGuard"]] },
     { path: '', component: _Login_register_login_login_component__WEBPACK_IMPORTED_MODULE_2__["LoginComponent"] },
     { path: 'register', component: _Login_register_register_register_component__WEBPACK_IMPORTED_MODULE_3__["RegisterComponent"] },
+    { path: 'Booksystem', component: _views_homepage_homepage_component__WEBPACK_IMPORTED_MODULE_5__["HomepageComponent"] },
+    { path: 'BookList', component: _views_book_list_page_book_list_page_component__WEBPACK_IMPORTED_MODULE_6__["BookListPageComponent"] },
+    { path: 'Menu', component: _views_menu_page_menu_page_component__WEBPACK_IMPORTED_MODULE_8__["MenuPageComponent"] },
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
 ];
@@ -980,7 +989,7 @@ var routing = _angular_router__WEBPACK_IMPORTED_MODULE_0__["RouterModule"].forRo
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".container{\n  box-sizing: border-box;\n  margin: 0px;\n  max-width: 2500px;\n}\n"
+module.exports = ".container{\r\n  box-sizing: border-box;\r\n  margin: 0px;\r\n  max-width: 2500px;\r\n}\r\n"
 
 /***/ }),
 
@@ -991,7 +1000,7 @@ module.exports = ".container{\n  box-sizing: border-box;\n  margin: 0px;\n  max-
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- main app container -->\n\n    <div class=\"container\">\n\n      <div class=\"col \">\n        <app-alert></app-alert>\n        <router-outlet></router-outlet>\n      </div>\n    </div>\n"
+module.exports = "<!-- main app container -->\r\n\r\n    <div class=\"container\">\r\n\r\n      <div class=\"col \">\r\n        <app-alert></app-alert>\r\n        <router-outlet></router-outlet>\r\n      </div>\r\n    </div>\r\n"
 
 /***/ }),
 
@@ -1070,6 +1079,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _views_homepage_homepage_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./views/homepage/homepage.component */ "./src/app/views/homepage/homepage.component.ts");
 /* harmony import */ var _components_submit_booking_form_submit_booking_form_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./components/submit-booking-form/submit-booking-form.component */ "./src/app/components/submit-booking-form/submit-booking-form.component.ts");
 /* harmony import */ var _head_banner_head_banner_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./head-banner/head-banner.component */ "./src/app/head-banner/head-banner.component.ts");
+/* harmony import */ var _views_book_list_page_book_list_page_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./views/book-list-page/book-list-page.component */ "./src/app/views/book-list-page/book-list-page.component.ts");
+/* harmony import */ var _components_frame_top_frame_top_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./components/frame-top/frame-top.component */ "./src/app/components/frame-top/frame-top.component.ts");
+/* harmony import */ var _components_frame_bottom_frame_bottom_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/frame-bottom/frame-bottom.component */ "./src/app/components/frame-bottom/frame-bottom.component.ts");
+/* harmony import */ var _components_content_booklist_content_booklist_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./components/content-booklist/content-booklist.component */ "./src/app/components/content-booklist/content-booklist.component.ts");
+/* harmony import */ var _components_content_mainpage_content_mainpage_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./components/content-mainpage/content-mainpage.component */ "./src/app/components/content-mainpage/content-mainpage.component.ts");
+/* harmony import */ var _views_main_page_main_page_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./views/main-page/main-page.component */ "./src/app/views/main-page/main-page.component.ts");
+/* harmony import */ var _views_menu_page_menu_page_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./views/menu-page/menu-page.component */ "./src/app/views/menu-page/menu-page.component.ts");
+/* harmony import */ var _components_content_menu_content_menu_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./components/content-menu/content-menu.component */ "./src/app/components/content-menu/content-menu.component.ts");
+/* harmony import */ var _components_frame_top_nav_frame_top_nav_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./components/frame-top-nav/frame-top-nav.component */ "./src/app/components/frame-top-nav/frame-top-nav.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1106,6 +1124,15 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
+
+
+
+
+
+
+
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -1123,7 +1150,16 @@ var AppModule = /** @class */ (function () {
                 _Login_register_register_register_component__WEBPACK_IMPORTED_MODULE_13__["RegisterComponent"],
                 _views_homepage_homepage_component__WEBPACK_IMPORTED_MODULE_23__["HomepageComponent"],
                 _components_submit_booking_form_submit_booking_form_component__WEBPACK_IMPORTED_MODULE_24__["SubmitBookingFormComponent"],
-                _head_banner_head_banner_component__WEBPACK_IMPORTED_MODULE_25__["HeadBannerComponent"]
+                _head_banner_head_banner_component__WEBPACK_IMPORTED_MODULE_25__["HeadBannerComponent"],
+                _views_book_list_page_book_list_page_component__WEBPACK_IMPORTED_MODULE_26__["BookListPageComponent"],
+                _components_frame_top_frame_top_component__WEBPACK_IMPORTED_MODULE_27__["FrameTopComponent"],
+                _components_frame_bottom_frame_bottom_component__WEBPACK_IMPORTED_MODULE_28__["FrameBottomComponent"],
+                _components_content_booklist_content_booklist_component__WEBPACK_IMPORTED_MODULE_29__["ContentBooklistComponent"],
+                _components_content_mainpage_content_mainpage_component__WEBPACK_IMPORTED_MODULE_30__["ContentMainpageComponent"],
+                _views_main_page_main_page_component__WEBPACK_IMPORTED_MODULE_31__["MainPageComponent"],
+                _views_menu_page_menu_page_component__WEBPACK_IMPORTED_MODULE_32__["MenuPageComponent"],
+                _components_content_menu_content_menu_component__WEBPACK_IMPORTED_MODULE_33__["ContentMenuComponent"],
+                _components_frame_top_nav_frame_top_nav_component__WEBPACK_IMPORTED_MODULE_34__["FrameTopNavComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -1154,6 +1190,453 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/content-booklist/content-booklist.component.css":
+/*!****************************************************************************!*\
+  !*** ./src/app/components/content-booklist/content-booklist.component.css ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".booklist-container{\r\n  display: flex;\r\n  flex-flow: row wrap;\r\n  justify-content: space-around;\r\n}\r\n\r\n.card-container{\r\n  display: flex;\r\n  flex-flow: row wrap;\r\n  justify-content: space-between;\r\n}\r\n"
+
+/***/ }),
+
+/***/ "./src/app/components/content-booklist/content-booklist.component.html":
+/*!*****************************************************************************!*\
+  !*** ./src/app/components/content-booklist/content-booklist.component.html ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"booklist-container\">\r\n\r\n\r\n  <ngb-tabset>\r\n    <ngb-tab title=\"Current\" class=\"menu-title\">\r\n      <ng-template ngbTabContent>\r\n        <div class=\"card-container\">\r\n\r\n              <div class=\"card\" style=\"width: 18rem;\" *ngFor=\"let booklist of currentBookList\">\r\n                <img class=\"card-img-top\" src=\"../../../assets/booking-list-imgag.jpg\" alt=\"Card image cap\">\r\n                <div class=\"card-body\">\r\n                  <h5 class=\"card-title\">{{booklist['tableNumber']}}</h5>\r\n                  <p class=\"card-text\"><b>BookingTime:</b>{{booklist['bookingTime']}}</p>\r\n                  <p class=\"card-text\"><b>Customer:</b>{{booklist['username']}}</p>\r\n                  <p class=\"card-text\"><b>PhoneNumber:</b>{{booklist['phoneNumber']}}</p>\r\n                  <p class=\"card-text\"><b>Total number of people:</b>{{booklist['peopleNumber']}}</p>\r\n                  <p class=\"card-text\"><b>Message:</b>{{booklist['message']}}</p>\r\n                  <a class=\"btn btn-danger\" (click)=\"deleteBooking(booklist)\">Cancel</a>\r\n\r\n\r\n                </div>\r\n              </div>\r\n        </div>\r\n\r\n      </ng-template>\r\n    </ngb-tab>\r\n\r\n    <ngb-tab>\r\n      <ng-template ngbTabTitle><b>History</b></ng-template>\r\n      <ng-template ngbTabContent>\r\n        <div class=\"card-container\">\r\n\r\n          <div class=\"card\" style=\"width: 18rem;\" *ngFor=\"let booklist of historyBookList\">\r\n            <img class=\"card-img-top\" src=\"../../../assets/booking-list-imgag.jpg\" alt=\"Card image cap\">\r\n            <div class=\"card-body\">\r\n              <h5 class=\"card-title\">{{booklist['tableNumber']}}</h5>\r\n              <p class=\"card-text\"><b>BookingTime:</b>{{booklist['bookingTime']}}</p>\r\n              <p class=\"card-text\"><b>Customer:</b>{{booklist['username']}}</p>\r\n              <p class=\"card-text\"><b>PhoneNumber:</b>{{booklist['phoneNumber']}}</p>\r\n              <p class=\"card-text\"><b>Total number of people:</b>{{booklist['peopleNumber']}}</p>\r\n              <p class=\"card-text\"><b>Message:</b>{{booklist['message']}}</p>\r\n              <a class=\"btn btn-danger\" (click)=\"deleteBooking(booklist)\">Delete</a>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </ng-template>\r\n    </ngb-tab>\r\n  </ngb-tabset>\r\n\r\n\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/components/content-booklist/content-booklist.component.ts":
+/*!***************************************************************************!*\
+  !*** ./src/app/components/content-booklist/content-booklist.component.ts ***!
+  \***************************************************************************/
+/*! exports provided: ContentBooklistComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContentBooklistComponent", function() { return ContentBooklistComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _services_bookinglist_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/bookinglist.service */ "./src/app/services/bookinglist.service.ts");
+/* harmony import */ var _services_tablelist_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/tablelist.service */ "./src/app/services/tablelist.service.ts");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var ContentBooklistComponent = /** @class */ (function () {
+    function ContentBooklistComponent(BookingService, TableService, router) {
+        this.BookingService = BookingService;
+        this.TableService = TableService;
+        this.router = router;
+        this.today = Date.now();
+        this.datePipe = new _angular_common__WEBPACK_IMPORTED_MODULE_4__["DatePipe"]('en-US');
+        this.currentDate = Number(this.datePipe.transform((this.today), "yyyMMddhh"));
+        this.getBookingList = [];
+        this.historyBookList = [];
+        this.currentBookList = [];
+    }
+    ContentBooklistComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        var postUserName = {
+            "username": "test"
+        };
+        var postUserWithTime = {
+            "username": "test",
+            "bookingTime": this.currentDate
+        };
+        this.BookingService.getBookingByUserName(postUserName).subscribe(function (response) {
+            if (response['success'] == true) {
+                _this.getBookingList = response['booklists'];
+            }
+        }, function (error) { console.log(error); });
+        this.BookingService.getHistoryBookByUserName(postUserWithTime).subscribe(function (response) {
+            if (response['success'] == true) {
+                _this.historyBookList = response['booklists'];
+            }
+        }, function (error) { console.log(error); });
+        this.BookingService.getCurrentListbyUserName(postUserWithTime).subscribe(function (response) {
+            if (response['success'] == true) {
+                _this.currentBookList = response['booklists'];
+            }
+        }, function (error) { console.log(error); });
+    };
+    ContentBooklistComponent.prototype.ngDoCheck = function () {
+    };
+    ContentBooklistComponent.prototype.deleteBooking = function (postData) {
+        if (confirm('Are you sure to delete ?') == true) {
+            var deleteBook = {
+                username: postData.username,
+                bookingTime: postData.bookingTime,
+                tableNumber: postData.tableNumber
+            };
+            var deletedTimeListofTable = {
+                bookingTime: postData.bookingTime,
+                tableNumber: postData.tableNumber
+            };
+            this.BookingService.deleteBooking(deleteBook).subscribe(function (response) {
+                if (response['success'] == true) {
+                    console.log(response);
+                }
+            }, function (error) { console.log(error); });
+            this.TableService.deleteBookTimeForTable(deletedTimeListofTable).subscribe(function (response) {
+                if (response['success'] == true) {
+                    console.log(response);
+                }
+            }, function (error) { console.log(error); });
+        }
+        else {
+        }
+    };
+    ContentBooklistComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-content-booklist',
+            template: __webpack_require__(/*! ./content-booklist.component.html */ "./src/app/components/content-booklist/content-booklist.component.html"),
+            styles: [__webpack_require__(/*! ./content-booklist.component.css */ "./src/app/components/content-booklist/content-booklist.component.css")]
+        }),
+        __metadata("design:paramtypes", [_services_bookinglist_service__WEBPACK_IMPORTED_MODULE_2__["BookinglistService"],
+            _services_tablelist_service__WEBPACK_IMPORTED_MODULE_3__["TablelistService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+    ], ContentBooklistComponent);
+    return ContentBooklistComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/content-mainpage/content-mainpage.component.css":
+/*!****************************************************************************!*\
+  !*** ./src/app/components/content-mainpage/content-mainpage.component.css ***!
+  \****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".container{\r\n  max-width: 1236px;\r\n  display: flex;\r\n  align-content: stretch;\r\n  align-items: stretch;\r\n  flex-flow: row nowrap;\r\n  padding: 0;\r\n}\r\n\r\n.container .card{\r\n  width: 34%;\r\n  height: 660px;\r\n  max-height: 660px;\r\n  cursor: pointer;\r\n}\r\n\r\n.container .card span{\r\n  position: absolute;\r\n  bottom: 0;\r\n  width: 100%;\r\n  background-color: rgba(237, 237, 237, 0.54);\r\n  margin-top: 250px;\r\n\r\n}\r\n\r\n.card-title{\r\n  font-size: 60px;\r\n  font-weight: bold;\r\n  text-align: center;\r\n  color: white;\r\n}\r\n\r\n.system_background{\r\n  background-image: url('main-page-makbooking.jpg');\r\n\r\n\r\n}\r\n\r\n.system_Menu{\r\n  background-image: url('main-page-menu.png');\r\n\r\n}\r\n\r\n.system_BookiList{\r\n  background-image: url('main-page-reserve.jpg');\r\n  background-position: -300px;\r\n}\r\n\r\n.container .card:hover{\r\n  opacity: 0.5;\r\n}\r\n\r\n.card:hover span h5{\r\n  color: #1767e5;\r\n}\r\n"
+
+/***/ }),
+
+/***/ "./src/app/components/content-mainpage/content-mainpage.component.html":
+/*!*****************************************************************************!*\
+  !*** ./src/app/components/content-mainpage/content-mainpage.component.html ***!
+  \*****************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\r\n\r\n  <a class=\"card system_background\" routerLink=\"/Booksystem\">\r\n\r\n        <span> <h5 class=\"card-title \">Booking System</h5>\r\n        </span>\r\n\r\n  </a>\r\n  <a class=\"card system_Menu\"  routerLink=\"/Menu\">\r\n      <span><h5 class=\"card-title \">Menu</h5></span>\r\n  </a>\r\n  <a class=\"card system_BookiList\"  routerLink=\"/BookList\">\r\n      <span><h5 class=\"card-title \">MY Booking</h5></span>\r\n  </a>\r\n\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/components/content-mainpage/content-mainpage.component.ts":
+/*!***************************************************************************!*\
+  !*** ./src/app/components/content-mainpage/content-mainpage.component.ts ***!
+  \***************************************************************************/
+/*! exports provided: ContentMainpageComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContentMainpageComponent", function() { return ContentMainpageComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ContentMainpageComponent = /** @class */ (function () {
+    function ContentMainpageComponent() {
+    }
+    ContentMainpageComponent.prototype.ngOnInit = function () {
+    };
+    ContentMainpageComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-content-mainpage',
+            template: __webpack_require__(/*! ./content-mainpage.component.html */ "./src/app/components/content-mainpage/content-mainpage.component.html"),
+            styles: [__webpack_require__(/*! ./content-mainpage.component.css */ "./src/app/components/content-mainpage/content-mainpage.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], ContentMainpageComponent);
+    return ContentMainpageComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/content-menu/content-menu.component.css":
+/*!********************************************************************!*\
+  !*** ./src/app/components/content-menu/content-menu.component.css ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".container{\r\n  max-width: 1236px;\r\n  display: flex;\r\n  align-content: stretch;\r\n  align-items: stretch;\r\n  flex-flow: row nowrap;\r\n  padding: 0;\r\n  justify-content: space-around;\r\n\r\n}\r\n\r\n\r\n"
+
+/***/ }),
+
+/***/ "./src/app/components/content-menu/content-menu.component.html":
+/*!*********************************************************************!*\
+  !*** ./src/app/components/content-menu/content-menu.component.html ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container\">\r\n\r\n  <ngb-tabset>\r\n    <ngb-tab title=\"Lunch\" class=\"menu-title\">\r\n      <ng-template ngbTabContent>\r\n        <img src=\"../../../assets/Lunch-new.jpg\" alt=\"\">\r\n      </ng-template>\r\n    </ngb-tab>\r\n\r\n    <ngb-tab>\r\n      <ng-template ngbTabTitle><b>Dinner</b></ng-template>\r\n      <ng-template ngbTabContent>\r\n        <img src=\"../../../assets/Dinner-new.jpg\" alt=\"\">\r\n      </ng-template>\r\n    </ngb-tab>\r\n  </ngb-tabset>\r\n\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/components/content-menu/content-menu.component.ts":
+/*!*******************************************************************!*\
+  !*** ./src/app/components/content-menu/content-menu.component.ts ***!
+  \*******************************************************************/
+/*! exports provided: ContentMenuComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ContentMenuComponent", function() { return ContentMenuComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var ContentMenuComponent = /** @class */ (function () {
+    function ContentMenuComponent() {
+    }
+    ContentMenuComponent.prototype.ngOnInit = function () {
+    };
+    ContentMenuComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-content-menu',
+            template: __webpack_require__(/*! ./content-menu.component.html */ "./src/app/components/content-menu/content-menu.component.html"),
+            styles: [__webpack_require__(/*! ./content-menu.component.css */ "./src/app/components/content-menu/content-menu.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], ContentMenuComponent);
+    return ContentMenuComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/frame-bottom/frame-bottom.component.css":
+/*!********************************************************************!*\
+  !*** ./src/app/components/frame-bottom/frame-bottom.component.css ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".restaurant-map-container{\r\n\r\n  box-sizing: border-box;\r\n  width: 1240px;\r\n  min-height: 660px;\r\n  border: 2px solid lightslategray;\r\n  margin: auto;\r\n  position: relative;\r\n\r\n}\r\n"
+
+/***/ }),
+
+/***/ "./src/app/components/frame-bottom/frame-bottom.component.html":
+/*!*********************************************************************!*\
+  !*** ./src/app/components/frame-bottom/frame-bottom.component.html ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"restaurant-map-container\">\r\n  <ng-content></ng-content>\r\n\r\n\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/components/frame-bottom/frame-bottom.component.ts":
+/*!*******************************************************************!*\
+  !*** ./src/app/components/frame-bottom/frame-bottom.component.ts ***!
+  \*******************************************************************/
+/*! exports provided: FrameBottomComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FrameBottomComponent", function() { return FrameBottomComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var FrameBottomComponent = /** @class */ (function () {
+    function FrameBottomComponent() {
+    }
+    FrameBottomComponent.prototype.ngOnInit = function () {
+    };
+    FrameBottomComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-frame-bottom',
+            template: __webpack_require__(/*! ./frame-bottom.component.html */ "./src/app/components/frame-bottom/frame-bottom.component.html"),
+            styles: [__webpack_require__(/*! ./frame-bottom.component.css */ "./src/app/components/frame-bottom/frame-bottom.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], FrameBottomComponent);
+    return FrameBottomComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/frame-top-nav/frame-top-nav.component.css":
+/*!**********************************************************************!*\
+  !*** ./src/app/components/frame-top-nav/frame-top-nav.component.css ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".head-banner-container{\r\n\r\n  background-color: #364248;\r\n  display: flex;\r\n  width: 1240px;\r\n  height: 80px;\r\n  flex-flow: row nowrap;\r\n  justify-content: flex-start;\r\n  align-items: center;\r\n\r\n}\r\n.head-banner-container .banner-icon{\r\n  flex: 0.2 50px;\r\n  height: 50px;\r\n  width: 50px;\r\n\r\n}\r\n.head-banner-container .col{\r\n  display: flex;\r\n  flex-flow: nowrap row;\r\n  align-items: center;\r\n  align-content: center;\r\n}\r\n.banner-icon img{\r\n  cursor: pointer;\r\n  padding: 10px;\r\n  height: 60px;\r\n  width: 60px;\r\n\r\n}\r\n.btn-outline-primary img{\r\n  cursor: pointer;\r\n  padding: 10px;\r\n  height: 60px;\r\n  width: 60px;\r\n}\r\na{\r\n  cursor: pointer;\r\n}\r\n#dropdownBasic1{\r\n  border:none;\r\n  -webkit-appearance: none;\r\n  -moz-appearance: none;\r\n  appearance: none;\r\n}\r\n#dropdownBasic1:after{\r\n  display: none;\r\n}\r\n"
+
+/***/ }),
+
+/***/ "./src/app/components/frame-top-nav/frame-top-nav.component.html":
+/*!***********************************************************************!*\
+  !*** ./src/app/components/frame-top-nav/frame-top-nav.component.html ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"head-banner-container\">\r\n\r\n  <div class=\"col\">\r\n    <div ngbDropdown class=\"d-inline-block\">\r\n      <button class=\"btn btn-outline-primary\" id=\"dropdownBasic1\" ngbDropdownToggle><img src=\"../../assets/icons/menu-icon.png\" alt=\"\"></button>\r\n      <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\r\n        <a class=\"dropdown-item\" href=\"Booksystem\">Booking System</a>\r\n        <a class=\"dropdown-item\" href=\"Menu\">Menu</a>\r\n        <a class=\"dropdown-item\" href=\"BookList\">My BookingList</a>\r\n        <div class=\"dropdown-divider\"></div>\r\n        <a class=\"dropdown-item\">Login out</a>\r\n      </div>\r\n    </div>\r\n    <a class=\"banner-icon\" href=\"HomePage\"><img src=\"../../assets/icons/homepage-icon.png\" alt=\"\"></a>\r\n\r\n  </div>\r\n\r\n\r\n\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/components/frame-top-nav/frame-top-nav.component.ts":
+/*!*********************************************************************!*\
+  !*** ./src/app/components/frame-top-nav/frame-top-nav.component.ts ***!
+  \*********************************************************************/
+/*! exports provided: FrameTopNavComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FrameTopNavComponent", function() { return FrameTopNavComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var FrameTopNavComponent = /** @class */ (function () {
+    function FrameTopNavComponent() {
+    }
+    FrameTopNavComponent.prototype.ngOnInit = function () {
+    };
+    FrameTopNavComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-frame-top-nav',
+            template: __webpack_require__(/*! ./frame-top-nav.component.html */ "./src/app/components/frame-top-nav/frame-top-nav.component.html"),
+            styles: [__webpack_require__(/*! ./frame-top-nav.component.css */ "./src/app/components/frame-top-nav/frame-top-nav.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], FrameTopNavComponent);
+    return FrameTopNavComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/components/frame-top/frame-top.component.css":
+/*!**************************************************************!*\
+  !*** ./src/app/components/frame-top/frame-top.component.css ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".head-banner-container{\r\n  margin: auto;\r\n  background-color: #364248;\r\n  display: flex;\r\n  width: 1240px;\r\n  height: 80px;\r\n  flex-flow: row nowrap;\r\n  align-items: center;\r\n  justify-content: space-around;\r\n\r\n}\r\n.head-banner-container .banner-icon{\r\n  flex: 0.5 50px;\r\n  height: 50px;\r\n  width: 50px;\r\n\r\n\r\n}\r\n.banner-icon img{\r\n  cursor: pointer;\r\n  padding: 10px;\r\n  height: 60px;\r\n  width: 60px;\r\n\r\n}\r\n"
+
+/***/ }),
+
+/***/ "./src/app/components/frame-top/frame-top.component.html":
+/*!***************************************************************!*\
+  !*** ./src/app/components/frame-top/frame-top.component.html ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"head-banner-container\">\r\n\r\n  <!--<div class=\"banner-icon\"><img src=\"../../assets/icons/menu-icon.png\" alt=\"\"></div>-->\r\n\r\n  <!--<div class=\"banner-icon\"><img src=\"../../assets/icons/homepage-icon.png\" alt=\"\"></div>-->\r\n  <ng-content></ng-content>\r\n\r\n\r\n</div>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/components/frame-top/frame-top.component.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/components/frame-top/frame-top.component.ts ***!
+  \*************************************************************/
+/*! exports provided: FrameTopComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FrameTopComponent", function() { return FrameTopComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var FrameTopComponent = /** @class */ (function () {
+    function FrameTopComponent() {
+    }
+    FrameTopComponent.prototype.ngOnInit = function () {
+    };
+    FrameTopComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-frame-top',
+            template: __webpack_require__(/*! ./frame-top.component.html */ "./src/app/components/frame-top/frame-top.component.html"),
+            styles: [__webpack_require__(/*! ./frame-top.component.css */ "./src/app/components/frame-top/frame-top.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], FrameTopComponent);
+    return FrameTopComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/submit-booking-form/submit-booking-form.component.css":
 /*!**********************************************************************************!*\
   !*** ./src/app/components/submit-booking-form/submit-booking-form.component.css ***!
@@ -1161,7 +1644,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".submit_container{\n  border: solid 2px lightslategray ;\n}\n\n.submit_top{\n  height: 50px;\n  background-color: #d96673;\n  display: flex;\n  justify-content: space-between;\n  flex-flow: row wrap;\n}\n\n.submit_top button{\n  background-color: #d96673;\n  border: none;\n  color: white;\n  cursor: pointer;\n  height: 50px;\n  width: 80px;\n}\n\n.submit_top button:hover{\n  color: darkblue;\n}\n\n.submit_content{\n  height: 550px;\n  background-color: white;\n\n}\n\n.submit_content .submit_content_title{\n  height: 30px;\n  padding-left: 10px;\n  background-color: rgb(227, 227, 227);\n}\n\n.submit_content .submit_content_userinfo{\n  position: relative;\n  height: 100px;\n\n}\n\n.submit_content_userinfo_icon{\n  position: absolute;\n  width: 100px;\n  horiz-align: center;\n  vertical-align: center;\n  left: 30px;\n}\n\n.submit_content_userinfo_icon div{\n  width: 70px;\n  height: 70px;\n  margin: auto;\n  margin-top: 15px;\n  border: solid 1px black;\n  background-color: #d2644f;\n  border-radius: 50%;\n  text-align: center;\n  font-size: 30px;\n  color: white;\n  line-height: 65px;\n  font-weight: bold;\n}\n\n.submit_content_userinfo_Info{\n  height: 100px;\n  position: absolute;\n  left: 130px;\n  padding: 20px 0;\n}\n\n.submit_content_userinfo_Info_Username{\n  font-size: 25px;\n}\n\n.submit_content_userinfo_button{\n  height: 100px;\n  position: absolute;\n  right: 50px;\n  cursor: pointer;\n}\n\n.submit_content_userinfo_button span{\n\n  border: none;\n  background-color: white;\n  color: dodgerblue;\n  text-align: center;\n  font-size: 20px;\n  cursor: pointer;\n  line-height: 90px;\n}\n\n.submit_content .submit_content_bookinginfo{\n  height: 200px;\n  display: flex;\n  flex-flow: row wrap;\n  justify-content: center;\n  align-items: center;\n  padding: 0;\n}\n\n.submit_content .submit_content_bookinginfo li{\n  list-style: none;\n  height: 50px;\n  width: 100%;\n  align-items:center;\n  padding-left: 80px;\n}\n\n.submit_content_bookinginfo .submit_time{\n  display: inline-block;\n  padding-right: 20px;\n}\n\n.submit_content .submit_content_message{\n  height: 100px;\n}\n\n.btn-primary{\n  background-color: #666666;\n  border: none;\n}\n\n.submit-table label{\n  padding: .375rem .35rem\n}\n\n.submit_form_State{\n  display: none;\n}\n\n#submit_message{\n  width: 100%;\n  height: 175px;\n}\n"
+module.exports = ".submit_container{\r\n  border: solid 2px lightslategray ;\r\n}\r\n\r\n.submit_top{\r\n  height: 50px;\r\n  background-color: #d96673;\r\n  display: flex;\r\n  justify-content: space-between;\r\n  flex-flow: row wrap;\r\n}\r\n\r\n.submit_top button{\r\n  background-color: #d96673;\r\n  border: none;\r\n  color: white;\r\n  cursor: pointer;\r\n  height: 50px;\r\n  width: 80px;\r\n}\r\n\r\n.submit_top button:hover{\r\n  color: darkblue;\r\n}\r\n\r\n.submit_content{\r\n  height: 550px;\r\n  background-color: white;\r\n\r\n}\r\n\r\n.submit_content .submit_content_title{\r\n  height: 30px;\r\n  padding-left: 10px;\r\n  background-color: rgb(227, 227, 227);\r\n}\r\n\r\n.submit_content .submit_content_userinfo{\r\n  position: relative;\r\n  height: 100px;\r\n\r\n}\r\n\r\n.submit_content_userinfo_icon{\r\n  position: absolute;\r\n  width: 100px;\r\n  horiz-align: center;\r\n  vertical-align: center;\r\n  left: 30px;\r\n}\r\n\r\n.submit_content_userinfo_icon div{\r\n  width: 70px;\r\n  height: 70px;\r\n  margin: auto;\r\n  margin-top: 15px;\r\n  border: solid 1px black;\r\n  background-color: #d2644f;\r\n  border-radius: 50%;\r\n  text-align: center;\r\n  font-size: 30px;\r\n  color: white;\r\n  line-height: 65px;\r\n  font-weight: bold;\r\n}\r\n\r\n.submit_content_userinfo_Info{\r\n  height: 100px;\r\n  position: absolute;\r\n  left: 130px;\r\n  padding: 20px 0;\r\n}\r\n\r\n.submit_content_userinfo_Info_Username{\r\n  font-size: 25px;\r\n}\r\n\r\n.submit_content_userinfo_button{\r\n  height: 100px;\r\n  position: absolute;\r\n  right: 50px;\r\n  cursor: pointer;\r\n}\r\n\r\n.submit_content_userinfo_button span{\r\n\r\n  border: none;\r\n  background-color: white;\r\n  color: dodgerblue;\r\n  text-align: center;\r\n  font-size: 20px;\r\n  cursor: pointer;\r\n  line-height: 90px;\r\n}\r\n\r\n.submit_content .submit_content_bookinginfo{\r\n  height: 200px;\r\n  display: flex;\r\n  flex-flow: row wrap;\r\n  justify-content: center;\r\n  align-items: center;\r\n  padding: 0;\r\n}\r\n\r\n.submit_content .submit_content_bookinginfo li{\r\n  list-style: none;\r\n  height: 50px;\r\n  width: 100%;\r\n  align-items:center;\r\n  padding-left: 80px;\r\n}\r\n\r\n.submit_content_bookinginfo .submit_time{\r\n  display: inline-block;\r\n  padding-right: 20px;\r\n}\r\n\r\n.submit_content .submit_content_message{\r\n  height: 100px;\r\n}\r\n\r\n.btn-primary{\r\n  background-color: #666666;\r\n  border: none;\r\n}\r\n\r\n.submit-table label{\r\n  padding: .375rem .35rem\r\n}\r\n\r\n.submit_form_State{\r\n  display: none;\r\n}\r\n\r\n#submit_message{\r\n  width: 100%;\r\n  height: 175px;\r\n}\r\n"
 
 /***/ }),
 
@@ -1172,7 +1655,7 @@ module.exports = ".submit_container{\n  border: solid 2px lightslategray ;\n}\n\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"submit_container\" >\n  <div class=\"submit_top\">\n\n    <button class=\"submit_top_close\" (click)=\"closeSubmit()\">Close</button>\n    <button class=\"submit_top_Submit\" (click)=\"submitBooking()\">Submit</button>\n\n  </div>\n\n  <div class=\"submit_content\">\n    <div class=\"submit_content_userinfo\">\n      <div class=\"submit_content_userinfo_icon\">\n        <div>TS</div>\n      </div>\n      <div class=\"submit_content_userinfo_Info\">\n          <div>\n            <span *ngIf=\"userInfoChange\" class=\"submit_content_userinfo_Info_Username\">{{Username.name}}</span>\n            <input type=\"text\" [(ngModel)]=\"Username.name\" *ngIf=\"!userInfoChange\"><br>\n            <span *ngIf=\"userInfoChange\">{{Username.phone}}</span>\n            <input type=\"text\"  [(ngModel)]=\"Username.phone\"  *ngIf=\"!userInfoChange\">\n          </div>\n      </div>\n      <div class=\"submit_content_userinfo_button\" (click)=\"editUserInfo()\">\n        <span >{{userInfoChangeButtonText}}</span>\n      </div>\n\n\n    </div>\n    <div class=\"submit_content_title\">  Booking Info</div>\n\n    <ul class=\"submit_content_bookinginfo\">\n      <li class=\"submit_date btn-group btn-group-toggle\" ngbRadioGroup name=\"radioBasic\" [(ngModel)]=\"model\">\n        <label ngbButtonLabel class=\"btn-primary\" *ngFor=\"let i of dayNumber\"  >\n          <input ngbButton type=\"radio\" [value]=\"today+(1000*3600*24*i)|date:'yyyMMdd'\" value=\"today+(1000*3600*24*i)|date:'yyyMMdd'\" (click)=\"chooseDate(i)\"> {{today+(1000*3600*24*i)|date:'E'}}\n        </label>\n      </li>\n      <li>\n        <div class=\"submit_time\">\n          <label >Time: </label>\n          <select name=\"time-select\" class=\"submit-time-select\" id=\"submit-time-select\"  (change)=\"chooseTime()\" >\n            <option *ngFor=\"let time of timeNumber\"  value={{time}} >{{time+': 00'}}--{{time+1+': 00'}}</option>\n          </select>\n        </div>\n\n        <div class=\"submit_time\">\n          <label >PeopleNum: </label>\n          <select name=\"time-select\" class=\"people-number\" id=\"people-select\"  (change)=\"choosePeople()\" >\n            <option *ngFor=\"let number of peopleNumber\"  value={{number}}>{{number}}</option>\n          </select>\n        </div>\n      </li>\n\n      <li>\n        <label >Table: </label>\n        <div class=\"submit-table btn-group btn-group-toggle\" ngbRadioGroup name=\"radioBasic\" [(ngModel)]=\"chooseTable\">\n          <label ngbButtonLabel class=\"btn-primary\" *ngFor=\"let tableNumber of availableTable\"  >\n            <input ngbButton type=\"radio\" [value]=\"tableNumber\"> {{tableNumber}}\n          </label>\n        </div>\n\n      </li>\n\n\n\n\n    </ul>\n\n    <div class=\"submit_content_title\">  Message</div>\n\n    <div class=\"submit_content_message\">\n      <textarea id=\"submit_message\"></textarea>\n\n    </div>\n\n  </div>\n</div>\n"
+module.exports = "<div class=\"submit_container\" >\r\n  <div class=\"submit_top\">\r\n\r\n    <button class=\"submit_top_close\" (click)=\"closeSubmit()\">Close</button>\r\n    <button class=\"submit_top_Submit\" (click)=\"submitBooking()\">Submit</button>\r\n\r\n  </div>\r\n\r\n  <div class=\"submit_content\">\r\n    <div class=\"submit_content_userinfo\">\r\n      <div class=\"submit_content_userinfo_icon\">\r\n        <div>TS</div>\r\n      </div>\r\n      <div class=\"submit_content_userinfo_Info\">\r\n          <div>\r\n            <span *ngIf=\"userInfoChange\" class=\"submit_content_userinfo_Info_Username\">{{Username.name}}</span>\r\n            <input type=\"text\" [(ngModel)]=\"Username.name\" *ngIf=\"!userInfoChange\"><br>\r\n            <span *ngIf=\"userInfoChange\">{{Username.phone}}</span>\r\n            <input type=\"text\"  [(ngModel)]=\"Username.phone\"  *ngIf=\"!userInfoChange\">\r\n          </div>\r\n      </div>\r\n      <div class=\"submit_content_userinfo_button\" (click)=\"editUserInfo()\">\r\n        <span >{{userInfoChangeButtonText}}</span>\r\n      </div>\r\n\r\n\r\n    </div>\r\n    <div class=\"submit_content_title\">  Booking Info</div>\r\n\r\n    <ul class=\"submit_content_bookinginfo\">\r\n      <li class=\"submit_date btn-group btn-group-toggle\" ngbRadioGroup name=\"radioBasic\" [(ngModel)]=\"model\">\r\n        <label ngbButtonLabel class=\"btn-primary\" *ngFor=\"let i of dayNumber\"  >\r\n          <input ngbButton type=\"radio\" [value]=\"today+(1000*3600*24*i)|date:'yyyMMdd'\" value=\"today+(1000*3600*24*i)|date:'yyyMMdd'\" (click)=\"chooseDate(i)\"> {{today+(1000*3600*24*i)|date:'E'}}\r\n        </label>\r\n      </li>\r\n      <li>\r\n        <div class=\"submit_time\">\r\n          <label >Time: </label>\r\n          <select name=\"time-select\" class=\"submit-time-select\" id=\"submit-time-select\"  (change)=\"chooseTime()\" >\r\n            <option *ngFor=\"let time of timeNumber\"  value={{time}} >{{time+': 00'}}--{{time+1+': 00'}}</option>\r\n          </select>\r\n        </div>\r\n\r\n        <div class=\"submit_time\">\r\n          <label >PeopleNum: </label>\r\n          <select name=\"time-select\" class=\"people-number\" id=\"people-select\"  (change)=\"choosePeople()\" >\r\n            <option *ngFor=\"let number of peopleNumber\"  value={{number}}>{{number}}</option>\r\n          </select>\r\n        </div>\r\n      </li>\r\n\r\n      <li>\r\n        <label >Table: </label>\r\n        <div class=\"submit-table btn-group btn-group-toggle\" ngbRadioGroup name=\"radioBasic\" [(ngModel)]=\"chooseTable\">\r\n          <label ngbButtonLabel class=\"btn-primary\" *ngFor=\"let tableNumber of availableTable\"  >\r\n            <input ngbButton type=\"radio\" [value]=\"tableNumber\"> {{tableNumber}}\r\n          </label>\r\n        </div>\r\n\r\n      </li>\r\n\r\n\r\n\r\n\r\n    </ul>\r\n\r\n    <div class=\"submit_content_title\">  Message</div>\r\n\r\n    <div class=\"submit_content_message\">\r\n      <textarea id=\"submit_message\" placeholder=\"Input your message here!\"></textarea>\r\n\r\n    </div>\r\n\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1312,7 +1795,7 @@ var SubmitBookingFormComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".date-container{\n  display: flex;\n\n}\n\n/*css for date picker*/\n\n.date-select-container{\n  text-align: center;\n  line-height: 18px;\n  background-color: #252b30;\n  padding: 0;\n  cursor: pointer;\n  padding: 0 20px;\n}\n\n.date-select-container:hover span{\n  color:  rgba(31, 249, 14, 0.79);\n}\n\n.date-container-month{\n  font-size: 10px;\n  color: white;\n}\n\n.date-container-day{\n  font-size: 14px;\n  color: white;\n}\n\n.date-click{\n  color: rgba(31, 249, 14, 0.79);\n}\n\n/*css for time picker*/\n\n.time-select-container{\n  display: flex;\n  align-items: center;\n  margin-right: 20px;\n}\n\n.time-select-container .time-select{\n  cursor: pointer;\n  width: 100%;\n  height: 100%;\n  background-color: #252b30;\n  border: none;\n  color: rgba(31, 249, 14, 0.79);\n  font-size: 16px;\n}\n"
+module.exports = ".date-container{\r\n  display: flex;\r\n\r\n}\r\n\r\n/*css for date picker*/\r\n\r\n.date-select-container{\r\n  text-align: center;\r\n  line-height: 18px;\r\n  background-color: #252b30;\r\n  padding: 0;\r\n  cursor: pointer;\r\n  padding: 0 20px;\r\n}\r\n\r\n.date-select-container:hover span{\r\n  color:  rgba(31, 249, 14, 0.79);\r\n}\r\n\r\n.date-container-month{\r\n  font-size: 10px;\r\n  color: white;\r\n}\r\n\r\n.date-container-day{\r\n  font-size: 14px;\r\n  color: white;\r\n}\r\n\r\n.date-click{\r\n  color: rgba(31, 249, 14, 0.79);\r\n}\r\n\r\n/*css for time picker*/\r\n\r\n.time-select-container{\r\n  display: flex;\r\n  align-items: center;\r\n  margin-right: 20px;\r\n}\r\n\r\n.time-select-container .time-select{\r\n  cursor: pointer;\r\n  width: 100%;\r\n  height: 100%;\r\n  background-color: #252b30;\r\n  border: none;\r\n  color: rgba(31, 249, 14, 0.79);\r\n  font-size: 16px;\r\n}\r\n"
 
 /***/ }),
 
@@ -1323,7 +1806,7 @@ module.exports = ".date-container{\n  display: flex;\n\n}\n\n/*css for date pick
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"date-container\">\n  <div class=\"time-select-container\">\n    <select name=\"time-select\" class=\"time-select\" id=\"time-select\"  (change)=\"chooseTime()\" >\n      <option *ngFor=\"let time of timeNumber\"  value={{time}} >{{time+': 00'}}--{{time+1+': 00'}}</option>\n    </select>\n  </div>\n  <div *ngFor=\"let i of dayNumber\"  class=\"date-select\" >\n\n    <div class=\"date-select-container\" (click)=\"chooseDate(i)\">\n      <span class=\"date-container-month\">{{today+(1000*3600*24*i)|date:'MMM dd'}}</span><br>\n      <span class=\"date-container-day\">{{today+(1000*3600*24*i)|date:'E'}}</span>\n    </div>\n\n  </div>\n</div>\n"
+module.exports = "<div class=\"date-container\">\r\n  <div class=\"time-select-container\">\r\n    <select name=\"time-select\" class=\"time-select\" id=\"time-select\"  (change)=\"chooseTime()\" >\r\n      <option *ngFor=\"let time of timeNumber\"  value={{time}} >{{time+': 00'}}--{{time+1+': 00'}}</option>\r\n    </select>\r\n  </div>\r\n  <div *ngFor=\"let i of dayNumber\"  class=\"date-select\" >\r\n\r\n    <div class=\"date-select-container\" (click)=\"chooseDate(i)\">\r\n      <span class=\"date-container-month\">{{today+(1000*3600*24*i)|date:'MMM dd'}}</span><br>\r\n      <span class=\"date-container-day\">{{today+(1000*3600*24*i)|date:'E'}}</span>\r\n    </div>\r\n\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1433,7 +1916,7 @@ var DataPickerComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".head-banner-container{\n  margin: auto;\n  background-color: #364248;\n  display: flex;\n  width: 1240px;\n  height: 80px;\n  flex-flow: row nowrap;\n  align-items: center;\n  justify-content: space-around;\n\n}\n.head-banner-container .banner-icon{\n  flex: 0.5 50px;\n  height: 50px;\n  width: 50px;\n\n\n}\n.banner-icon img{\n  cursor: pointer;\n  padding: 10px;\n  height: 40px;\n  width: 40px;\n\n}\n.app-data-picker{\n  flex:5 300px;\n}\n。app-data-picker-title{\n  flex:5 300px;\n  margin-left: 100px;\n}\n.Book-btn{\n  flex: 0.5 150px;\n  background-color: #4CAF50;\n  border: none;\n  color: white;\n  padding: 10px 25px;\n  text-align: center;\n  text-decoration: none;\n  display: inline-block;\n  font-size: 16px;\n  margin: 5px 2px;\n  cursor: pointer;\n  border-radius: 4px;\n  transition: 1s;\n  width: 120px;\n  margin-right: 30px;\n}\n.Book-btn:hover {\n  opacity: 1;\n  color: lightgray;\n  transition: 1s;\n}\n.Book-btn span {\n  cursor: pointer;\n  display: inline-block;\n  position: relative;\n\n}\n.Book-btn span:after {\n  content: '\\00bb';\n  position: absolute;\n  opacity: 0;\n  top: 0;\n  right: -10px;\n  transition: 0.5s;\n\n}\n.Book-btn:hover span {\n  padding-right: 15px;\n}\n.button:hover span:after {\n  opacity: 1;\n  right: 0;\n}\n.Book-btn:hover span:after {\n  opacity: 1;\n  right: 0;\n}\n.Book-btn:active {\n  background-color: #3e8e41;\n  box-shadow: 0 5px #666;\n  -webkit-transform: translateY(4px);\n          transform: translateY(4px);\n}\n\n"
+module.exports = ".head-banner-container{\r\n  margin: auto;\r\n  background-color: #364248;\r\n  display: flex;\r\n  width: 1240px;\r\n  height: 80px;\r\n  flex-flow: row nowrap;\r\n  align-items: center;\r\n  justify-content: space-around;\r\n\r\n}\r\n.head-banner-container .banner-icon{\r\n  flex: 0.5 50px;\r\n  height: 50px;\r\n  width: 50px;\r\n\r\n\r\n}\r\n.banner-icon img{\r\n  cursor: pointer;\r\n  padding: 10px;\r\n  height: 40px;\r\n  width: 40px;\r\n\r\n}\r\n.app-data-picker{\r\n  flex:5 300px;\r\n}\r\n。app-data-picker-title{\r\n  flex:5 300px;\r\n  margin-left: 100px;\r\n}\r\n.Book-btn{\r\n  flex: 0.5 150px;\r\n  background-color: #4CAF50;\r\n  border: none;\r\n  color: white;\r\n  padding: 10px 25px;\r\n  text-align: center;\r\n  text-decoration: none;\r\n  display: inline-block;\r\n  font-size: 16px;\r\n  margin: 5px 2px;\r\n  cursor: pointer;\r\n  border-radius: 4px;\r\n  transition: 1s;\r\n  width: 120px;\r\n  margin-right: 30px;\r\n}\r\n.Book-btn:hover {\r\n  opacity: 1;\r\n  color: lightgray;\r\n  transition: 1s;\r\n}\r\n.Book-btn span {\r\n  cursor: pointer;\r\n  display: inline-block;\r\n  position: relative;\r\n\r\n}\r\n.Book-btn span:after {\r\n  content: '\\00bb';\r\n  position: absolute;\r\n  opacity: 0;\r\n  top: 0;\r\n  right: -10px;\r\n  transition: 0.5s;\r\n\r\n}\r\n.Book-btn:hover span {\r\n  padding-right: 15px;\r\n}\r\n.button:hover span:after {\r\n  opacity: 1;\r\n  right: 0;\r\n}\r\n.Book-btn:hover span:after {\r\n  opacity: 1;\r\n  right: 0;\r\n}\r\n.Book-btn:active {\r\n  background-color: #3e8e41;\r\n  box-shadow: 0 5px #666;\r\n  -webkit-transform: translateY(4px);\r\n          transform: translateY(4px);\r\n}\r\n.banner-icon img{\r\n  cursor: pointer;\r\n  padding: 10px;\r\n  height: 60px;\r\n  width: 60px;\r\n\r\n}\r\n.btn-outline-primary img{\r\n  cursor: pointer;\r\n  padding: 10px;\r\n  height: 60px;\r\n  width: 60px;\r\n}\r\na{\r\n  cursor: pointer;\r\n}\r\n#dropdownBasic1{\r\n  border:none\r\n}\r\n#dropdownBasic1:after{\r\n  display: none;\r\n}\r\n"
 
 /***/ }),
 
@@ -1444,7 +1927,7 @@ module.exports = ".head-banner-container{\n  margin: auto;\n  background-color: 
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"head-banner-container\">\n\n      <div class=\"banner-icon\"><img src=\"../../assets/icons/menu-icon.png\" alt=\"\"></div>\n\n      <div class=\"banner-icon\"><img src=\"../../assets/icons/homepage-icon.png\" alt=\"\"></div>\n\n\n  <span>\n      <div class=\"app-data-picker-title\"></div>\n\n      <app-data-picker class=\"app-data-picker\"></app-data-picker>\n\n  </span>\n  <button class=\"Book-btn\" (click)=\"changeSubmit()\"><span>Booking</span></button>\n</div>\n"
+module.exports = "<div class=\"head-banner-container\">\r\n\r\n  <div class=\"col\">\r\n    <div ngbDropdown class=\"d-inline-block\">\r\n      <button class=\"btn btn-outline-primary\" id=\"dropdownBasic1\" ngbDropdownToggle><img src=\"../../assets/icons/menu-icon.png\" alt=\"\"></button>\r\n      <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\r\n        <a class=\"dropdown-item\" href=\"Booksystem\">Booking System</a>\r\n        <a class=\"dropdown-item\" href=\"Menu\">Menu</a>\r\n        <a class=\"dropdown-item\" href=\"BookList\">My BookingList</a>\r\n        <div class=\"dropdown-divider\"></div>\r\n        <a class=\"dropdown-item\">Login out</a>\r\n      </div>\r\n    </div>\r\n    <a class=\"banner-icon\" href=\"HomePage\"><img src=\"../../assets/icons/homepage-icon.png\" alt=\"\"></a>\r\n\r\n  </div>\r\n  <span>\r\n      <div class=\"app-data-picker-title\"></div>\r\n\r\n      <app-data-picker class=\"app-data-picker\"></app-data-picker>\r\n\r\n  </span>\r\n  <button class=\"Book-btn\" (click)=\"changeSubmit()\"><span>Booking</span></button>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1541,9 +2024,24 @@ var BookinglistService = /** @class */ (function () {
         });
         return this.http.post(URI, body, { headers: this.headers });
     };
+    BookinglistService.prototype.getHistoryBookByUserName = function (postData) {
+        var URI = this.serverAPI + "/booklist/getHistoryListbyUserName";
+        var body = postData;
+        return this.http.post(URI, body, { headers: this.headers });
+    };
+    BookinglistService.prototype.getCurrentListbyUserName = function (postData) {
+        var URI = this.serverAPI + "/booklist/getCurrentListbyUserName";
+        var body = postData;
+        return this.http.post(URI, body, { headers: this.headers });
+    };
     BookinglistService.prototype.addNewBooking = function (newBooking) {
         var URI = this.serverAPI + "/booklist/addNewBooking";
         var body = newBooking;
+        return this.http.post(URI, body, { headers: this.headers });
+    };
+    BookinglistService.prototype.deleteBooking = function (postData) {
+        var URI = this.serverAPI + "/booklist/deleteBookList";
+        var body = postData;
         return this.http.post(URI, body, { headers: this.headers });
     };
     BookinglistService = __decorate([
@@ -1633,6 +2131,14 @@ var TablelistService = /** @class */ (function () {
         });
         return this.http.post(URI, body, { headers: this.headers });
     };
+    TablelistService.prototype.deleteBookTimeForTable = function (postData) {
+        var URI = this.serverAPI + "/tablelist/deleteBooktime";
+        var body = JSON.stringify({
+            "tableNumber": postData.tableNumber,
+            "booktimeList": postData.bookingTime,
+        });
+        return this.http.post(URI, body, { headers: this.headers });
+    };
     TablelistService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
@@ -1713,7 +2219,7 @@ var UserService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".restaurant-map-container{\n\n  box-sizing: border-box;\n  width: 1240px;\n  height: 660px;\n  border: 2px solid lightslategray;\n  margin: auto;\n  position: relative;\n\n}\n\n.picker{\n  text-align: center;\n}\n\n.live-kitchen{\n  position: absolute;\n  height: 300px;\n  width: 150px;\n  border: 2px solid lightslategray;\n  border-left: 0px;\n  top: 220px;\n}\n\n.entrance{\n  position: absolute;\n  height: 100px;\n  width: 80px;\n  border: 2px solid lightslategray;\n  border-left: 0px;\n  border-right: 0px;\n  top: 20px;\n}\n\n.live-kitchen p, .entrance p {\n  color: lightslategray;\n  text-align: center;\n}\n\n.live-kitchen p{\n\n  line-height: 250px;\n}\n\n.entrance p {\n  line-height: 60px;\n}\n\n/*Css for square-table-1  */\n\n.square-table-map-container{\n  position: absolute;\n  width: 1000px;\n  right: 0px;\n  top: 30px;\n\n  /*display: flex;\n  flex-flow: row wrap;\n  justify-content: space-around;*/\n}\n\n.square-table-container-1{\n  width: 900px;\n  height: 140px;\n  margin-left: 80px;\n  margin-top: 30px;\n\n}\n\n.square-table{\n  width: 140px;\n  height: 140px;\n  float: left;\n  margin: 10px 5px;\n}\n\n/*Css for circle-table  */\n\n.circle-table-map-container{\n\n  position: absolute;\n  width: 1000px;\n  height: 260px;\n  top:400px;\n  right: 0px;\n\n}\n\n.circle-table-container-1{\n  width: 900px;\n  height: 260px;\n  margin-left: 120px;\n\n}\n\n.circle-table-map-container .circle-table-container-1 .circle-table {\n  float: left;\n  margin: 10px 60px;\n}\n\n/* css for booking form*/\n\n.submit-booking-form{\n  position: absolute;\n  right: 0;\n  top: 0px;\n  width: 500px;\n  height: 600px;\n}\n\n.submit_form_State{\n  display: none;\n}\n"
+module.exports = ".restaurant-map-container{\r\n\r\n  box-sizing: border-box;\r\n  width: 1240px;\r\n  height: 660px;\r\n  border: 2px solid lightslategray;\r\n  margin: auto;\r\n  position: relative;\r\n\r\n}\r\n\r\n.picker{\r\n  text-align: center;\r\n}\r\n\r\n.live-kitchen{\r\n  position: absolute;\r\n  height: 300px;\r\n  width: 150px;\r\n  border: 2px solid lightslategray;\r\n  border-left: 0px;\r\n  top: 220px;\r\n}\r\n\r\n.entrance{\r\n  position: absolute;\r\n  height: 100px;\r\n  width: 80px;\r\n  border: 2px solid lightslategray;\r\n  border-left: 0px;\r\n  border-right: 0px;\r\n  top: 20px;\r\n}\r\n\r\n.live-kitchen p, .entrance p {\r\n  color: lightslategray;\r\n  text-align: center;\r\n}\r\n\r\n.live-kitchen p{\r\n\r\n  line-height: 250px;\r\n}\r\n\r\n.entrance p {\r\n  line-height: 60px;\r\n}\r\n\r\n/*Css for square-table-1  */\r\n\r\n.square-table-map-container{\r\n  position: absolute;\r\n  width: 1000px;\r\n  right: 0px;\r\n  top: 30px;\r\n\r\n  /*display: flex;\r\n  flex-flow: row wrap;\r\n  justify-content: space-around;*/\r\n}\r\n\r\n.square-table-container-1{\r\n  width: 900px;\r\n  height: 140px;\r\n  margin-left: 80px;\r\n  margin-top: 30px;\r\n\r\n}\r\n\r\n.square-table{\r\n  width: 140px;\r\n  height: 140px;\r\n  float: left;\r\n  margin: 10px 5px;\r\n}\r\n\r\n/*Css for circle-table  */\r\n\r\n.circle-table-map-container{\r\n\r\n  position: absolute;\r\n  width: 1000px;\r\n  height: 260px;\r\n  top:400px;\r\n  right: 0px;\r\n\r\n}\r\n\r\n.circle-table-container-1{\r\n  width: 900px;\r\n  height: 260px;\r\n  margin-left: 120px;\r\n\r\n}\r\n\r\n.circle-table-map-container .circle-table-container-1 .circle-table {\r\n  float: left;\r\n  margin: 10px 60px;\r\n}\r\n\r\n/* css for booking form*/\r\n\r\n.submit-booking-form{\r\n  position: absolute;\r\n  right: 0;\r\n  top: 0px;\r\n  width: 500px;\r\n  height: 600px;\r\n}\r\n\r\n.submit_form_State{\r\n  display: none;\r\n}\r\n"
 
 /***/ }),
 
@@ -1724,7 +2230,7 @@ module.exports = ".restaurant-map-container{\n\n  box-sizing: border-box;\n  wid
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"restaurant-map-container\">\n  <div class=\"entrance\"><p>Entrance</p></div>\n  <div class=\"live-kitchen\"><p>Live kitchen</p></div>\n\n\n\n  <div class=\"square-table-map-container\" >\n    <div class=\"square-table-container-1\" (click)=\"changeSubmitState()\" >\n    <app-square-table class=\"square-table\"  *ngFor=\"let tableInfo of allSmallTables\" [tableNumber]=\"tableInfo['tableNumber']\" [unAvailable]=\"unAvailableTables\"></app-square-table>\n    </div>\n  </div>\n\n  <div class=\"circle-table-map-container\">\n    <div class=\"circle-table-container-1\" (click)=\"changeSubmitState()\">\n      <app-circle-table class=\"circle-table\" *ngFor=\"let tableInfo of allBigTables\" [tableNumber]=\"tableInfo['tableNumber']\" [unAvailable]=\"unAvailableTables\" ></app-circle-table>\n    </div>\n\n  </div>\n\n  <div class=\"submit-booking-form\" [ngClass]=\"{'submit_form_State' : submitFormState}\">\n    <app-submit-booking-form ></app-submit-booking-form>\n  </div>\n\n\n\n</div>\n"
+module.exports = "<div class=\"restaurant-map-container\">\r\n  <div class=\"entrance\"><p>Entrance</p></div>\r\n  <div class=\"live-kitchen\"><p>Live kitchen</p></div>\r\n\r\n\r\n\r\n  <div class=\"square-table-map-container\" >\r\n    <div class=\"square-table-container-1\" (click)=\"changeSubmitState()\" >\r\n    <app-square-table class=\"square-table\"  *ngFor=\"let tableInfo of allSmallTables\" [tableNumber]=\"tableInfo['tableNumber']\" [unAvailable]=\"unAvailableTables\"></app-square-table>\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"circle-table-map-container\">\r\n    <div class=\"circle-table-container-1\" (click)=\"changeSubmitState()\">\r\n      <app-circle-table class=\"circle-table\" *ngFor=\"let tableInfo of allBigTables\" [tableNumber]=\"tableInfo['tableNumber']\" [unAvailable]=\"unAvailableTables\" ></app-circle-table>\r\n    </div>\r\n\r\n  </div>\r\n\r\n  <div class=\"submit-booking-form\" [ngClass]=\"{'submit_form_State' : submitFormState}\">\r\n    <app-submit-booking-form ></app-submit-booking-form>\r\n  </div>\r\n\r\n\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1818,7 +2324,7 @@ var TableMapComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".circle-table-container{\n  width: 100px;\n  height: 100px;\n\n  left: 100px;\n  top: 100px;\n  padding: 20px;\n}\n\n.circle-table{\n  position:relative;\n  cursor: pointer;\n  width: 120px;\n  height: 120px;\n  border: 1.5px solid lightslategray;\n  border-radius: 50%;\n}\n\n.circle-table-1{\n  position: absolute;\n  top: -15px;\n  left: 45px;\n  width:  25px;\n  height: 8px;\n  border: 1px solid darkgray;\n}\n\n.circle-table-2{\n  position: absolute;\n  bottom: -15px;\n  left: 45px;\n  width:  25px;\n  height: 8px;\n  border: 1px solid darkgray;\n}\n\n.circle-table-3{\n  position: absolute;\n  top: 55px;\n  left: -25px;\n  width:  25px;\n  height: 8px;\n  border: 1px solid darkgray;\n  -webkit-transform: rotate(90deg);\n          transform: rotate(90deg);\n}\n\n.circle-table-4{\n  position: absolute;\n  top: 55px;\n  right: -25px;\n  width:  25px;\n  height: 8px;\n  border: 1px solid darkgray;\n  -webkit-transform: rotate(90deg);\n          transform: rotate(90deg);\n}\n\n.circle-table-5{\n  position: absolute;\n  top: 5px;\n  right: -2px;\n  width:  25px;\n  height: 8px;\n  border: 1px solid darkgray;\n  -webkit-transform: rotate(45deg);\n          transform: rotate(45deg);\n}\n\n.circle-table-6{\n  position: absolute;\n  top: 110px;\n  right: -2px;\n  width:  25px;\n  height: 8px;\n  border: 1px solid darkgray;\n  -webkit-transform: rotate(-45deg);\n          transform: rotate(-45deg);\n}\n\n.circle-table-7{\n  position: absolute;\n  top: 5px;\n  left: -5px;\n  width:  25px;\n  height: 8px;\n  border: 1px solid darkgray;\n  -webkit-transform: rotate(-45deg);\n          transform: rotate(-45deg);\n}\n\n.circle-table-8{\n  position: absolute;\n  top: 110px;\n  left: -5px;\n  width:  25px;\n  height: 8px;\n  border: 1px solid darkgray;\n  -webkit-transform: rotate(45deg);\n          transform: rotate(45deg);\n}\n\n.circle-table:hover {\n  background-color: lightslategray;\n  transition: 0.5s;\n}\n\n.circle-table span{\n  position: absolute;\n  top: 50px;\n  left: 50px;\n}\n\n.table_unavailable {\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n  -webkit-user-select: none;\n  pointer-events: none;\n  cursor: not-allowed;\n  background-color: darkorange;\n}\n\n.submit_form_State{\n  display: none;\n}\n"
+module.exports = ".circle-table-container{\r\n  width: 100px;\r\n  height: 100px;\r\n\r\n  left: 100px;\r\n  top: 100px;\r\n  padding: 20px;\r\n}\r\n\r\n.circle-table{\r\n  position:relative;\r\n  cursor: pointer;\r\n  width: 120px;\r\n  height: 120px;\r\n  border: 1.5px solid lightslategray;\r\n  border-radius: 50%;\r\n}\r\n\r\n.circle-table-1{\r\n  position: absolute;\r\n  top: -15px;\r\n  left: 45px;\r\n  width:  25px;\r\n  height: 8px;\r\n  border: 1px solid darkgray;\r\n}\r\n\r\n.circle-table-2{\r\n  position: absolute;\r\n  bottom: -15px;\r\n  left: 45px;\r\n  width:  25px;\r\n  height: 8px;\r\n  border: 1px solid darkgray;\r\n}\r\n\r\n.circle-table-3{\r\n  position: absolute;\r\n  top: 55px;\r\n  left: -25px;\r\n  width:  25px;\r\n  height: 8px;\r\n  border: 1px solid darkgray;\r\n  -webkit-transform: rotate(90deg);\r\n          transform: rotate(90deg);\r\n}\r\n\r\n.circle-table-4{\r\n  position: absolute;\r\n  top: 55px;\r\n  right: -25px;\r\n  width:  25px;\r\n  height: 8px;\r\n  border: 1px solid darkgray;\r\n  -webkit-transform: rotate(90deg);\r\n          transform: rotate(90deg);\r\n}\r\n\r\n.circle-table-5{\r\n  position: absolute;\r\n  top: 5px;\r\n  right: -2px;\r\n  width:  25px;\r\n  height: 8px;\r\n  border: 1px solid darkgray;\r\n  -webkit-transform: rotate(45deg);\r\n          transform: rotate(45deg);\r\n}\r\n\r\n.circle-table-6{\r\n  position: absolute;\r\n  top: 110px;\r\n  right: -2px;\r\n  width:  25px;\r\n  height: 8px;\r\n  border: 1px solid darkgray;\r\n  -webkit-transform: rotate(-45deg);\r\n          transform: rotate(-45deg);\r\n}\r\n\r\n.circle-table-7{\r\n  position: absolute;\r\n  top: 5px;\r\n  left: -5px;\r\n  width:  25px;\r\n  height: 8px;\r\n  border: 1px solid darkgray;\r\n  -webkit-transform: rotate(-45deg);\r\n          transform: rotate(-45deg);\r\n}\r\n\r\n.circle-table-8{\r\n  position: absolute;\r\n  top: 110px;\r\n  left: -5px;\r\n  width:  25px;\r\n  height: 8px;\r\n  border: 1px solid darkgray;\r\n  -webkit-transform: rotate(45deg);\r\n          transform: rotate(45deg);\r\n}\r\n\r\n.circle-table:hover {\r\n  background-color: lightslategray;\r\n  transition: 0.5s;\r\n}\r\n\r\n.circle-table span{\r\n  position: absolute;\r\n  top: 50px;\r\n  left: 50px;\r\n}\r\n\r\n.table_unavailable {\r\n  -moz-user-select: none;\r\n   -ms-user-select: none;\r\n       user-select: none;\r\n  -webkit-user-select: none;\r\n  pointer-events: none;\r\n  cursor: not-allowed;\r\n  background-color: darkorange;\r\n}\r\n\r\n.submit_form_State{\r\n  display: none;\r\n}\r\n"
 
 /***/ }),
 
@@ -1829,7 +2335,7 @@ module.exports = ".circle-table-container{\n  width: 100px;\n  height: 100px;\n\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"circle-table-container\">\n\n  <div class=\"circle-table\"  [ngClass]=\"{table_unavailable : tableUnavailable}\">\n    <span>  {{tableNumber}}</span>\n    <div class=\"circle-table-1\"></div>\n    <div class=\"circle-table-2\"></div>\n    <div class=\"circle-table-3\"></div>\n    <div class=\"circle-table-4\"></div>\n    <div class=\"circle-table-5\"></div>\n    <div class=\"circle-table-6\"></div>\n    <div class=\"circle-table-7\"></div>\n    <div class=\"circle-table-8\"></div>\n  </div>\n</div>\n"
+module.exports = "<div class=\"circle-table-container\">\r\n\r\n  <div class=\"circle-table\"  [ngClass]=\"{table_unavailable : tableUnavailable}\">\r\n    <span>  {{tableNumber}}</span>\r\n    <div class=\"circle-table-1\"></div>\r\n    <div class=\"circle-table-2\"></div>\r\n    <div class=\"circle-table-3\"></div>\r\n    <div class=\"circle-table-4\"></div>\r\n    <div class=\"circle-table-5\"></div>\r\n    <div class=\"circle-table-6\"></div>\r\n    <div class=\"circle-table-7\"></div>\r\n    <div class=\"circle-table-8\"></div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1903,7 +2409,7 @@ var CircleTableComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".square-table-container{\n  width: 100px;\n  height: 100px;\n\n  left: 100px;\n  top: 100px;\n  padding: 20px;\n}\n\n.square-table{\n  position: relative;\n  cursor: pointer;\n  width: 80px;\n  height: 80px;\n  border: 1.5px solid lightslategray;\n  ;\n\n}\n\n.square-table-desk-up{\n  position: absolute;\n  top: -18px;\n  left: 25px;\n  width:  25px;\n  height: 8px;\n  border: 1px solid darkgray;\n}\n\n.square-table-desk-down{\n  position: absolute;\n  bottom: -16px;\n  left: 25px;\n  width:  25px;\n  height: 8px;\n  border: 1px solid darkgray;\n\n}\n\n.square-table-desk-left{\n  position: absolute;\n  top: 25px;\n  left: -20px;\n  width:  8px;\n  height: 25px;\n  border: 1px solid darkgray;\n\n}\n\n.square-table-desk-right{\n  position: absolute;\n  top: 25px;\n  right: -20px;\n  width:  8px;\n  height: 25px;\n  border: 1px solid darkgray;\n\n}\n\n.square-table:hover {\n  background-color: lightslategray;\n  transition: 0.5s;\n}\n\n.square-table span{\n  position: absolute;\n  top: 30px ;\n  left: 30px;\n}\n\n.table_unavailable {\n  -moz-user-select: none;\n   -ms-user-select: none;\n       user-select: none;\n  -webkit-user-select: none;\n  pointer-events: none;\n  cursor: not-allowed;\n  background-color: darkorange;\n}\n"
+module.exports = ".square-table-container{\r\n  width: 100px;\r\n  height: 100px;\r\n\r\n  left: 100px;\r\n  top: 100px;\r\n  padding: 20px;\r\n}\r\n\r\n.square-table{\r\n  position: relative;\r\n  cursor: pointer;\r\n  width: 80px;\r\n  height: 80px;\r\n  border: 1.5px solid lightslategray;\r\n  ;\r\n\r\n}\r\n\r\n.square-table-desk-up{\r\n  position: absolute;\r\n  top: -18px;\r\n  left: 25px;\r\n  width:  25px;\r\n  height: 8px;\r\n  border: 1px solid darkgray;\r\n}\r\n\r\n.square-table-desk-down{\r\n  position: absolute;\r\n  bottom: -16px;\r\n  left: 25px;\r\n  width:  25px;\r\n  height: 8px;\r\n  border: 1px solid darkgray;\r\n\r\n}\r\n\r\n.square-table-desk-left{\r\n  position: absolute;\r\n  top: 25px;\r\n  left: -20px;\r\n  width:  8px;\r\n  height: 25px;\r\n  border: 1px solid darkgray;\r\n\r\n}\r\n\r\n.square-table-desk-right{\r\n  position: absolute;\r\n  top: 25px;\r\n  right: -20px;\r\n  width:  8px;\r\n  height: 25px;\r\n  border: 1px solid darkgray;\r\n\r\n}\r\n\r\n.square-table:hover {\r\n  background-color: lightslategray;\r\n  transition: 0.5s;\r\n}\r\n\r\n.square-table span{\r\n  position: absolute;\r\n  top: 30px ;\r\n  left: 30px;\r\n}\r\n\r\n.table_unavailable {\r\n  -moz-user-select: none;\r\n   -ms-user-select: none;\r\n       user-select: none;\r\n  -webkit-user-select: none;\r\n  pointer-events: none;\r\n  cursor: not-allowed;\r\n  background-color: darkorange;\r\n}\r\n"
 
 /***/ }),
 
@@ -1914,7 +2420,7 @@ module.exports = ".square-table-container{\n  width: 100px;\n  height: 100px;\n\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"square-table-container\">\n\n      <div class=\"square-table\" [ngClass]=\"{table_unavailable : tableUnavailable}\" (click)=\"onclick()\" >\n        <span>{{tableNumber}}</span>\n        <div class=\"square-table-desk-up\"></div>\n        <div class=\"square-table-desk-down\"></div>\n        <div class=\"square-table-desk-left\"></div>\n        <div class=\"square-table-desk-right\"></div>\n      </div>\n</div>\n"
+module.exports = "<div class=\"square-table-container\">\r\n\r\n      <div class=\"square-table\" [ngClass]=\"{table_unavailable : tableUnavailable}\" (click)=\"onclick()\" >\r\n        <span>{{tableNumber}}</span>\r\n        <div class=\"square-table-desk-up\"></div>\r\n        <div class=\"square-table-desk-down\"></div>\r\n        <div class=\"square-table-desk-left\"></div>\r\n        <div class=\"square-table-desk-right\"></div>\r\n      </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1984,6 +2490,69 @@ var SquareTableComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/views/book-list-page/book-list-page.component.css":
+/*!*******************************************************************!*\
+  !*** ./src/app/views/book-list-page/book-list-page.component.css ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/views/book-list-page/book-list-page.component.html":
+/*!********************************************************************!*\
+  !*** ./src/app/views/book-list-page/book-list-page.component.html ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\r\n<app-frame-top>\r\n  <app-frame-top-nav></app-frame-top-nav>\r\n</app-frame-top>\r\n\r\n<app-frame-bottom >\r\n    <app-content-booklist></app-content-booklist>\r\n</app-frame-bottom>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/views/book-list-page/book-list-page.component.ts":
+/*!******************************************************************!*\
+  !*** ./src/app/views/book-list-page/book-list-page.component.ts ***!
+  \******************************************************************/
+/*! exports provided: BookListPageComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "BookListPageComponent", function() { return BookListPageComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var BookListPageComponent = /** @class */ (function () {
+    function BookListPageComponent() {
+    }
+    BookListPageComponent.prototype.ngOnInit = function () {
+    };
+    BookListPageComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-book-list-page',
+            template: __webpack_require__(/*! ./book-list-page.component.html */ "./src/app/views/book-list-page/book-list-page.component.html"),
+            styles: [__webpack_require__(/*! ./book-list-page.component.css */ "./src/app/views/book-list-page/book-list-page.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], BookListPageComponent);
+    return BookListPageComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/views/homepage/homepage.component.css":
 /*!*******************************************************!*\
   !*** ./src/app/views/homepage/homepage.component.css ***!
@@ -2002,7 +2571,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-head-banner></app-head-banner>\n<app-table-map class=\"row\"></app-table-map>\n\n<!--<p><a [routerLink]=\"['/login']\">Logout</a></p>-->\n"
+module.exports = "<app-head-banner></app-head-banner>\r\n<app-table-map class=\"row\"></app-table-map>\r\n\r\n<!--<p><a [routerLink]=\"['/login']\">Logout</a></p>-->\r\n"
 
 /***/ }),
 
@@ -2041,6 +2610,132 @@ var HomepageComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [])
     ], HomepageComponent);
     return HomepageComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/views/main-page/main-page.component.css":
+/*!*********************************************************!*\
+  !*** ./src/app/views/main-page/main-page.component.css ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "h1{\r\n  color: white;\r\n}\r\n"
+
+/***/ }),
+
+/***/ "./src/app/views/main-page/main-page.component.html":
+/*!**********************************************************!*\
+  !*** ./src/app/views/main-page/main-page.component.html ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\r\n<app-frame-top>\r\n    <h1>Weclome to XXXX</h1>\r\n</app-frame-top>\r\n\r\n<app-frame-bottom >\r\n  <app-content-mainpage></app-content-mainpage>\r\n</app-frame-bottom>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/views/main-page/main-page.component.ts":
+/*!********************************************************!*\
+  !*** ./src/app/views/main-page/main-page.component.ts ***!
+  \********************************************************/
+/*! exports provided: MainPageComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MainPageComponent", function() { return MainPageComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var MainPageComponent = /** @class */ (function () {
+    function MainPageComponent() {
+    }
+    MainPageComponent.prototype.ngOnInit = function () {
+    };
+    MainPageComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-main-page',
+            template: __webpack_require__(/*! ./main-page.component.html */ "./src/app/views/main-page/main-page.component.html"),
+            styles: [__webpack_require__(/*! ./main-page.component.css */ "./src/app/views/main-page/main-page.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], MainPageComponent);
+    return MainPageComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/views/menu-page/menu-page.component.css":
+/*!*********************************************************!*\
+  !*** ./src/app/views/menu-page/menu-page.component.css ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/views/menu-page/menu-page.component.html":
+/*!**********************************************************!*\
+  !*** ./src/app/views/menu-page/menu-page.component.html ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "\r\n<app-frame-top>\r\n  <app-frame-top-nav></app-frame-top-nav>\r\n</app-frame-top>\r\n\r\n<app-frame-bottom >\r\n  <app-content-menu></app-content-menu>\r\n</app-frame-bottom>\r\n"
+
+/***/ }),
+
+/***/ "./src/app/views/menu-page/menu-page.component.ts":
+/*!********************************************************!*\
+  !*** ./src/app/views/menu-page/menu-page.component.ts ***!
+  \********************************************************/
+/*! exports provided: MenuPageComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenuPageComponent", function() { return MenuPageComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var MenuPageComponent = /** @class */ (function () {
+    function MenuPageComponent() {
+    }
+    MenuPageComponent.prototype.ngOnInit = function () {
+    };
+    MenuPageComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-menu-page',
+            template: __webpack_require__(/*! ./menu-page.component.html */ "./src/app/views/menu-page/menu-page.component.html"),
+            styles: [__webpack_require__(/*! ./menu-page.component.css */ "./src/app/views/menu-page/menu-page.component.css")]
+        }),
+        __metadata("design:paramtypes", [])
+    ], MenuPageComponent);
+    return MenuPageComponent;
 }());
 
 
@@ -2108,7 +2803,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/mc/Documents/UTS/course/2018Spring/Advanced Internet Programming/-FF/angular_src/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\allon\OneDrive\Documents\uts\semester4\advance IP\project\angular\-FF\angular_src\src\main.ts */"./src/main.ts");
 
 
 /***/ })

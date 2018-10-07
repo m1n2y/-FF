@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router'
 
 import {BookinglistService} from '../../services/bookinglist.service';
+import {TablelistService} from '../../services/tablelist.service';
 import {BookingList} from '../../models/BookingList';
 import {DatePipe, formatDate} from '@angular/common';
+
 
 
 @Component({
@@ -19,7 +22,9 @@ export class ContentBooklistComponent implements OnInit {
   public getBookingList=[];
   public historyBookList=[];
   public currentBookList=[];
-  constructor(private BookingService: BookinglistService) { }
+  constructor(private BookingService: BookinglistService,
+              private TableService:TablelistService,
+              private router:Router) { }
 
   ngOnInit( ) {
 
@@ -41,6 +46,7 @@ export class ContentBooklistComponent implements OnInit {
       error =>{console.log(error)}
     )
 
+
     this.BookingService.getHistoryBookByUserName(postUserWithTime).subscribe(
       response =>{
         if(response['success'] == true){
@@ -60,10 +66,42 @@ export class ContentBooklistComponent implements OnInit {
     )
   }
 
-  public deleteBooking(postData){
-    if(confirm('Are you sure to delete')==true){
-      console.log(postData)
+  ngDoCheck(){
 
+  }
+
+  public deleteBooking(postData){
+    if(confirm('Are you sure to delete ?')==true){
+
+      let deleteBook = {
+        username:postData.username,
+        bookingTime:postData.bookingTime,
+        tableNumber:postData.tableNumber
+      }
+
+      let deletedTimeListofTable ={
+        bookingTime:postData.bookingTime,
+        tableNumber:postData.tableNumber
+      }
+      this.BookingService.deleteBooking(deleteBook).subscribe(
+        response=>{
+          if(response['success']==true){
+            console.log(response)
+          }
+        },
+        error=>{console.log(error)}
+      )
+
+
+      this.TableService.deleteBookTimeForTable(deletedTimeListofTable).subscribe(
+        response=>{
+          if(response['success']==true){
+            console.log(response)
+
+          }
+        },
+        error=>{console.log(error)}
+      )
 
     }else{
 
