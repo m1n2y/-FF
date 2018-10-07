@@ -3,6 +3,9 @@ import {MatCheckboxModule} from '@angular/material';
 import {DatePipe, formatDate} from '@angular/common';
 
 import {TablelistService} from '../../services/tablelist.service';
+import {BookinglistService} from '../../services/bookinglist.service';
+import {BookingList} from '../../models/BookingList';
+
 
 @Component({
   selector: 'app-submit-booking-form',
@@ -23,8 +26,8 @@ export class SubmitBookingFormComponent implements OnInit {
   userInfoChange:boolean = true
   userInfoChangeButtonText ='Edit'
 
-  model:String;
-  chooseTable:String;
+  model:string;
+  chooseTable:string;
 
 
   Username={
@@ -32,7 +35,8 @@ export class SubmitBookingFormComponent implements OnInit {
     phone: '123123'
   }
 
-  constructor(private TableService:TablelistService) { }
+  constructor(private TableService:TablelistService,
+              private BookListService: BookinglistService) { }
 
   ngOnInit() {
   }
@@ -73,17 +77,31 @@ export class SubmitBookingFormComponent implements OnInit {
     if (this.chooseTable ==null){
       alert("you need to select a table")
     }
-    // console.log((this.TableService.chooseTime))
-    // console.log((this.TableService.chooseDate))
-    // console.log((this.choosePeopleNumber))
-
-    let bookingInfo = {
-      "tableNumber": this.chooseTable,
-      "booktimeList": Number(String(this.TableService.chooseDate)+String(this.TableService.chooseTime)),
+    let bookingInfo:BookingList = {
+      username: 'test',
+      bookingTime: Number(String(this.TableService.chooseDate)+String(this.TableService.chooseTime)),
+      phoneNumber: '123123',
+      peopleNumber:this.choosePeopleNumber,
+      tableNumber:this.chooseTable,
+      message:(document.getElementById('submit_message') as HTMLInputElement).value
     }
-    console.log(bookingInfo)
 
+    let timeForTable = {
+      bookingTime: Number(String(this.TableService.chooseDate)+String(this.TableService.chooseTime)),
+      tableNumber:this.chooseTable
+    }
 
+    this.BookListService.addNewBooking(bookingInfo).subscribe(
+      response=>{if (response['success'] == true){
+        console.log(timeForTable)
+        this.TableService.updateBookTimeForTable(timeForTable).subscribe(
+          response =>{ console.log(response)},
+          error=>{ console.log(error)}
+        )
+
+      }},
+      error=>{console.log(error)}
+    )
   }
 
   checkAvailableTable(){
@@ -99,6 +117,10 @@ export class SubmitBookingFormComponent implements OnInit {
       },
       error=>{console.log(error)}
     )
+  }
+
+  closeSubmit(){
+    this.BookListService.submitFormState = true;
   }
 
 

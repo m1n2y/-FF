@@ -70,7 +70,7 @@ router.post('/', (req,res,next) => {
 
 
 
-router.post('/bookInfo', (req,res,next) => {
+router.post('/updateBooktime', (req,res,next) => {
     let bookInfo ={
         tableNumber: req.body.tableNumber,
         booktimeList: req.body.booktimeList,

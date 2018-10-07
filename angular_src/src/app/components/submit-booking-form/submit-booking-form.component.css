@@ -124,3 +124,11 @@
 .submit-table label{
   padding: .375rem .35rem
 }
+.submit_form_State{
+  display: none;
+}
+
+#submit_message{
+  width: 100%;
+  height: 175px;
+}

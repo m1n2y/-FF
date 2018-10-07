@@ -115,3 +115,7 @@
   cursor: not-allowed;
   background-color: darkorange;
 }
+
+.submit_form_State{
+  display: none;
+}

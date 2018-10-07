@@ -1,7 +1,7 @@
-<div class="submit_container">
+<div class="submit_container" >
   <div class="submit_top">
 
-    <button class="submit_top_close">Close</button>
+    <button class="submit_top_close" (click)="closeSubmit()">Close</button>
     <button class="submit_top_Submit" (click)="submitBooking()">Submit</button>
 
   </div>
@@ -67,6 +67,7 @@
     <div class="submit_content_title">  Message</div>
 
     <div class="submit_content_message">
+      <textarea id="submit_message"></textarea>
 
     </div>
 

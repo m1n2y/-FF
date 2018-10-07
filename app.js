@@ -6,6 +6,7 @@ const mongoose = require('mongoose');
 const config = require('./config/database');
 const users = require('./controllers/users');
 const tablelist = require('./controllers/tablelist')
+const booklist = require('./controllers/booklist')
 
 mongoose.connect(config.database,{useNewUrlParser: true});
 //Initialize our app variable
@@ -28,6 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/user',users);
 app.use('/api/tablelist',tablelist);
+app.use('/api/booklist',booklist)
 
 app.get('/', (req,res) => {
     res.send("Invalid page");

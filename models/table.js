@@ -19,15 +19,15 @@ const Table = module.exports = mongoose.model('Table',TableSchema);
 
 //Table.find() returns all the tables
 module.exports.getAllTable = (callback) => {
-    Table.find({"tableNumber": "A5",'tableType': 'small'},callback);
+    Table.find({},callback).sort("_id");
 }
 
 module.exports.getAllSmallTables = (callback) => {
-    Table.find({'tableType': 'small'},callback);
+    Table.find({'tableType': 'small'},callback).sort("_id");
 }
 
 module.exports.getAllBigTables = (callback) => {
-    Table.find({'tableType': 'big'},callback);
+    Table.find({'tableType': 'big'},callback).sort("_id");
 }
 
 

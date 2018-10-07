@@ -2,7 +2,7 @@ import { Component, OnInit, DoCheck } from '@angular/core';
 import {TablelistService} from '../services/tablelist.service';
 
 import {TableList} from '../models/TableList';
-
+import {BookinglistService} from '../services/bookinglist.service';
 
 @Component({
   selector: 'app-table-map',
@@ -18,8 +18,10 @@ export class TableMapComponent implements OnInit {
   public allSmallTables:TableList[] =[];
   public allBigTables:TableList[] = [];
   public unAvailableTables=[];
+  public submitFormState =true;
 
-  constructor(private tableService: TablelistService) {
+  constructor(private tableService: TablelistService,
+              private BookingService: BookinglistService) {
     this.unAvailableTables = this.tableService.unAvailableList
   }
 
@@ -54,13 +56,15 @@ export class TableMapComponent implements OnInit {
   }
 
   ngDoCheck(){
+    this.submitFormState = this.BookingService.submitFormState
+
     if (this.unAvailableTables != this.tableService.unAvailableList){
        this.unAvailableTables = this.tableService.unAvailableList
     }
   }
 
-  test(){
-
+  changeSubmitState(){
+    this.BookingService.submitFormState = false
   }
 
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {BookinglistService} from '../services/bookinglist.service';
 
 @Component({
   selector: 'app-head-banner',
@@ -10,9 +11,14 @@ import { Component, OnInit } from '@angular/core';
 
 export class HeadBannerComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(private BookingService:BookinglistService) { }
 
   ngOnInit() {
+  }
+
+  changeSubmit(){
+    this.BookingService.submitFormState = false
   }
 
 }

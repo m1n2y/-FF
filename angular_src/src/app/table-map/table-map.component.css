@@ -110,3 +110,7 @@
   width: 500px;
   height: 600px;
 }
+
+.submit_form_State{
+  display: none;
+}
