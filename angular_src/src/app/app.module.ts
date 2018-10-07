@@ -36,6 +36,8 @@ import { BookListPageComponent } from './views/book-list-page/book-list-page.com
 import { FrameTopComponent } from './components/frame-top/frame-top.component';
 import { FrameBottomComponent } from './components/frame-bottom/frame-bottom.component';
 import { ContentBooklistComponent } from './components/content-booklist/content-booklist.component';
+import { ContentMainpageComponent } from './components/content-mainpage/content-mainpage.component';
+import { MainPageComponent } from './views/main-page/main-page.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +56,9 @@ import { ContentBooklistComponent } from './components/content-booklist/content-
     BookListPageComponent,
     FrameTopComponent,
     FrameBottomComponent,
-    ContentBooklistComponent
+    ContentBooklistComponent,
+    ContentMainpageComponent,
+    MainPageComponent
 
   ],
   imports: [

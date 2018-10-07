@@ -24,7 +24,7 @@ module.exports.getAllBookingList = (callback) => {
 // getTable by username
 module.exports.getBookingListByUserName = (postData,callback) =>{
     let query = {"username" : postData.username};
-    BookingList.find(query,{_id:0},callback);
+    BookingList.find(query,{_id:0},callback).sort("bookingTime");
 }
 
 

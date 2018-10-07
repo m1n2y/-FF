@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import {BookinglistService} from '../../services/bookinglist.service';
+import {BookingList} from '../../models/BookingList';
 
 @Component({
   selector: 'app-content-booklist',
@@ -9,9 +10,26 @@ import {BookinglistService} from '../../services/bookinglist.service';
 })
 export class ContentBooklistComponent implements OnInit {
 
-  constructor() { }
+  public getBookingList=[];
+  constructor(private BookingService: BookinglistService) { }
 
-  ngOnInit() {
+  ngOnInit( ) {
+
+    let postUserName = {
+      "username":"test"
+    }
+    this.BookingService.getBookingByUserName(postUserName).subscribe(
+      response =>{
+        if(response['success'] == true){
+          this.getBookingList = response['booklists'];
+        }
+      },
+      error =>{console.log(error)}
+    )
   }
+
+
+
+
 
 }

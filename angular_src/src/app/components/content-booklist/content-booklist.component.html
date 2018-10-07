@@ -1,10 +1,14 @@
 <div class="booklist-container">
-  <div class="card" style="width: 18rem;">
+  <div class="card" style="width: 18rem;" *ngFor="let booklist of getBookingList">
     <img class="card-img-top" src="../../../assets/booking-list-imgag.jpg" alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
+      <h5 class="card-title">{{booklist['tableNumber']}}</h5>
+      <p class="card-text"><b>BookingTime:</b>{{booklist['bookingTime']}}</p>
+      <p class="card-text"><b>Customer:</b>{{booklist['username']}}</p>
+      <p class="card-text"><b>PhoneNumber:</b>{{booklist['phoneNumber']}}</p>
+      <p class="card-text"><b>Total number of people:</b>{{booklist['peopleNumber']}}</p>
+      <p class="card-text"><b>Message:</b>{{booklist['message']}}</p>
+      <a class="btn btn-primary">Go somewhere</a>
     </div>
   </div>
 
