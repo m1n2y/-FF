@@ -38,6 +38,9 @@ import { FrameBottomComponent } from './components/frame-bottom/frame-bottom.com
 import { ContentBooklistComponent } from './components/content-booklist/content-booklist.component';
 import { ContentMainpageComponent } from './components/content-mainpage/content-mainpage.component';
 import { MainPageComponent } from './views/main-page/main-page.component';
+import { MenuPageComponent } from './views/menu-page/menu-page.component';
+import { ContentMenuComponent } from './components/content-menu/content-menu.component';
+import { FrameTopNavComponent } from './components/frame-top-nav/frame-top-nav.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +61,10 @@ import { MainPageComponent } from './views/main-page/main-page.component';
     FrameBottomComponent,
     ContentBooklistComponent,
     ContentMainpageComponent,
-    MainPageComponent
+    MainPageComponent,
+    MenuPageComponent,
+    ContentMenuComponent,
+    FrameTopNavComponent
 
   ],
   imports: [

@@ -7,6 +7,7 @@ import { AuthGuard} from './Login_register/~guards/auth.guard';
 import {HomepageComponent} from './views/homepage/homepage.component';
 import {BookListPageComponent} from './views/book-list-page/book-list-page.component';
 import {MainPageComponent} from './views/main-page/main-page.component';
+import {MenuPageComponent} from './views/menu-page/menu-page.component';
 
 const appRoutes: Routes = [
   { path: 'HomePage', component: MainPageComponent },
@@ -15,6 +16,8 @@ const appRoutes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'Booksystem', component: HomepageComponent },
   { path: 'BookList', component: BookListPageComponent },
+  { path: 'Menu', component: MenuPageComponent },
+
 
 
 

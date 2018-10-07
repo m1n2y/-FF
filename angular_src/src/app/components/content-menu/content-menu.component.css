@@ -1,0 +1,12 @@
+.container{
+  max-width: 1236px;
+  display: flex;
+  align-content: stretch;
+  align-items: stretch;
+  flex-flow: row nowrap;
+  padding: 0;
+  justify-content: space-around;
+
+}
+
+

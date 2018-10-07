@@ -91,3 +91,20 @@
   transform: translateY(4px);
 }
 
+
+.banner-icon img{
+  cursor: pointer;
+  padding: 10px;
+  height: 60px;
+  width: 60px;
+
+}
+.btn-outline-primary img{
+  cursor: pointer;
+  padding: 10px;
+  height: 60px;
+  width: 60px;
+}
+a{
+  cursor: pointer;
+}
