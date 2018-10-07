@@ -32,7 +32,11 @@ module.exports.getAllUser = (callback) => {
 
 //newList.save is used to insert the document into MongoDB
 module.exports.addUser = (newUser, callback) => {
-    newUser.save(callback);
+
+
+    let user= new User(newUser)
+    user.save(callback);
+    // newUser.save(callback);
 }
 
 //find one user by username
