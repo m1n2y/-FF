@@ -56,6 +56,7 @@ router.post('/getCurrentListbyUserName', (req,res,next) => {
 router.post('/addNewBooking', (req,res,next) => {
     let newBooking = new bookList({
         username:req.body.username,
+        customer:req.body.customer,
         bookingTime:req.body.bookingTime,
         phoneNumber:req.body.phoneNumber,
         peopleNumber:req.body.peopleNumber,

@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 
 const  BookingListSchema = mongoose.Schema({
     username:{ type:String ,required:true,},
+    customer:{ type:String ,required:true,},
     bookingTime:{ type:Number ,required:true,},
     phoneNumber:{ type:String ,required:true,},
     peopleNumber:{ type:Number ,required:true, },

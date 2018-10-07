@@ -31,8 +31,8 @@ export class SubmitBookingFormComponent implements OnInit {
 
 
   Username={
-    name: 'aba',
-    phone: '123123'
+    username: 'aba',
+    phoneNumber: '123123'
   }
 
   constructor(private TableService:TablelistService,
@@ -78,7 +78,8 @@ export class SubmitBookingFormComponent implements OnInit {
       alert("you need to select a table")
     }
     let bookingInfo:BookingList = {
-      username: 'test',
+      username: this.Username.username,
+      customer: this.Username.phoneNumber,
       bookingTime: Number(String(this.TableService.chooseDate)+String(this.TableService.chooseTime)),
       phoneNumber: '123123',
       peopleNumber:this.choosePeopleNumber,

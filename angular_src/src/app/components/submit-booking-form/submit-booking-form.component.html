@@ -13,10 +13,10 @@
       </div>
       <div class="submit_content_userinfo_Info">
           <div>
-            <span *ngIf="userInfoChange" class="submit_content_userinfo_Info_Username">{{Username.name}}</span>
-            <input type="text" [(ngModel)]="Username.name" *ngIf="!userInfoChange"><br>
-            <span *ngIf="userInfoChange">{{Username.phone}}</span>
-            <input type="text"  [(ngModel)]="Username.phone"  *ngIf="!userInfoChange">
+            <span *ngIf="userInfoChange" class="submit_content_userinfo_Info_Username">{{Username.username}}</span>
+            <input type="text" [(ngModel)]="Username.username" *ngIf="!userInfoChange"><br>
+            <span *ngIf="userInfoChange">{{Username.phoneNumber}}</span>
+            <input type="text"  [(ngModel)]="Username.phoneNumber"  *ngIf="!userInfoChange">
           </div>
       </div>
       <div class="submit_content_userinfo_button" (click)="editUserInfo()">
