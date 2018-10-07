@@ -21,7 +21,7 @@ router.get('/',(req,res) => {
 // //POST HTTP find user by username
 //
 router.post('/', (req,res,next) => {
-    
+
     userList.findUserByUsername(req.body.username,(err,user)=>{
         if(err){
 

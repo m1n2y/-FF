@@ -4,8 +4,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
 import {AlertService} from '../~services/alert.service';
-import {UserService} from '../~services/user.service';
-
+// import {UserService} from '../~services/user.service';
+import {UserService} from '../../services/user.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -19,7 +19,8 @@ export class RegisterComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
               private router: Router,
-              private userService: UserService,
+              // private userService: UserService,
+              private userAu: UserService,
               private alertService: AlertService) {
   }
 
@@ -47,16 +48,38 @@ export class RegisterComponent implements OnInit {
     }
 
     this.loading = true;
-    this.userService.register(this.registerForm.value)
-      .pipe(first())
-      .subscribe(
-        data => {
-          this.alertService.success('Registration successful', true);
-          this.router.navigate(['/login']);
-        },
-        error => {
-          this.alertService.error(error);
-          this.loading = false;
-        });
+    // this.userService.register(this.registerForm.value)
+    //   .pipe(first())
+    //   .subscribe(
+    //     data => {
+    //       this.alertService.success('Registration successful', true);
+    //       this.router.navigate(['/login']);
+    //     },
+    //     error => {
+    //       this.alertService.error(error);
+    //       this.loading = false;
+    //     });
+
+
+    this.userAu.register(this.registerForm.value).subscribe(
+      response => {
+        this.loading = false;
+        if (response['success'] == true){
+
+
+
+              this.router.navigate(['/login']);
+
+
+
+
+
+
+        }
+      },
+      error => {
+        console.log(error)
+      }
+    );
   }
 }

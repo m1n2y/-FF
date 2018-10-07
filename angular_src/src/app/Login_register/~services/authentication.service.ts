@@ -1,12 +1,22 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { map } from 'rxjs/operators';
 
 import { environment } from '../../../environments/environment';
+import {DatePipe} from '@angular/common';
 
 @Injectable()
 export class AuthenticationService {
   constructor(private http: HttpClient) { }
+  private serverAPI = 'http://localhost:3000/api'
+  private headers = new HttpHeaders().set('Content-Type', 'application/json');
+  datePipe = new DatePipe('en-US');
+
+  public getAllUsers (){
+    let URI = `${this.serverAPI}/user`;
+    return this.http.get(URI)
+  }
+
 
   login(username: string, password: string) {
     return this.http.post<any>(`${environment.apiUrl}/users/authenticate`, { username: username, password: password })
@@ -19,6 +29,7 @@ export class AuthenticationService {
 
         return user;
       }));
+
   }
 
   logout() {
