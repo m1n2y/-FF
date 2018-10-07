@@ -21,6 +21,22 @@ module.exports.getAllBookingList = (callback) => {
     BookingList.find({},callback);
 }
 
+
+//Table.find() returns all the tables
+module.exports.getHistoryListbyUserName = (postData,callback) => {
+    let query = {"username" : postData.username,"bookingTime":{$lt:postData['bookingTime']}};
+
+    BookingList.find(query,callback).sort("bookingTime");
+}
+
+//Table.find() returns all the tables
+module.exports.getCurrentListbyUserName = (postData,callback) => {
+    let query = {"username" : postData.username,"bookingTime":{$gt:postData['bookingTime']}};
+    BookingList.find(query,callback).sort("bookingTime");
+}
+
+
+
 // getTable by username
 module.exports.getBookingListByUserName = (postData,callback) =>{
     let query = {"username" : postData.username};
@@ -33,4 +49,13 @@ module.exports.addNewBooking = (newBooking, callback) => {
     newBooking.save(callback);
 }
 
+//delete bookingList
+module.exports.deleteBookList = (postData, callback) => {
+    let query = {
+        username: postData.username,
+        tableNumber: postData.tableNumber,
+        bookingTime: postData.bookingTime,
+    };
+    BookingList.deleteOne(query, callback);
+}
 

@@ -29,10 +29,28 @@ export class BookinglistService {
     return this.http.post(URI,body,{headers : this.headers})
   }
 
+  public getHistoryBookByUserName(postData){
+    let URI = `${this.serverAPI}/booklist/getHistoryListbyUserName`;
+    let body = postData
+    return this.http.post(URI,body,{headers : this.headers})
+  }
+  public getCurrentListbyUserName(postData){
+    let URI = `${this.serverAPI}/booklist/getCurrentListbyUserName`;
+    let body = postData
+    return this.http.post(URI,body,{headers : this.headers})
+  }
+
+
 
   public addNewBooking(newBooking:BookingList){
     let URI = `${this.serverAPI}/booklist/addNewBooking`;
     let body = newBooking;
+    return this.http.post(URI,body,{headers : this.headers})
+  }
+
+  public deleteBooking(postData){
+    let URI = `${this.serverAPI}/booklist/addNewBooking`;
+    let body = postData;
     return this.http.post(URI,body,{headers : this.headers})
   }
 

@@ -108,3 +108,9 @@
 a{
   cursor: pointer;
 }
+#dropdownBasic1{
+  border:none
+}
+#dropdownBasic1:after{
+  display: none;
+}

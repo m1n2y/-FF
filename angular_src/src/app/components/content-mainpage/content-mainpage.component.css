@@ -43,7 +43,7 @@
 
 .system_BookiList{
   background-image: url("../../../assets/main-page-reserve.jpg");
-
+  background-position: -300px;
 }
 
 .container .card:hover{

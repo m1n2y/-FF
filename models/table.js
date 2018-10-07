@@ -46,6 +46,15 @@ module.exports.updateBooktime = (bookInfo,callback) =>{
 
 }
 
+//delete table time
+
+module.exports.deleteBooktime = (bookInfo,callback) =>{
+    let query = {tableNumber: bookInfo.tableNumber};
+    let deleteTime =  bookInfo.booktimeList
+    Table.update(query, { $pull: {booktimeList: deleteTime } },'',callback);
+
+}
+
 module.exports.getTableByBooktimeList = (bookTime,callback) =>{
     let query = {"booktimeList" : bookTime.booktimeList};
     Table.find(query,{tableNumber:1, _id:0},callback);

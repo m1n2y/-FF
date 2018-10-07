@@ -39,3 +39,13 @@
 a{
   cursor: pointer;
 }
+
+#dropdownBasic1{
+  border:none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+#dropdownBasic1:after{
+  display: none;
+}

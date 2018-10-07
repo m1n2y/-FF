@@ -86,6 +86,22 @@ router.post('/updateBooktime', (req,res,next) => {
 });
 
 
+router.post('/deleteBooktime', (req,res,next) => {
+    let bookInfo ={
+        tableNumber: req.body.tableNumber,
+        booktimeList: req.body.booktimeList,
+    }
+
+    tableList.deleteBooktime(bookInfo,(err,table)=>{
+        if(err){
+            res.json({success: false, message: `Failed to create a new user. Error: ${err}`})
+        }else {
+            res.json({success:true, message: bookInfo.tableNumber+"  booking deleted successfully."});
+        }
+    });
+});
+
+
 router.post('/getTableByBooktimeList', (req,res,next) => {
     let bookTime ={
         booktimeList: req.body.booktimeList,

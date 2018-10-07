@@ -73,4 +73,13 @@ export class TablelistService {
     return this.http.post(URI,body,{headers : this.headers})
   }
 
+  public deleteBookTimeForTable(postData){
+    let URI = `${this.serverAPI}/tablelist/deleteBooktime`;
+    let body = JSON.stringify({
+      "tableNumber": postData.tableNumber,
+      "booktimeList": postData.bookingTime,
+    })
+    return this.http.post(URI,body,{headers : this.headers})
+  }
+
 }
