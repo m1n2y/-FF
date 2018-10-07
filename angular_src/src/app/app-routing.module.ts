@@ -7,9 +7,9 @@ import { AuthGuard} from './Login_register/~guards/auth.guard';
 import {HomepageComponent} from './views/homepage/homepage.component';
 
 const appRoutes: Routes = [
-  { path: '', component: HomepageComponent },
+  { path: 'HomePage', component: HomepageComponent },
   {path: 'usermanagement', component: HomeComponent, canActivate: [AuthGuard] },
-  { path: 'login', component: LoginComponent },
+  { path: '', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
 
   // otherwise redirect to home
