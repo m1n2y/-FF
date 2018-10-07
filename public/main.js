@@ -112,7 +112,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<h1>Hi {{currentUser.firstName}}!</h1>\n<p>You're logged in with Angular 6!!</p>\n<h3>All registered users:</h3>\n<ul>\n  <li *ngFor=\"let user of users\">\n    {{user.username}} ({{user.firstName}} {{user.lastName}})\n    - <a (click)=\"deleteUser(user.id)\" class=\"text-danger\">Delete</a>\n  </li>\n</ul>\n<p><a [routerLink]=\"['/login']\">Logout</a></p>\n"
+module.exports = "<h1>Hi {{currentUser.firstName}}!</h1>\n<p>You're logged in with Angular 6!!</p>\n<h3>All registered users:</h3>\n<ul>\n  <li *ngFor=\"let user of users\">\n    {{user.username}} ({{user.firstName}} {{user.lastName}})\n    - <a (click)=\"deleteUser(user.username)\" class=\"text-danger\">Delete</a>\n  </li>\n</ul>\n<p><a [routerLink]=\"['/login']\">Logout</a></p>\n"
 
 /***/ }),
 
@@ -127,9 +127,7 @@ module.exports = "<h1>Hi {{currentUser.firstName}}!</h1>\n<p>You're logged in wi
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeComponent", function() { return HomeComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var rxjs_internal_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/internal/operators */ "./node_modules/rxjs/internal/operators/index.js");
-/* harmony import */ var rxjs_internal_operators__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(rxjs_internal_operators__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _services_user_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../~services/user.service */ "./src/app/Login_register/~services/user.service.ts");
+/* harmony import */ var _services_user_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../services/user.service */ "./src/app/services/user.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -140,27 +138,42 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
-
+// import {UserService} from '../~services/user.service';
 
 var HomeComponent = /** @class */ (function () {
     function HomeComponent(userService) {
         this.userService = userService;
         this.users = [];
         this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        // this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     }
     HomeComponent.prototype.ngOnInit = function () {
         this.loadAllUsers();
     };
-    HomeComponent.prototype.deleteUser = function (id) {
+    HomeComponent.prototype.deleteUser = function (name) {
         var _this = this;
-        this.userService.delete(id).pipe(Object(rxjs_internal_operators__WEBPACK_IMPORTED_MODULE_1__["first"])()).subscribe(function () {
-            _this.loadAllUsers();
+        // this.userService.delete(id).pipe(first()).subscribe(() => {
+        //     this.loadAllUsers();
+        // });
+        this.userService.delete(name).subscribe(function (response) {
+            if (response['success'] == true) {
+                _this.loadAllUsers();
+            }
+        }, function (error) {
+            console.log(error);
         });
     };
     HomeComponent.prototype.loadAllUsers = function () {
         var _this = this;
-        this.userService.getAll().pipe(Object(rxjs_internal_operators__WEBPACK_IMPORTED_MODULE_1__["first"])()).subscribe(function (users) {
-            _this.users = users;
+        // this.userService.getAll().pipe(first()).subscribe(users => {
+        //     this.users = users;
+        // });
+        this.userService.getAllUser().subscribe(function (response) {
+            if (response['success'] == true) {
+                _this.users = response['users'];
+            }
+        }, function (error) {
+            console.log(error);
         });
     };
     HomeComponent = __decorate([
@@ -169,7 +182,7 @@ var HomeComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./home.component.html */ "./src/app/Login_register/home/home.component.html"),
             styles: [__webpack_require__(/*! ./home.component.css */ "./src/app/Login_register/home/home.component.css")]
         }),
-        __metadata("design:paramtypes", [_services_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"]])
+        __metadata("design:paramtypes", [_services_user_service__WEBPACK_IMPORTED_MODULE_1__["UserService"]])
     ], HomeComponent);
     return HomeComponent;
 }());
@@ -289,6 +302,7 @@ var LoginComponent = /** @class */ (function () {
                     // console.debug(response['users'][i]);
                     if (response['users'][i].username == _this.f.username.value && response['users'][i].password == _this.f.password.value) {
                         goto = true;
+                        localStorage.setItem('currentUser', JSON.stringify(response['users'][i]));
                         _this.router.navigate([_this.returnUrl]);
                     }
                 }
@@ -587,11 +601,12 @@ var FakeBackendInterceptor = /** @class */ (function () {
     FakeBackendInterceptor.prototype.intercept = function (request, next) {
         // array in local storage for registered users
         var users = JSON.parse(localStorage.getItem('users')) || [];
+        var userAu;
         // wrap in delayed observable to simulate server api call
         return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["of"])(null).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["mergeMap"])(function () {
             // authenticate
             if (request.url.endsWith('/users/authenticate') && request.method === 'POST') {
-                // find if any user matches login credentials
+                // // find if any user matches login credentials
                 var filteredUsers = users.filter(function (user) {
                     return user.username === request.body.username && user.password === request.body.password;
                 });
@@ -611,6 +626,39 @@ var FakeBackendInterceptor = /** @class */ (function () {
                     // else return 400 bad request
                     return Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["throwError"])({ error: { message: 'Username or password is incorrect' } });
                 }
+                // console.log("UserService")
+                // userAu.getAllUser().subscribe(
+                //   response => {
+                //
+                //     if (response['success'] == true) {
+                //
+                //       console.debug(response['users']);
+                //       let filteredUsers = response['users'].filter(user => {
+                //         return user.username === request.body.username && user.password === request.body.password;
+                //       });
+                //       if (filteredUsers.length) {
+                //         // if login details are valid return 200 OK with user details and fake jwt token
+                //         let user = filteredUsers[0];
+                //         let body = {
+                //           id: user.id,
+                //           username: user.username,
+                //           firstName: user.firstName,
+                //           lastName: user.lastName,
+                //           token: 'fake-jwt-token'
+                //         };
+                //
+                //         return of(new HttpResponse({ status: 200, body: body }));
+                //       } else {
+                //         // else return 400 bad request
+                //         return throwError({ error: { message: 'Username or password is incorrect' } });
+                //       }
+                //     }
+                //   }, error => {
+                //     console.log("error")
+                //          console.log(error)
+                //        }
+                //
+                // );
             }
             // get users
             if (request.url.endsWith('/users') && request.method === 'GET') {
@@ -1692,6 +1740,10 @@ var UserService = /** @class */ (function () {
             "phoneNumber": postData.phoneNumber,
         });
         return this.http.post(URI, body, { headers: this.headers });
+    };
+    UserService.prototype.delete = function (name) {
+        var URI = this.serverAPI + "/user/";
+        return this.http.delete(URI + name);
     };
     UserService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({

@@ -41,4 +41,10 @@ export class UserService {
     return this.http.post(URI,body,{headers : this.headers})
   }
 
+  public delete(name){
+    let URI = `${this.serverAPI}/user/`;
+
+    return this.http.delete(URI+name);
+  }
+
 }
