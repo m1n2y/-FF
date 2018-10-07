@@ -31,7 +31,8 @@ export class SubmitBookingFormComponent implements OnInit {
 
 
   Username={
-    username: 'aba',
+    username:'abc',
+    customer: 'aba',
     phoneNumber: '123123'
   }
 
@@ -79,9 +80,9 @@ export class SubmitBookingFormComponent implements OnInit {
     }
     let bookingInfo:BookingList = {
       username: this.Username.username,
-      customer: this.Username.phoneNumber,
+      customer: this.Username.customer,
       bookingTime: Number(String(this.TableService.chooseDate)+String(this.TableService.chooseTime)),
-      phoneNumber: '123123',
+      phoneNumber: this.Username.phoneNumber,
       peopleNumber:this.choosePeopleNumber,
       tableNumber:this.chooseTable,
       message:(document.getElementById('submit_message') as HTMLInputElement).value

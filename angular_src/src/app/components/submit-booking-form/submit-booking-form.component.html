@@ -13,8 +13,8 @@
       </div>
       <div class="submit_content_userinfo_Info">
           <div>
-            <span *ngIf="userInfoChange" class="submit_content_userinfo_Info_Username">{{Username.username}}</span>
-            <input type="text" [(ngModel)]="Username.username" *ngIf="!userInfoChange"><br>
+            <span *ngIf="userInfoChange" class="submit_content_userinfo_Info_Username">{{Username.customer}}</span>
+            <input type="text" [(ngModel)]="Username.customer" *ngIf="!userInfoChange"><br>
             <span *ngIf="userInfoChange">{{Username.phoneNumber}}</span>
             <input type="text"  [(ngModel)]="Username.phoneNumber"  *ngIf="!userInfoChange">
           </div>

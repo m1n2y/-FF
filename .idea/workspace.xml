@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6c715f4d-56f6-41cc-9225-b3721751866f" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/angular_src/src/app/components/frame-top-nav/frame-top-nav.component.html" afterPath="$PROJECT_DIR$/angular_src/src/app/components/frame-top-nav/frame-top-nav.component.html" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/angular_src/src/app/components/submit-booking-form/submit-booking-form.component.html" afterPath="$PROJECT_DIR$/angular_src/src/app/components/submit-booking-form/submit-booking-form.component.html" />
       <change beforePath="$PROJECT_DIR$/angular_src/src/app/components/submit-booking-form/submit-booking-form.component.ts" afterPath="$PROJECT_DIR$/angular_src/src/app/components/submit-booking-form/submit-booking-form.component.ts" />
-      <change beforePath="$PROJECT_DIR$/angular_src/src/app/head-banner/head-banner.component.html" afterPath="$PROJECT_DIR$/angular_src/src/app/head-banner/head-banner.component.html" />
-      <change beforePath="$PROJECT_DIR$/angular_src/src/app/models/BookingList.ts" afterPath="$PROJECT_DIR$/angular_src/src/app/models/BookingList.ts" />
-      <change beforePath="$PROJECT_DIR$/controllers/booklist.js" afterPath="$PROJECT_DIR$/controllers/booklist.js" />
-      <change beforePath="$PROJECT_DIR$/models/booklist.js" afterPath="$PROJECT_DIR$/models/booklist.js" />
       <change beforePath="$PROJECT_DIR$/public/main.js" afterPath="$PROJECT_DIR$/public/main.js" />
       <change beforePath="$PROJECT_DIR$/public/main.js.map" afterPath="$PROJECT_DIR$/public/main.js.map" />
     </list>
@@ -78,11 +74,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="frame-top-nav.component.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="frame-top-nav.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/angular_src/src/app/components/frame-top-nav/frame-top-nav.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="576">
-              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="content-mainpage.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/angular_src/src/app/components/content-mainpage/content-mainpage.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="content-booklist.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/angular_src/src/app/components/content-booklist/content-booklist.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="648">
+              <caret line="70" column="3" lean-forward="false" selection-start-line="70" selection-start-column="3" selection-end-line="70" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -104,18 +120,6 @@
             <state relative-caret-position="468">
               <caret line="13" column="40" lean-forward="false" selection-start-line="13" selection-start-column="40" selection-end-line="13" selection-end-column="40" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user.service.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/angular_src/src/app/services/user.service.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="924">
-              <caret line="37" column="42" lean-forward="false" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -153,8 +157,8 @@
       <file leaf-file-name="submit-booking-form.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/angular_src/src/app/components/submit-booking-form/submit-booking-form.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1080">
-              <caret line="102" column="9" lean-forward="false" selection-start-line="102" selection-start-column="9" selection-end-line="102" selection-end-column="9" />
+            <state relative-caret-position="360">
+              <caret line="34" column="12" lean-forward="false" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="12" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -162,21 +166,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="submit-booking-form.component.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="submit-booking-form.component.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/angular_src/src/app/components/submit-booking-form/submit-booking-form.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="617">
-              <caret line="23" column="12" lean-forward="false" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="booklist.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/booklist.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-929">
-              <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="12" />
+            <state relative-caret-position="653">
+              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -263,10 +257,10 @@
         <option value="$PROJECT_DIR$/models/booklist.js" />
         <option value="$PROJECT_DIR$/controllers/booklist.js" />
         <option value="$PROJECT_DIR$/angular_src/src/app/models/BookingList.ts" />
-        <option value="$PROJECT_DIR$/angular_src/src/app/components/submit-booking-form/submit-booking-form.component.ts" />
-        <option value="$PROJECT_DIR$/angular_src/src/app/components/submit-booking-form/submit-booking-form.component.html" />
         <option value="$PROJECT_DIR$/angular_src/src/app/head-banner/head-banner.component.html" />
         <option value="$PROJECT_DIR$/angular_src/src/app/components/frame-top-nav/frame-top-nav.component.html" />
+        <option value="$PROJECT_DIR$/angular_src/src/app/components/submit-booking-form/submit-booking-form.component.ts" />
+        <option value="$PROJECT_DIR$/angular_src/src/app/components/submit-booking-form/submit-booking-form.component.html" />
       </list>
     </option>
   </component>
@@ -357,16 +351,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="content-mainpage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="-FF" type="b2602c69:ProjectViewProjectNode" />
-              <item name="-FF" type="462c0819:PsiDirectoryNode" />
-              <item name="angular_src" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="frame-top-nav" type="462c0819:PsiDirectoryNode" />
+              <item name="submit-booking-form" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="-FF" type="b2602c69:ProjectViewProjectNode" />
@@ -467,7 +452,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154205000" />
+    <option name="totallyTimeSpent" value="154661000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-13" y="-13" width="2762" height="1770" extended-state="6" />
@@ -516,14 +501,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/angular_src/src/app/components/frame-bottom/frame-bottom.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="1" column="14" lean-forward="false" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/angular_src/src/app/components/frame-bottom/frame-bottom.component.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -775,30 +752,30 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1538930890709" expanded="true" signature="137800:137842" ph="{&quot;providedIn&quot;: 'root'...}" />
-            <marker date="1538930890709" expanded="true" signature="139836:139849" ph="/**...*/" />
-            <marker date="1538930890709" expanded="true" signature="141204:141252" ph="{&quot;booktimeList&quot;: bookTime...}" />
-            <marker date="1538930890709" expanded="true" signature="141513:141620" ph="{&quot;booktimeList&quot;: postData.booktimeList...}" />
-            <marker date="1538930890709" expanded="true" signature="142240:142350" ph="{&quot;tableNumber&quot;: postData.tableNumber...}" />
-            <marker date="1538930890709" expanded="true" signature="142538:142580" ph="{&quot;providedIn&quot;: 'root'...}" />
-            <marker date="1538930890709" expanded="true" signature="144530:144543" ph="/**...*/" />
-            <marker date="1538930890709" expanded="true" signature="145185:145419" ph="{&quot;username&quot;: postData.username...}" />
-            <marker date="1538930890709" expanded="true" signature="145602:145644" ph="{&quot;providedIn&quot;: 'root'...}" />
-            <marker date="1538930890709" expanded="true" signature="151292:151305" ph="/**...*/" />
-            <marker date="1538930890709" expanded="true" signature="153003:153301" ph="{&quot;selector&quot;: 'app-table-map'...}" />
-            <marker date="1538930890709" expanded="true" signature="159092:159105" ph="/**...*/" />
-            <marker date="1538930890709" expanded="true" signature="160158:160496" ph="{&quot;selector&quot;: 'app-circle-table'...}" />
-            <marker date="1538930890709" expanded="true" signature="164923:164936" ph="/**...*/" />
-            <marker date="1538930890709" expanded="true" signature="166081:166419" ph="{&quot;selector&quot;: 'app-square-table'...}" />
-            <marker date="1538930890709" expanded="true" signature="169192:169205" ph="/**...*/" />
-            <marker date="1538930890709" expanded="true" signature="169447:169791" ph="{&quot;selector&quot;: 'app-book-list-page'...}" />
-            <marker date="1538930890709" expanded="true" signature="172249:172262" ph="/**...*/" />
-            <marker date="1538930890709" expanded="true" signature="172492:172794" ph="{&quot;selector&quot;: 'app-homepage'...}" />
-            <marker date="1538930890709" expanded="true" signature="175324:175337" ph="/**...*/" />
-            <marker date="1538930890709" expanded="true" signature="175567:175876" ph="{&quot;selector&quot;: 'app-main-page'...}" />
-            <marker date="1538930890709" expanded="true" signature="178380:178393" ph="/**...*/" />
-            <marker date="1538930890709" expanded="true" signature="178623:178932" ph="{&quot;selector&quot;: 'app-menu-page'...}" />
-            <marker date="1538930890709" expanded="true" signature="179769:179831" ph="{&quot;apiUrl&quot;: 'http://localhost:4200'...}" />
+            <marker date="1538931283935" expanded="true" signature="137809:137851" ph="{&quot;providedIn&quot;: 'root'...}" />
+            <marker date="1538931283935" expanded="true" signature="139845:139858" ph="/**...*/" />
+            <marker date="1538931283935" expanded="true" signature="141213:141261" ph="{&quot;booktimeList&quot;: bookTime...}" />
+            <marker date="1538931283935" expanded="true" signature="141522:141629" ph="{&quot;booktimeList&quot;: postData.booktimeList...}" />
+            <marker date="1538931283935" expanded="true" signature="142249:142359" ph="{&quot;tableNumber&quot;: postData.tableNumber...}" />
+            <marker date="1538931283935" expanded="true" signature="142547:142589" ph="{&quot;providedIn&quot;: 'root'...}" />
+            <marker date="1538931283935" expanded="true" signature="144539:144552" ph="/**...*/" />
+            <marker date="1538931283935" expanded="true" signature="145194:145428" ph="{&quot;username&quot;: postData.username...}" />
+            <marker date="1538931283935" expanded="true" signature="145611:145653" ph="{&quot;providedIn&quot;: 'root'...}" />
+            <marker date="1538931283935" expanded="true" signature="151301:151314" ph="/**...*/" />
+            <marker date="1538931283935" expanded="true" signature="153012:153310" ph="{&quot;selector&quot;: 'app-table-map'...}" />
+            <marker date="1538931283935" expanded="true" signature="159101:159114" ph="/**...*/" />
+            <marker date="1538931283935" expanded="true" signature="160167:160505" ph="{&quot;selector&quot;: 'app-circle-table'...}" />
+            <marker date="1538931283935" expanded="true" signature="164932:164945" ph="/**...*/" />
+            <marker date="1538931283935" expanded="true" signature="166090:166428" ph="{&quot;selector&quot;: 'app-square-table'...}" />
+            <marker date="1538931283935" expanded="true" signature="169201:169214" ph="/**...*/" />
+            <marker date="1538931283935" expanded="true" signature="169456:169800" ph="{&quot;selector&quot;: 'app-book-list-page'...}" />
+            <marker date="1538931283935" expanded="true" signature="172258:172271" ph="/**...*/" />
+            <marker date="1538931283935" expanded="true" signature="172501:172803" ph="{&quot;selector&quot;: 'app-homepage'...}" />
+            <marker date="1538931283935" expanded="true" signature="175333:175346" ph="/**...*/" />
+            <marker date="1538931283935" expanded="true" signature="175576:175885" ph="{&quot;selector&quot;: 'app-main-page'...}" />
+            <marker date="1538931283935" expanded="true" signature="178389:178402" ph="/**...*/" />
+            <marker date="1538931283935" expanded="true" signature="178632:178941" ph="{&quot;selector&quot;: 'app-menu-page'...}" />
+            <marker date="1538931283935" expanded="true" signature="179778:179840" ph="{&quot;apiUrl&quot;: 'http://localhost:4200'...}" />
           </folding>
         </state>
       </provider>
@@ -851,16 +828,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/angular_src/src/app/components/content-booklist/content-booklist.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="70" column="3" lean-forward="false" selection-start-line="70" selection-start-column="3" selection-end-line="70" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#50#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/angular_src/src/app/components/content-booklist/content-booklist.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -882,7 +849,7 @@
         <state relative-caret-position="924">
           <caret line="37" column="42" lean-forward="false" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
           <folding>
-            <element signature="e#0#43#0" expanded="true" />
+            <element signature="e#0#43#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -919,24 +886,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/angular_src/src/app/components/submit-booking-form/submit-booking-form.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="617">
-          <caret line="23" column="12" lean-forward="false" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/angular_src/src/app/components/submit-booking-form/submit-booking-form.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="102" column="9" lean-forward="false" selection-start-line="102" selection-start-column="9" selection-end-line="102" selection-end-column="9" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/angular_src/src/app/head-banner/head-banner.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
@@ -956,7 +905,41 @@
     <entry file="file://$PROJECT_DIR$/angular_src/src/app/components/frame-top-nav/frame-top-nav.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular_src/src/app/components/content-mainpage/content-mainpage.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular_src/src/app/components/content-booklist/content-booklist.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="70" column="3" lean-forward="false" selection-start-line="70" selection-start-column="3" selection-end-line="70" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular_src/src/app/components/submit-booking-form/submit-booking-form.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="34" column="12" lean-forward="false" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/angular_src/src/app/components/submit-booking-form/submit-booking-form.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="653">
+          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
         </state>
       </provider>
