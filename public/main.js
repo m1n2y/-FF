@@ -289,6 +289,11 @@ var LoginComponent = /** @class */ (function () {
                     // console.debug(response['users'][i]);
                     if (response['users'][i].username == _this.f.username.value && response['users'][i].password == _this.f.password.value) {
                         goto = true;
+                        var tmp = {
+                            "username": response['users'][i].username,
+                            "phoneNumber": response['users'][i].phoneNumber,
+                        };
+                        localStorage.setItem('currentUser', JSON.stringify(tmp));
                         _this.router.navigate([_this.returnUrl]);
                     }
                 }
@@ -957,6 +962,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _views_book_list_page_book_list_page_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./views/book-list-page/book-list-page.component */ "./src/app/views/book-list-page/book-list-page.component.ts");
 /* harmony import */ var _views_main_page_main_page_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./views/main-page/main-page.component */ "./src/app/views/main-page/main-page.component.ts");
 /* harmony import */ var _views_menu_page_menu_page_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./views/menu-page/menu-page.component */ "./src/app/views/menu-page/menu-page.component.ts");
+/* harmony import */ var _components_router_return_router_return_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/router-return/router-return.component */ "./src/app/components/router-return/router-return.component.ts");
+
 
 
 
@@ -974,6 +981,7 @@ var appRoutes = [
     { path: 'Booksystem', component: _views_homepage_homepage_component__WEBPACK_IMPORTED_MODULE_5__["HomepageComponent"] },
     { path: 'BookList', component: _views_book_list_page_book_list_page_component__WEBPACK_IMPORTED_MODULE_6__["BookListPageComponent"] },
     { path: 'Menu', component: _views_menu_page_menu_page_component__WEBPACK_IMPORTED_MODULE_8__["MenuPageComponent"] },
+    { path: 'Return', component: _components_router_return_router_return_component__WEBPACK_IMPORTED_MODULE_9__["RouterReturnComponent"] },
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
 ];
@@ -1088,6 +1096,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _views_menu_page_menu_page_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./views/menu-page/menu-page.component */ "./src/app/views/menu-page/menu-page.component.ts");
 /* harmony import */ var _components_content_menu_content_menu_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./components/content-menu/content-menu.component */ "./src/app/components/content-menu/content-menu.component.ts");
 /* harmony import */ var _components_frame_top_nav_frame_top_nav_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./components/frame-top-nav/frame-top-nav.component */ "./src/app/components/frame-top-nav/frame-top-nav.component.ts");
+/* harmony import */ var _components_router_return_router_return_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./components/router-return/router-return.component */ "./src/app/components/router-return/router-return.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1133,6 +1142,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -1159,7 +1169,8 @@ var AppModule = /** @class */ (function () {
                 _views_main_page_main_page_component__WEBPACK_IMPORTED_MODULE_31__["MainPageComponent"],
                 _views_menu_page_menu_page_component__WEBPACK_IMPORTED_MODULE_32__["MenuPageComponent"],
                 _components_content_menu_content_menu_component__WEBPACK_IMPORTED_MODULE_33__["ContentMenuComponent"],
-                _components_frame_top_nav_frame_top_nav_component__WEBPACK_IMPORTED_MODULE_34__["FrameTopNavComponent"]
+                _components_frame_top_nav_frame_top_nav_component__WEBPACK_IMPORTED_MODULE_34__["FrameTopNavComponent"],
+                _components_router_return_router_return_component__WEBPACK_IMPORTED_MODULE_35__["RouterReturnComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -1208,7 +1219,7 @@ module.exports = ".booklist-container{\r\n  display: flex;\r\n  flex-flow: row w
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"booklist-container\">\r\n\r\n\r\n  <ngb-tabset>\r\n    <ngb-tab title=\"Current\" class=\"menu-title\">\r\n      <ng-template ngbTabContent>\r\n        <div class=\"card-container\">\r\n\r\n              <div class=\"card\" style=\"width: 18rem;\" *ngFor=\"let booklist of currentBookList\">\r\n                <img class=\"card-img-top\" src=\"../../../assets/booking-list-imgag.jpg\" alt=\"Card image cap\">\r\n                <div class=\"card-body\">\r\n                  <h5 class=\"card-title\">{{booklist['tableNumber']}}</h5>\r\n                  <p class=\"card-text\"><b>BookingTime:</b>{{booklist['bookingTime']}}</p>\r\n                  <p class=\"card-text\"><b>Customer:</b>{{booklist['username']}}</p>\r\n                  <p class=\"card-text\"><b>PhoneNumber:</b>{{booklist['phoneNumber']}}</p>\r\n                  <p class=\"card-text\"><b>Total number of people:</b>{{booklist['peopleNumber']}}</p>\r\n                  <p class=\"card-text\"><b>Message:</b>{{booklist['message']}}</p>\r\n                  <a class=\"btn btn-danger\" (click)=\"deleteBooking(booklist)\">Cancel</a>\r\n\r\n\r\n                </div>\r\n              </div>\r\n        </div>\r\n\r\n      </ng-template>\r\n    </ngb-tab>\r\n\r\n    <ngb-tab>\r\n      <ng-template ngbTabTitle><b>History</b></ng-template>\r\n      <ng-template ngbTabContent>\r\n        <div class=\"card-container\">\r\n\r\n          <div class=\"card\" style=\"width: 18rem;\" *ngFor=\"let booklist of historyBookList\">\r\n            <img class=\"card-img-top\" src=\"../../../assets/booking-list-imgag.jpg\" alt=\"Card image cap\">\r\n            <div class=\"card-body\">\r\n              <h5 class=\"card-title\">{{booklist['tableNumber']}}</h5>\r\n              <p class=\"card-text\"><b>BookingTime:</b>{{booklist['bookingTime']}}</p>\r\n              <p class=\"card-text\"><b>Customer:</b>{{booklist['username']}}</p>\r\n              <p class=\"card-text\"><b>PhoneNumber:</b>{{booklist['phoneNumber']}}</p>\r\n              <p class=\"card-text\"><b>Total number of people:</b>{{booklist['peopleNumber']}}</p>\r\n              <p class=\"card-text\"><b>Message:</b>{{booklist['message']}}</p>\r\n              <a class=\"btn btn-danger\" (click)=\"deleteBooking(booklist)\">Delete</a>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </ng-template>\r\n    </ngb-tab>\r\n  </ngb-tabset>\r\n\r\n\r\n</div>\r\n"
+module.exports = "<div class=\"booklist-container\">\r\n\r\n\r\n  <ngb-tabset>\r\n    <ngb-tab title=\"Current\" class=\"menu-title\">\r\n      <ng-template ngbTabContent>\r\n        <div class=\"card-container\">\r\n\r\n              <div class=\"card\" style=\"width: 18rem;\" *ngFor=\"let booklist of currentBookList\">\r\n                <img class=\"card-img-top\" src=\"../../../assets/booking-list-imgag.jpg\" alt=\"Card image cap\">\r\n                <div class=\"card-body\">\r\n                  <h5 class=\"card-title\">{{booklist['tableNumber']}}</h5>\r\n                  <p class=\"card-text\"><b>UserName:</b>{{booklist['username']}}</p>\r\n                  <p class=\"card-text\"><b>BookingTime:</b>{{booklist['bookingTime']}}</p>\r\n                  <p class=\"card-text\"><b>Customer:</b>{{booklist['customer']}}</p>\r\n                  <p class=\"card-text\"><b>PhoneNumber:</b>{{booklist['phoneNumber']}}</p>\r\n                  <p class=\"card-text\"><b>Total number of people:</b>{{booklist['peopleNumber']}}</p>\r\n                  <p class=\"card-text\"><b>Message:</b>{{booklist['message']}}</p>\r\n                  <a class=\"btn btn-danger\" (click)=\"deleteBooking(booklist)\">Cancel</a>\r\n\r\n\r\n                </div>\r\n              </div>\r\n        </div>\r\n\r\n      </ng-template>\r\n    </ngb-tab>\r\n\r\n    <ngb-tab>\r\n      <ng-template ngbTabTitle><b>History</b></ng-template>\r\n      <ng-template ngbTabContent>\r\n        <div class=\"card-container\">\r\n\r\n          <div class=\"card\" style=\"width: 18rem;\" *ngFor=\"let booklist of historyBookList\">\r\n            <img class=\"card-img-top\" src=\"../../../assets/booking-list-imgag.jpg\" alt=\"Card image cap\">\r\n            <div class=\"card-body\">\r\n              <h5 class=\"card-title\">{{booklist['tableNumber']}}</h5>\r\n              <p class=\"card-text\"><b>UserName:</b>{{booklist['username']}}</p>\r\n              <p class=\"card-text\"><b>BookingTime:</b>{{booklist['bookingTime']}}</p>\r\n              <p class=\"card-text\"><b>Customer:</b>{{booklist['customer']}}</p>\r\n              <p class=\"card-text\"><b>PhoneNumber:</b>{{booklist['phoneNumber']}}</p>\r\n              <p class=\"card-text\"><b>Total number of people:</b>{{booklist['peopleNumber']}}</p>\r\n              <p class=\"card-text\"><b>Message:</b>{{booklist['message']}}</p>\r\n              <a class=\"btn btn-danger\" (click)=\"deleteBooking(booklist)\">Delete</a>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </ng-template>\r\n    </ngb-tab>\r\n  </ngb-tabset>\r\n\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1241,25 +1252,28 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var ContentBooklistComponent = /** @class */ (function () {
-    function ContentBooklistComponent(BookingService, TableService, router) {
+    function ContentBooklistComponent(BookingService, TableService, router, zone) {
         this.BookingService = BookingService;
         this.TableService = TableService;
         this.router = router;
+        this.zone = zone;
         this.today = Date.now();
         this.datePipe = new _angular_common__WEBPACK_IMPORTED_MODULE_4__["DatePipe"]('en-US');
         this.currentDate = Number(this.datePipe.transform((this.today), "yyyMMddhh"));
         this.getBookingList = [];
         this.historyBookList = [];
         this.currentBookList = [];
+        this.getUserInfo = JSON.parse(localStorage.getItem('currentUser'));
     }
     ContentBooklistComponent.prototype.ngOnInit = function () {
         var _this = this;
         var postUserName = {
-            "username": "test"
+            "username": this.getUserInfo.username
         };
         var postUserWithTime = {
-            "username": "test",
+            "username": this.getUserInfo.username,
             "bookingTime": this.currentDate
         };
         this.BookingService.getBookingByUserName(postUserName).subscribe(function (response) {
@@ -1281,6 +1295,7 @@ var ContentBooklistComponent = /** @class */ (function () {
     ContentBooklistComponent.prototype.ngDoCheck = function () {
     };
     ContentBooklistComponent.prototype.deleteBooking = function (postData) {
+        var _this = this;
         if (confirm('Are you sure to delete ?') == true) {
             var deleteBook = {
                 username: postData.username,
@@ -1299,6 +1314,7 @@ var ContentBooklistComponent = /** @class */ (function () {
             this.TableService.deleteBookTimeForTable(deletedTimeListofTable).subscribe(function (response) {
                 if (response['success'] == true) {
                     console.log(response);
+                    _this.router.navigate(['/Return'], { replaceUrl: true });
                 }
             }, function (error) { console.log(error); });
         }
@@ -1313,7 +1329,8 @@ var ContentBooklistComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [_services_bookinglist_service__WEBPACK_IMPORTED_MODULE_2__["BookinglistService"],
             _services_tablelist_service__WEBPACK_IMPORTED_MODULE_3__["TablelistService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+            _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
+            _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"]])
     ], ContentBooklistComponent);
     return ContentBooklistComponent;
 }());
@@ -1637,6 +1654,73 @@ var FrameTopComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/components/router-return/router-return.component.css":
+/*!**********************************************************************!*\
+  !*** ./src/app/components/router-return/router-return.component.css ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/components/router-return/router-return.component.html":
+/*!***********************************************************************!*\
+  !*** ./src/app/components/router-return/router-return.component.html ***!
+  \***********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<p>\n  Successful!\n</p>\n"
+
+/***/ }),
+
+/***/ "./src/app/components/router-return/router-return.component.ts":
+/*!*********************************************************************!*\
+  !*** ./src/app/components/router-return/router-return.component.ts ***!
+  \*********************************************************************/
+/*! exports provided: RouterReturnComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RouterReturnComponent", function() { return RouterReturnComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var RouterReturnComponent = /** @class */ (function () {
+    function RouterReturnComponent(router) {
+        this.router = router;
+    }
+    RouterReturnComponent.prototype.ngOnInit = function () {
+        this.router.navigate(['/BookList'], { replaceUrl: true });
+    };
+    RouterReturnComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-router-return',
+            template: __webpack_require__(/*! ./router-return.component.html */ "./src/app/components/router-return/router-return.component.html"),
+            styles: [__webpack_require__(/*! ./router-return.component.css */ "./src/app/components/router-return/router-return.component.css")]
+        }),
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+    ], RouterReturnComponent);
+    return RouterReturnComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/components/submit-booking-form/submit-booking-form.component.css":
 /*!**********************************************************************************!*\
   !*** ./src/app/components/submit-booking-form/submit-booking-form.component.css ***!
@@ -1655,7 +1739,7 @@ module.exports = ".submit_container{\r\n  border: solid 2px lightslategray ;\r\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"submit_container\" >\r\n  <div class=\"submit_top\">\r\n\r\n    <button class=\"submit_top_close\" (click)=\"closeSubmit()\">Close</button>\r\n    <button class=\"submit_top_Submit\" (click)=\"submitBooking()\">Submit</button>\r\n\r\n  </div>\r\n\r\n  <div class=\"submit_content\">\r\n    <div class=\"submit_content_userinfo\">\r\n      <div class=\"submit_content_userinfo_icon\">\r\n        <div>TS</div>\r\n      </div>\r\n      <div class=\"submit_content_userinfo_Info\">\r\n          <div>\r\n            <span *ngIf=\"userInfoChange\" class=\"submit_content_userinfo_Info_Username\">{{Username.username}}</span>\r\n            <input type=\"text\" [(ngModel)]=\"Username.username\" *ngIf=\"!userInfoChange\"><br>\r\n            <span *ngIf=\"userInfoChange\">{{Username.phoneNumber}}</span>\r\n            <input type=\"text\"  [(ngModel)]=\"Username.phoneNumber\"  *ngIf=\"!userInfoChange\">\r\n          </div>\r\n      </div>\r\n      <div class=\"submit_content_userinfo_button\" (click)=\"editUserInfo()\">\r\n        <span >{{userInfoChangeButtonText}}</span>\r\n      </div>\r\n\r\n\r\n    </div>\r\n    <div class=\"submit_content_title\">  Booking Info</div>\r\n\r\n    <ul class=\"submit_content_bookinginfo\">\r\n      <li class=\"submit_date btn-group btn-group-toggle\" ngbRadioGroup name=\"radioBasic\" [(ngModel)]=\"model\">\r\n        <label ngbButtonLabel class=\"btn-primary\" *ngFor=\"let i of dayNumber\"  >\r\n          <input ngbButton type=\"radio\" [value]=\"today+(1000*3600*24*i)|date:'yyyMMdd'\" value=\"today+(1000*3600*24*i)|date:'yyyMMdd'\" (click)=\"chooseDate(i)\"> {{today+(1000*3600*24*i)|date:'E'}}\r\n        </label>\r\n      </li>\r\n      <li>\r\n        <div class=\"submit_time\">\r\n          <label >Time: </label>\r\n          <select name=\"time-select\" class=\"submit-time-select\" id=\"submit-time-select\"  (change)=\"chooseTime()\" >\r\n            <option *ngFor=\"let time of timeNumber\"  value={{time}} >{{time+': 00'}}--{{time+1+': 00'}}</option>\r\n          </select>\r\n        </div>\r\n\r\n        <div class=\"submit_time\">\r\n          <label >PeopleNum: </label>\r\n          <select name=\"time-select\" class=\"people-number\" id=\"people-select\"  (change)=\"choosePeople()\" >\r\n            <option *ngFor=\"let number of peopleNumber\"  value={{number}}>{{number}}</option>\r\n          </select>\r\n        </div>\r\n      </li>\r\n\r\n      <li>\r\n        <label >Table: </label>\r\n        <div class=\"submit-table btn-group btn-group-toggle\" ngbRadioGroup name=\"radioBasic\" [(ngModel)]=\"chooseTable\">\r\n          <label ngbButtonLabel class=\"btn-primary\" *ngFor=\"let tableNumber of availableTable\"  >\r\n            <input ngbButton type=\"radio\" [value]=\"tableNumber\"> {{tableNumber}}\r\n          </label>\r\n        </div>\r\n\r\n      </li>\r\n\r\n\r\n\r\n\r\n    </ul>\r\n\r\n    <div class=\"submit_content_title\">  Message</div>\r\n\r\n    <div class=\"submit_content_message\">\r\n      <textarea id=\"submit_message\" placeholder=\"Input your message here!\"></textarea>\r\n\r\n    </div>\r\n\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"submit_container\" >\r\n  <div class=\"submit_top\">\r\n\r\n    <button class=\"submit_top_close\" (click)=\"closeSubmit()\">Close</button>\r\n    <button class=\"submit_top_Submit\" (click)=\"submitBooking()\">Submit</button>\r\n\r\n  </div>\r\n\r\n  <div class=\"submit_content\">\r\n    <div class=\"submit_content_userinfo\">\r\n      <div class=\"submit_content_userinfo_icon\">\r\n        <div>TS</div>\r\n      </div>\r\n      <div class=\"submit_content_userinfo_Info\">\r\n          <div>\r\n            <span *ngIf=\"userInfoChange\" class=\"submit_content_userinfo_Info_Username\">{{Username.customer}}</span>\r\n            <input type=\"text\" [(ngModel)]=\"Username.customer\" *ngIf=\"!userInfoChange\"><br>\r\n            <span *ngIf=\"userInfoChange\">{{Username.phoneNumber}}</span>\r\n            <input type=\"text\"  [(ngModel)]=\"Username.phoneNumber\"  *ngIf=\"!userInfoChange\">\r\n          </div>\r\n      </div>\r\n      <div class=\"submit_content_userinfo_button\" (click)=\"editUserInfo()\">\r\n        <span >{{userInfoChangeButtonText}}</span>\r\n      </div>\r\n\r\n\r\n    </div>\r\n    <div class=\"submit_content_title\">  Booking Info</div>\r\n\r\n    <ul class=\"submit_content_bookinginfo\">\r\n      <li class=\"submit_date btn-group btn-group-toggle\" ngbRadioGroup name=\"radioBasic\" [(ngModel)]=\"model\">\r\n        <label ngbButtonLabel class=\"btn-primary\" *ngFor=\"let i of dayNumber\"  >\r\n          <input ngbButton type=\"radio\" [value]=\"today+(1000*3600*24*i)|date:'yyyMMdd'\" value=\"today+(1000*3600*24*i)|date:'yyyMMdd'\" (click)=\"chooseDate(i)\"> {{today+(1000*3600*24*i)|date:'E'}}\r\n        </label>\r\n      </li>\r\n      <li>\r\n        <div class=\"submit_time\">\r\n          <label >Time: </label>\r\n          <select name=\"time-select\" class=\"submit-time-select\" id=\"submit-time-select\"  (change)=\"chooseTime()\" >\r\n            <option *ngFor=\"let time of timeNumber\"  value={{time}} >{{time+': 00'}}--{{time+1+': 00'}}</option>\r\n          </select>\r\n        </div>\r\n\r\n        <div class=\"submit_time\">\r\n          <label >PeopleNum: </label>\r\n          <select name=\"time-select\" class=\"people-number\" id=\"people-select\"  (change)=\"choosePeople()\" >\r\n            <option *ngFor=\"let number of peopleNumber\"  value={{number}}>{{number}}</option>\r\n          </select>\r\n        </div>\r\n      </li>\r\n\r\n      <li>\r\n        <label >Table: </label>\r\n        <div class=\"submit-table btn-group btn-group-toggle\" ngbRadioGroup name=\"radioBasic\" [(ngModel)]=\"chooseTable\">\r\n          <label ngbButtonLabel class=\"btn-primary\" *ngFor=\"let tableNumber of availableTable\"  >\r\n            <input ngbButton type=\"radio\" [value]=\"tableNumber\"> {{tableNumber}}\r\n          </label>\r\n        </div>\r\n\r\n      </li>\r\n\r\n\r\n\r\n\r\n    </ul>\r\n\r\n    <div class=\"submit_content_title\">  Message</div>\r\n\r\n    <div class=\"submit_content_message\">\r\n      <textarea id=\"submit_message\" placeholder=\"Input your message here!\"></textarea>\r\n\r\n    </div>\r\n\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1671,8 +1755,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SubmitBookingFormComponent", function() { return SubmitBookingFormComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _services_tablelist_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../services/tablelist.service */ "./src/app/services/tablelist.service.ts");
-/* harmony import */ var _services_bookinglist_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/bookinglist.service */ "./src/app/services/bookinglist.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _services_tablelist_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../services/tablelist.service */ "./src/app/services/tablelist.service.ts");
+/* harmony import */ var _services_bookinglist_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../services/bookinglist.service */ "./src/app/services/bookinglist.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1686,10 +1771,12 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var SubmitBookingFormComponent = /** @class */ (function () {
-    function SubmitBookingFormComponent(TableService, BookListService) {
+    function SubmitBookingFormComponent(TableService, BookListService, router) {
         this.TableService = TableService;
         this.BookListService = BookListService;
+        this.router = router;
         this.today = Date.now();
         this.datePipe = new _angular_common__WEBPACK_IMPORTED_MODULE_1__["DatePipe"]('en-US');
         this.dayNumber = [0, 1, 2, 3, 4, 5, 6];
@@ -1699,12 +1786,19 @@ var SubmitBookingFormComponent = /** @class */ (function () {
         this.choosePeopleNumber = 1;
         this.userInfoChange = true;
         this.userInfoChangeButtonText = 'Edit';
+        this.getUserInfo = JSON.parse(localStorage.getItem('currentUser'));
         this.Username = {
             username: 'aba',
+            customer: 'aba',
             phoneNumber: '123123'
         };
     }
     SubmitBookingFormComponent.prototype.ngOnInit = function () {
+        this.Username = {
+            username: this.getUserInfo.username,
+            customer: this.getUserInfo.username,
+            phoneNumber: this.getUserInfo.phoneNumber
+        };
     };
     SubmitBookingFormComponent.prototype.ngDoCheck = function () {
         if (this.model != String(this.TableService.chooseDate)) {
@@ -1738,9 +1832,9 @@ var SubmitBookingFormComponent = /** @class */ (function () {
         }
         var bookingInfo = {
             username: this.Username.username,
-            customer: this.Username.phoneNumber,
+            customer: this.Username.customer,
             bookingTime: Number(String(this.TableService.chooseDate) + String(this.TableService.chooseTime)),
-            phoneNumber: '123123',
+            phoneNumber: this.Username.phoneNumber,
             peopleNumber: this.choosePeopleNumber,
             tableNumber: this.chooseTable,
             message: document.getElementById('submit_message').value
@@ -1749,12 +1843,20 @@ var SubmitBookingFormComponent = /** @class */ (function () {
             bookingTime: Number(String(this.TableService.chooseDate) + String(this.TableService.chooseTime)),
             tableNumber: this.chooseTable
         };
-        this.BookListService.addNewBooking(bookingInfo).subscribe(function (response) {
-            if (response['success'] == true) {
-                console.log(timeForTable);
-                _this.TableService.updateBookTimeForTable(timeForTable).subscribe(function (response) { console.log(response); }, function (error) { console.log(error); });
-            }
-        }, function (error) { console.log(error); });
+        if (confirm("Please confirm Infomation is correct") == true) {
+            this.BookListService.addNewBooking(bookingInfo).subscribe(function (response) {
+                if (response['success'] == true) {
+                    console.log(timeForTable);
+                    _this.TableService.updateBookTimeForTable(timeForTable).subscribe(function (response) {
+                        if (response['success'] == true) {
+                            _this.router.navigate(['/BookList'], { replaceUrl: true });
+                        }
+                    }, function (error) { console.log(error); });
+                }
+            }, function (error) { console.log(error); });
+        }
+        else {
+        }
     };
     SubmitBookingFormComponent.prototype.checkAvailableTable = function () {
         var _this = this;
@@ -1779,8 +1881,9 @@ var SubmitBookingFormComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./submit-booking-form.component.html */ "./src/app/components/submit-booking-form/submit-booking-form.component.html"),
             styles: [__webpack_require__(/*! ./submit-booking-form.component.css */ "./src/app/components/submit-booking-form/submit-booking-form.component.css")]
         }),
-        __metadata("design:paramtypes", [_services_tablelist_service__WEBPACK_IMPORTED_MODULE_2__["TablelistService"],
-            _services_bookinglist_service__WEBPACK_IMPORTED_MODULE_3__["BookinglistService"]])
+        __metadata("design:paramtypes", [_services_tablelist_service__WEBPACK_IMPORTED_MODULE_3__["TablelistService"],
+            _services_bookinglist_service__WEBPACK_IMPORTED_MODULE_4__["BookinglistService"],
+            _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
     ], SubmitBookingFormComponent);
     return SubmitBookingFormComponent;
 }());

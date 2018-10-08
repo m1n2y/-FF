@@ -62,5 +62,5 @@ module.exports.getTableByBooktimeList = (bookTime,callback) =>{
 
 module.exports.getTableByBooktimeAndType = (postData,callback) =>{
     let query = {"booktimeList" : {$ne:postData.booktimeList}, "tableType": postData.tableType};
-    Table.find(query,{tableNumber:1, _id:0},callback);
+    Table.find(query,{tableNumber:1, _id:0},callback).sort('_id');
 }

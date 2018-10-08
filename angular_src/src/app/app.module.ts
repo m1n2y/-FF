@@ -41,6 +41,7 @@ import { MainPageComponent } from './views/main-page/main-page.component';
 import { MenuPageComponent } from './views/menu-page/menu-page.component';
 import { ContentMenuComponent } from './components/content-menu/content-menu.component';
 import { FrameTopNavComponent } from './components/frame-top-nav/frame-top-nav.component';
+import { RouterReturnComponent } from './components/router-return/router-return.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { FrameTopNavComponent } from './components/frame-top-nav/frame-top-nav.c
     MainPageComponent,
     MenuPageComponent,
     ContentMenuComponent,
-    FrameTopNavComponent
+    FrameTopNavComponent,
+    RouterReturnComponent
 
   ],
   imports: [

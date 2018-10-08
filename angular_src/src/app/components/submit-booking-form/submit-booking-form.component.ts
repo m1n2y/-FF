@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {MatCheckboxModule} from '@angular/material';
 import {DatePipe, formatDate} from '@angular/common';
+import {Router} from '@angular/router'
+
 
 import {TablelistService} from '../../services/tablelist.service';
 import {BookinglistService} from '../../services/bookinglist.service';
@@ -28,19 +30,29 @@ export class SubmitBookingFormComponent implements OnInit {
 
   model:string;
   chooseTable:string;
+  getUserInfo = JSON.parse(localStorage.getItem('currentUser'))
 
-
-  Username={
-    username:'abc',
+  public Username={
+    username:'aba',
     customer: 'aba',
     phoneNumber: '123123'
   }
 
+
+
   constructor(private TableService:TablelistService,
-              private BookListService: BookinglistService) { }
+              private BookListService: BookinglistService,
+              private router:Router) { }
 
   ngOnInit() {
+    this.Username={
+    username:this.getUserInfo.username,
+    customer: this.getUserInfo.username,
+    phoneNumber: this.getUserInfo.phoneNumber
   }
+  }
+
+
 
   ngDoCheck(){
     if (this.model != String(this.TableService.chooseDate)){
@@ -92,18 +104,28 @@ export class SubmitBookingFormComponent implements OnInit {
       bookingTime: Number(String(this.TableService.chooseDate)+String(this.TableService.chooseTime)),
       tableNumber:this.chooseTable
     }
+    if(confirm("Please confirm Infomation is correct")==true){
+      this.BookListService.addNewBooking(bookingInfo).subscribe(
+        response=>{if (response['success'] == true){
+          console.log(timeForTable)
+          this.TableService.updateBookTimeForTable(timeForTable).subscribe(
+            response =>{ if (response['success']==true){
+              this.router.navigate(['/BookList'], { replaceUrl: true });
+            }
+            },
+            error=>{ console.log(error)}
+          )
 
-    this.BookListService.addNewBooking(bookingInfo).subscribe(
-      response=>{if (response['success'] == true){
-        console.log(timeForTable)
-        this.TableService.updateBookTimeForTable(timeForTable).subscribe(
-          response =>{ console.log(response)},
-          error=>{ console.log(error)}
-        )
+        }},
+        error=>{console.log(error)}
+      )
 
-      }},
-      error=>{console.log(error)}
-    )
+    }else{
+
+    }
+
+
+
   }
 
   checkAvailableTable(){

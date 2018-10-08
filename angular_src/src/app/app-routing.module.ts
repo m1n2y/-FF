@@ -8,6 +8,7 @@ import {HomepageComponent} from './views/homepage/homepage.component';
 import {BookListPageComponent} from './views/book-list-page/book-list-page.component';
 import {MainPageComponent} from './views/main-page/main-page.component';
 import {MenuPageComponent} from './views/menu-page/menu-page.component';
+import {RouterReturnComponent} from './components/router-return/router-return.component';
 
 const appRoutes: Routes = [
   { path: 'HomePage', component: MainPageComponent },
@@ -17,6 +18,8 @@ const appRoutes: Routes = [
   { path: 'Booksystem', component: HomepageComponent },
   { path: 'BookList', component: BookListPageComponent },
   { path: 'Menu', component: MenuPageComponent },
+  { path: 'Return', component: RouterReturnComponent },
+
 
 
 

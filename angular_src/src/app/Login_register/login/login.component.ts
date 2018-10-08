@@ -76,6 +76,14 @@ export class LoginComponent implements OnInit {
 
                if(response['users'][i].username == this.f.username.value && response['users'][i].password == this.f.password.value){
                  goto =true;
+                 let tmp ={
+                   "username" : response['users'][i].username,
+                   "phoneNumber" : response['users'][i].phoneNumber,
+                   // "token" : response['users'][i].username,
+
+                 }
+                 localStorage.setItem('currentUser',JSON.stringify(tmp));
+
                  this.router.navigate([this.returnUrl]);
                }
           }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router'
 
+import {NgZone} from '@angular/core';
 import {BookinglistService} from '../../services/bookinglist.service';
 import {TablelistService} from '../../services/tablelist.service';
 import {BookingList} from '../../models/BookingList';
@@ -24,16 +25,18 @@ export class ContentBooklistComponent implements OnInit {
   public currentBookList=[];
   constructor(private BookingService: BookinglistService,
               private TableService:TablelistService,
-              private router:Router) { }
+              private router:Router,
+              private zone: NgZone) { }
+
+  getUserInfo = JSON.parse(localStorage.getItem('currentUser'))
 
   ngOnInit( ) {
-
     let postUserName = {
-      "username":"test"
+      "username": this.getUserInfo.username
     }
 
     let postUserWithTime ={
-      "username":"test",
+      "username": this.getUserInfo.username,
       "bookingTime": this.currentDate
     }
 
@@ -97,6 +100,7 @@ export class ContentBooklistComponent implements OnInit {
         response=>{
           if(response['success']==true){
             console.log(response)
+            this.router.navigate(['/Return'], { replaceUrl: true });
 
           }
         },
