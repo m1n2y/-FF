@@ -32,7 +32,7 @@ module.exports.getHistoryListbyUserName = (postData,callback) => {
 
 //Table.find() returns all the tables
 module.exports.getCurrentListbyUserName = (postData,callback) => {
-    let query = {"username" : postData.username,"bookingTime":{$gt:postData['bookingTime']}};
+    let query = {"username" : postData.username,"bookingTime":{$gte:postData['bookingTime']}};
     BookingList.find(query,callback).sort("bookingTime");
 }
 
