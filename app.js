@@ -31,9 +31,14 @@ app.use('/api/user',users);
 app.use('/api/tablelist',tablelist);
 app.use('/api/booklist',booklist)
 
-app.get('/', (req,res) => {
-    res.send("Invalid page");
-})
+app.get('/*', function (req, res) {
+    console.log(111);
+    res.sendFile(path.join(__dirname, 'public/index.html'));
+});
+
+// app.get('/', (req,res) => {
+//     res.send("Invalid page");
+// })
 
 //Listen to port 3000
 app.listen(port, () => {
