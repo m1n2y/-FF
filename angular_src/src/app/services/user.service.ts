@@ -10,8 +10,8 @@ import {DatePipe, formatDate} from '@angular/common';
   providedIn: 'root'
 })
 export class UserService {
-
-  private serverAPI = 'http://localhost:3000/api'
+  // private serverAPI = 'http://localhost:3000/api'
+  private serverAPI = '/api'
   private headers = new HttpHeaders().set('Content-Type', 'application/json');
   datePipe = new DatePipe('en-US');
 
