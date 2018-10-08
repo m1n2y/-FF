@@ -9,7 +9,7 @@ import {DatePipe} from '@angular/common';
 })
 export class BookinglistService {
 
-  private serverAPI = '/api'
+  private serverAPI = ':3000/api'
 
   private headers = new HttpHeaders().set('Content-Type', 'application/json');
   datePipe = new DatePipe('en-US');
