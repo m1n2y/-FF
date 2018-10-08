@@ -11,7 +11,7 @@ import {DatePipe, formatDate} from '@angular/common';
 })
 export class TablelistService {
 
-  private serverAPI = ':3000/api'
+  private serverAPI = 'http://47.91.44.192/api'
   private headers = new HttpHeaders().set('Content-Type', 'application/json');
   datePipe = new DatePipe('en-US');
   public unAvailableList:TableList[] = []
