@@ -95,7 +95,7 @@ MIT
 MIT
 MIT
 
-@ng-bootstrap/ng-bootstrap@3.3.0
+@ng-bootstrap/ng-bootstrap@3.2.0
 MIT
 The MIT License (MIT)
 

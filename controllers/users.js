@@ -3,6 +3,9 @@ const express = require('express');
 const router = express.Router();
 const userList = require('../models/user');
 
+var VerifyToken = require('../Middleware/authenticateCheck')
+
+
 //GET HTTP method to /user
 router.get('/',(req,res) => {
 

@@ -280,27 +280,17 @@ var LoginComponent = /** @class */ (function () {
         //     this.alertService.error(error);
         //     this.loading = false;
         //   });
-        console.debug("dd");
-        this.userAu.getAllUser().subscribe(function (response) {
+        // console.debug("dd")
+        var postDate = {
+            username: this.f.username.value,
+            password: this.f.password.value,
+        };
+        this.userAu.validateUser(postDate).subscribe(function (response) {
             _this.loading = false;
             if (response['success'] == true) {
-                var goto = false;
-                for (var i = 0; i < response['users'].length; i++) {
-                    // console.debug(response['users'][i]);
-                    if (response['users'][i].username == _this.f.username.value && response['users'][i].password == _this.f.password.value) {
-                        goto = true;
-                        var tmp = {
-                            "username": response['users'][i].username,
-                            "phoneNumber": response['users'][i].phoneNumber,
-                        };
-                        localStorage.setItem('currentUser', JSON.stringify(tmp));
-                        _this.router.navigate([_this.returnUrl]);
-                    }
-                }
-                console.debug("goto" + goto);
-                if (goto == false) {
-                    _this.alertService.error('Username or password is incorrect');
-                }
+                // console.debug(response['users'][i]);
+                localStorage.setItem('currentUser', JSON.stringify(response['userInfo']));
+                _this.router.navigate([_this.returnUrl]);
             }
             else {
                 return Object(rxjs__WEBPACK_IMPORTED_MODULE_6__["throwError"])({ error: { message: 'Username or password is incorrect' } });
@@ -1546,7 +1536,7 @@ module.exports = ".head-banner-container{\r\n\r\n  background-color: #364248;\r\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"head-banner-container\">\r\n\r\n  <div class=\"col\">\r\n    <div ngbDropdown class=\"d-inline-block\">\r\n      <button class=\"btn btn-outline-primary\" id=\"dropdownBasic1\" ngbDropdownToggle><img src=\"../../assets/icons/menu-icon.png\" alt=\"\"></button>\r\n      <div ngbDropdownMenu aria-labelledby=\"/dropdownBasic1\">\r\n        <a class=\"dropdown-item\" routerLink=\"/Booksystem\">Booking System</a>\r\n        <a class=\"dropdown-item\" routerLink=\"/Menu\">Menu</a>\r\n        <a class=\"dropdown-item\" routerLink=\"/BookList\">My BookingList</a>\r\n        <div class=\"dropdown-divider\"></div>\r\n        <a class=\"dropdown-item\">Login out</a>\r\n      </div>\r\n    </div>\r\n    <a class=\"banner-icon\" routerLink=\"/HomePage\"><img src=\"../../assets/icons/homepage-icon.png\" alt=\"\"></a>\r\n\r\n  </div>\r\n\r\n\r\n\r\n</div>\r\n"
+module.exports = "<div class=\"head-banner-container\">\r\n\r\n  <div class=\"col\">\r\n    <div ngbDropdown class=\"d-inline-block\">\r\n      <button class=\"btn btn-outline-primary\" id=\"dropdownBasic1\" ngbDropdownToggle><img src=\"../../assets/icons/menu-icon.png\" alt=\"\"></button>\r\n      <div ngbDropdownMenu aria-labelledby=\"/dropdownBasic1\">\r\n        <a class=\"dropdown-item\" routerLink=\"/Booksystem\">Booking System</a>\r\n        <a class=\"dropdown-item\" routerLink=\"/Menu\">Menu</a>\r\n        <a class=\"dropdown-item\" routerLink=\"/BookList\">My BookingList</a>\r\n        <div class=\"dropdown-divider\"></div>\r\n        <a class=\"dropdown-item\" routerLink=\"/\">Login out</a>\r\n      </div>\r\n    </div>\r\n    <a class=\"banner-icon\" routerLink=\"/HomePage\"><img src=\"../../assets/icons/homepage-icon.png\" alt=\"\"></a>\r\n\r\n  </div>\r\n\r\n\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1672,7 +1662,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  Successful!\n</p>\n"
+module.exports = "<p>\r\n  Successful!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -2031,7 +2021,7 @@ module.exports = ".head-banner-container{\r\n  margin: auto;\r\n  background-col
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"head-banner-container\">\r\n\r\n  <div class=\"col\">\r\n    <div ngbDropdown class=\"d-inline-block\">\r\n      <button class=\"btn btn-outline-primary\" id=\"dropdownBasic1\" ngbDropdownToggle><img src=\"../../assets/icons/menu-icon.png\" alt=\"\"></button>\r\n      <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\r\n        <a class=\"dropdown-item\" routerLink=\"/Booksystem\">Booking System</a>\r\n        <a class=\"dropdown-item\" routerLink=\"/Menu\">Menu</a>\r\n        <a class=\"dropdown-item\" routerLink=\"/BookList\">My BookingList</a>\r\n        <div class=\"dropdown-divider\"></div>\r\n        <a class=\"dropdown-item\">Login out</a>\r\n      </div>\r\n    </div>\r\n    <a class=\"banner-icon\" routerLink=\"/HomePage\"><img src=\"../../assets/icons/homepage-icon.png\" alt=\"\"></a>\r\n\r\n  </div>\r\n  <span>\r\n      <div class=\"app-data-picker-title\"></div>\r\n\r\n      <app-data-picker class=\"app-data-picker\"></app-data-picker>\r\n\r\n  </span>\r\n  <button class=\"Book-btn\" (click)=\"changeSubmit()\"><span>Booking</span></button>\r\n</div>\r\n"
+module.exports = "<div class=\"head-banner-container\">\r\n\r\n  <div class=\"col\">\r\n    <div ngbDropdown class=\"d-inline-block\">\r\n      <button class=\"btn btn-outline-primary\" id=\"dropdownBasic1\" ngbDropdownToggle><img src=\"../../assets/icons/menu-icon.png\" alt=\"\"></button>\r\n      <div ngbDropdownMenu aria-labelledby=\"dropdownBasic1\">\r\n        <a class=\"dropdown-item\" routerLink=\"/Booksystem\">Booking System</a>\r\n        <a class=\"dropdown-item\" routerLink=\"/Menu\">Menu</a>\r\n        <a class=\"dropdown-item\" routerLink=\"/BookList\">My BookingList</a>\r\n        <div class=\"dropdown-divider\"></div>\r\n        <a class=\"dropdown-item\" routerLink=\"/\">Login out</a>\r\n      </div>\r\n    </div>\r\n    <a class=\"banner-icon\" routerLink=\"/HomePage\"><img src=\"../../assets/icons/homepage-icon.png\" alt=\"\"></a>\r\n\r\n  </div>\r\n  <span>\r\n      <div class=\"app-data-picker-title\"></div>\r\n\r\n      <app-data-picker class=\"app-data-picker\"></app-data-picker>\r\n\r\n  </span>\r\n  <button class=\"Book-btn\" (click)=\"changeSubmit()\"><span>Booking</span></button>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -2112,7 +2102,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var BookinglistService = /** @class */ (function () {
     function BookinglistService(http) {
         this.http = http;
-        this.serverAPI = 'http://localhost:3000/api';
+        this.serverAPI = '/api';
         this.headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/json');
         this.datePipe = new _angular_common__WEBPACK_IMPORTED_MODULE_2__["DatePipe"]('en-US');
         this.submitFormState = true;
@@ -2189,7 +2179,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var TablelistService = /** @class */ (function () {
     function TablelistService(http) {
         this.http = http;
-        this.serverAPI = 'http://localhost:3000/api';
+        this.serverAPI = '/api';
         this.headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/json');
         this.datePipe = new _angular_common__WEBPACK_IMPORTED_MODULE_2__["DatePipe"]('en-US');
         this.unAvailableList = [];
@@ -2284,10 +2274,19 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 var UserService = /** @class */ (function () {
     function UserService(http) {
         this.http = http;
-        this.serverAPI = 'http://localhost:3000/api';
+        // private serverAPI = 'http://localhost:3000/api'
+        this.serverAPI = '/api';
         this.headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/json');
         this.datePipe = new _angular_common__WEBPACK_IMPORTED_MODULE_2__["DatePipe"]('en-US');
     }
+    UserService.prototype.validateUser = function (postData) {
+        var URI = this.serverAPI + "/authenticate/";
+        var body = JSON.stringify({
+            "username": postData.username,
+            "password": postData.password,
+        });
+        return this.http.post(URI, body, { headers: this.headers });
+    };
     UserService.prototype.getAllUser = function () {
         var URI = this.serverAPI + "/user";
         return this.http.get(URI);
@@ -2907,7 +2906,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\allon\OneDrive\Documents\uts\semester4\advance IP\project\angular\-FF\angular_src\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\Allon Cai\Code\Project\allon\-FF\angular_src\src\main.ts */"./src/main.ts");
 
 
 /***/ })

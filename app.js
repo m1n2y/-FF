@@ -7,6 +7,10 @@ const config = require('./config/database');
 const users = require('./controllers/users');
 const tablelist = require('./controllers/tablelist')
 const booklist = require('./controllers/booklist')
+const authenticate = require('./controllers/authenticate')
+const authenticateCheck = require('./Middleware/authenticateCheck')
+
+
 
 mongoose.connect(config.database,{useNewUrlParser: true});
 //Initialize our app variable
@@ -28,8 +32,11 @@ app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/user',users);
-app.use('/api/tablelist',tablelist);
-app.use('/api/booklist',booklist)
+app.use('/api/tablelist',authenticateCheck,tablelist);
+app.use('/api/booklist',authenticateCheck,booklist);
+app.use('/api/authenticate',authenticate);
+
+
 
 app.get('/*', function (req, res) {
     console.log(111);
@@ -44,3 +51,4 @@ app.get('/*', function (req, res) {
 app.listen(port, () => {
     console.log(`Starting the server at port ${port}`);
 });
+

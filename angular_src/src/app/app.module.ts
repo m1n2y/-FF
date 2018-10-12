@@ -10,7 +10,7 @@ import {FormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MyDatePickerModule} from 'mydatepicker';
 
-import { TableMapComponent } from './table-map/table-map.component';
+import { TableMapComponent } from './components/table-map/table-map.component';
 import { SquareTableComponent } from './tableType/square-table/square-table.component';
 import { CircleTableComponent } from './tableType/circle-table/circle-table.component';
 import { AlertComponent } from './Login_register/alert/alert.component';

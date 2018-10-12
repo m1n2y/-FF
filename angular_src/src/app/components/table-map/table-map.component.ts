@@ -1,8 +1,8 @@
 import { Component, OnInit, DoCheck } from '@angular/core';
-import {TablelistService} from '../services/tablelist.service';
+import {TablelistService} from '../../services/tablelist.service';
 
-import {TableList} from '../models/TableList';
-import {BookinglistService} from '../services/bookinglist.service';
+import {TableList} from '../../models/TableList';
+import {BookinglistService} from '../../services/bookinglist.service';
 
 @Component({
   selector: 'app-table-map',

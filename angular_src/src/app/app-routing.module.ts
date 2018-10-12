@@ -11,13 +11,13 @@ import {MenuPageComponent} from './views/menu-page/menu-page.component';
 import {RouterReturnComponent} from './components/router-return/router-return.component';
 
 const appRoutes: Routes = [
-  { path: 'HomePage', component: MainPageComponent },
+  { path: 'HomePage', component: MainPageComponent , canActivate: [AuthGuard] },
   {path: 'usermanagement', component: HomeComponent, canActivate: [AuthGuard] },
   { path: '', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'Booksystem', component: HomepageComponent },
-  { path: 'BookList', component: BookListPageComponent },
-  { path: 'Menu', component: MenuPageComponent },
+  { path: 'Booksystem', component: HomepageComponent, canActivate: [AuthGuard]  },
+  { path: 'BookList', component: BookListPageComponent , canActivate: [AuthGuard] },
+  { path: 'Menu', component: MenuPageComponent , canActivate: [AuthGuard] },
   { path: 'Return', component: RouterReturnComponent },
 
 

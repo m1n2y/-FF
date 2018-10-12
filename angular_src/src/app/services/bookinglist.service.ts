@@ -8,6 +8,7 @@ import {DatePipe} from '@angular/common';
   providedIn: 'root'
 })
 export class BookinglistService {
+  // private serverAPI = 'http://localhost:3000/api'
 
   private serverAPI = '/api'
 

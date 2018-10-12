@@ -19,6 +19,14 @@ export class UserService {
   constructor(private http: HttpClient) {  }
 
 
+  public validateUser (postData){
+    let URI = `${this.serverAPI}/authenticate/`;
+    let body = JSON.stringify({
+      "username": postData.username,
+      "password": postData.password,
+    })
+    return this.http.post(URI,body,{headers : this.headers})
+  }
 
 
 

@@ -65,35 +65,21 @@ export class LoginComponent implements OnInit {
     //     this.alertService.error(error);
     //     this.loading = false;
     //   });
-    console.debug("dd")
-   this.userAu.getAllUser().subscribe(
+    // console.debug("dd")
+    let postDate={
+      username: this.f.username.value,
+      password: this.f.password.value,
+
+    }
+   this.userAu.validateUser(postDate).subscribe(
       response => {
         this.loading = false;
         if (response['success'] == true){
-          let goto = false;
-          for (let i =0; i<response['users'].length;i++){
             // console.debug(response['users'][i]);
 
-               if(response['users'][i].username == this.f.username.value && response['users'][i].password == this.f.password.value){
-                 goto =true;
-                 let tmp ={
-                   "username" : response['users'][i].username,
-                   "phoneNumber" : response['users'][i].phoneNumber,
-                   // "token" : response['users'][i].username,
-
-                 }
-                 localStorage.setItem('currentUser',JSON.stringify(tmp));
+                 localStorage.setItem('currentUser',JSON.stringify(response['userInfo']));
 
                  this.router.navigate([this.returnUrl]);
-               }
-          }
-          console.debug("goto"+goto);
-          if(goto==false){
-
-
-            this.alertService.error( 'Username or password is incorrect' )
-
-          }
 
 
         }else{
