@@ -29,10 +29,8 @@ import { HomepageComponent } from './views/homepage/homepage.component';
 import { SubmitBookingFormComponent } from './components/submit-booking-form/submit-booking-form.component';
 import {HeadBannerComponent} from './head-banner/head-banner.component';
 import { BookListPageComponent } from './views/book-list-page/book-list-page.component';
-import { FrameBottomComponent } from './components/frame-bottom/frame-bottom.component';
 import { ContentBooklistComponent } from './components/content-booklist/content-booklist.component';
 import { MenuPageComponent } from './views/menu-page/menu-page.component';
-import { RouterReturnComponent } from './components/router-return/router-return.component';
 
 @NgModule({
   declarations: [
@@ -48,10 +46,8 @@ import { RouterReturnComponent } from './components/router-return/router-return.
     SubmitBookingFormComponent,
     HeadBannerComponent,
     BookListPageComponent,
-    FrameBottomComponent,
     ContentBooklistComponent,
     MenuPageComponent,
-    RouterReturnComponent
 
   ],
   imports: [

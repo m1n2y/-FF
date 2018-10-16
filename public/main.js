@@ -716,8 +716,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _views_homepage_homepage_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./views/homepage/homepage.component */ "./src/app/views/homepage/homepage.component.ts");
 /* harmony import */ var _views_book_list_page_book_list_page_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./views/book-list-page/book-list-page.component */ "./src/app/views/book-list-page/book-list-page.component.ts");
 /* harmony import */ var _views_menu_page_menu_page_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./views/menu-page/menu-page.component */ "./src/app/views/menu-page/menu-page.component.ts");
-/* harmony import */ var _components_router_return_router_return_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/router-return/router-return.component */ "./src/app/components/router-return/router-return.component.ts");
-
 
 
 
@@ -732,7 +730,6 @@ var appRoutes = [
     { path: 'Booksystem', component: _views_homepage_homepage_component__WEBPACK_IMPORTED_MODULE_4__["HomepageComponent"], canActivate: [_Login_register_guards_auth_guard__WEBPACK_IMPORTED_MODULE_3__["AuthGuard"]] },
     { path: 'BookList', component: _views_book_list_page_book_list_page_component__WEBPACK_IMPORTED_MODULE_5__["BookListPageComponent"], canActivate: [_Login_register_guards_auth_guard__WEBPACK_IMPORTED_MODULE_3__["AuthGuard"]] },
     { path: 'Menu', component: _views_menu_page_menu_page_component__WEBPACK_IMPORTED_MODULE_6__["MenuPageComponent"], canActivate: [_Login_register_guards_auth_guard__WEBPACK_IMPORTED_MODULE_3__["AuthGuard"]] },
-    { path: 'Return', component: _components_router_return_router_return_component__WEBPACK_IMPORTED_MODULE_7__["RouterReturnComponent"] },
     // otherwise redirect to home
     { path: '**', redirectTo: '' }
 ];
@@ -837,10 +834,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_submit_booking_form_submit_booking_form_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./components/submit-booking-form/submit-booking-form.component */ "./src/app/components/submit-booking-form/submit-booking-form.component.ts");
 /* harmony import */ var _head_banner_head_banner_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./head-banner/head-banner.component */ "./src/app/head-banner/head-banner.component.ts");
 /* harmony import */ var _views_book_list_page_book_list_page_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./views/book-list-page/book-list-page.component */ "./src/app/views/book-list-page/book-list-page.component.ts");
-/* harmony import */ var _components_frame_bottom_frame_bottom_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/frame-bottom/frame-bottom.component */ "./src/app/components/frame-bottom/frame-bottom.component.ts");
-/* harmony import */ var _components_content_booklist_content_booklist_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./components/content-booklist/content-booklist.component */ "./src/app/components/content-booklist/content-booklist.component.ts");
-/* harmony import */ var _views_menu_page_menu_page_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./views/menu-page/menu-page.component */ "./src/app/views/menu-page/menu-page.component.ts");
-/* harmony import */ var _components_router_return_router_return_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./components/router-return/router-return.component */ "./src/app/components/router-return/router-return.component.ts");
+/* harmony import */ var _components_content_booklist_content_booklist_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./components/content-booklist/content-booklist.component */ "./src/app/components/content-booklist/content-booklist.component.ts");
+/* harmony import */ var _views_menu_page_menu_page_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./views/menu-page/menu-page.component */ "./src/app/views/menu-page/menu-page.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -878,8 +873,6 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
-
-
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -898,10 +891,8 @@ var AppModule = /** @class */ (function () {
                 _components_submit_booking_form_submit_booking_form_component__WEBPACK_IMPORTED_MODULE_22__["SubmitBookingFormComponent"],
                 _head_banner_head_banner_component__WEBPACK_IMPORTED_MODULE_23__["HeadBannerComponent"],
                 _views_book_list_page_book_list_page_component__WEBPACK_IMPORTED_MODULE_24__["BookListPageComponent"],
-                _components_frame_bottom_frame_bottom_component__WEBPACK_IMPORTED_MODULE_25__["FrameBottomComponent"],
-                _components_content_booklist_content_booklist_component__WEBPACK_IMPORTED_MODULE_26__["ContentBooklistComponent"],
-                _views_menu_page_menu_page_component__WEBPACK_IMPORTED_MODULE_27__["MenuPageComponent"],
-                _components_router_return_router_return_component__WEBPACK_IMPORTED_MODULE_28__["RouterReturnComponent"]
+                _components_content_booklist_content_booklist_component__WEBPACK_IMPORTED_MODULE_25__["ContentBooklistComponent"],
+                _views_menu_page_menu_page_component__WEBPACK_IMPORTED_MODULE_26__["MenuPageComponent"],
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -1062,136 +1053,6 @@ var ContentBooklistComponent = /** @class */ (function () {
             _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgZone"]])
     ], ContentBooklistComponent);
     return ContentBooklistComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/components/frame-bottom/frame-bottom.component.css":
-/*!********************************************************************!*\
-  !*** ./src/app/components/frame-bottom/frame-bottom.component.css ***!
-  \********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ".restaurant-map-container{\n\n  box-sizing: border-box;\n  width: 1240px;\n  min-height: 660px;\n  border: 2px solid lightslategray;\n  margin: auto;\n  position: relative;\n\n}\n"
-
-/***/ }),
-
-/***/ "./src/app/components/frame-bottom/frame-bottom.component.html":
-/*!*********************************************************************!*\
-  !*** ./src/app/components/frame-bottom/frame-bottom.component.html ***!
-  \*********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"restaurant-map-container\">\n  <ng-content></ng-content>\n</div>\n"
-
-/***/ }),
-
-/***/ "./src/app/components/frame-bottom/frame-bottom.component.ts":
-/*!*******************************************************************!*\
-  !*** ./src/app/components/frame-bottom/frame-bottom.component.ts ***!
-  \*******************************************************************/
-/*! exports provided: FrameBottomComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FrameBottomComponent", function() { return FrameBottomComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var FrameBottomComponent = /** @class */ (function () {
-    function FrameBottomComponent() {
-    }
-    FrameBottomComponent.prototype.ngOnInit = function () {
-    };
-    FrameBottomComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-frame-bottom',
-            template: __webpack_require__(/*! ./frame-bottom.component.html */ "./src/app/components/frame-bottom/frame-bottom.component.html"),
-            styles: [__webpack_require__(/*! ./frame-bottom.component.css */ "./src/app/components/frame-bottom/frame-bottom.component.css")]
-        }),
-        __metadata("design:paramtypes", [])
-    ], FrameBottomComponent);
-    return FrameBottomComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/components/router-return/router-return.component.css":
-/*!**********************************************************************!*\
-  !*** ./src/app/components/router-return/router-return.component.css ***!
-  \**********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ""
-
-/***/ }),
-
-/***/ "./src/app/components/router-return/router-return.component.html":
-/*!***********************************************************************!*\
-  !*** ./src/app/components/router-return/router-return.component.html ***!
-  \***********************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<p>\n  Successful!\n</p>\n"
-
-/***/ }),
-
-/***/ "./src/app/components/router-return/router-return.component.ts":
-/*!*********************************************************************!*\
-  !*** ./src/app/components/router-return/router-return.component.ts ***!
-  \*********************************************************************/
-/*! exports provided: RouterReturnComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RouterReturnComponent", function() { return RouterReturnComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var RouterReturnComponent = /** @class */ (function () {
-    function RouterReturnComponent(router) {
-        this.router = router;
-    }
-    RouterReturnComponent.prototype.ngOnInit = function () {
-        this.router.navigate(['/BookList'], { replaceUrl: true });
-    };
-    RouterReturnComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'app-router-return',
-            template: __webpack_require__(/*! ./router-return.component.html */ "./src/app/components/router-return/router-return.component.html"),
-            styles: [__webpack_require__(/*! ./router-return.component.css */ "./src/app/components/router-return/router-return.component.css")]
-        }),
-        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
-    ], RouterReturnComponent);
-    return RouterReturnComponent;
 }());
 
 
