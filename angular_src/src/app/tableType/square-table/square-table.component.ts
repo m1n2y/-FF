@@ -19,14 +19,8 @@ export class SquareTableComponent implements OnInit {
   @Input() tableNumber: String ;
   @Input() unAvailable: [String] ;
 
-  onclick(){
-    console.log('a')
-
-  }
-
   ngDoCheck(){
       this.checkUnavailableTable()
-
   }
 
 

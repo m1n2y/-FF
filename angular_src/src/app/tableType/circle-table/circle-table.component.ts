@@ -9,7 +9,7 @@ import { Component, OnInit, Input,DoCheck } from '@angular/core';
 // this component is use for demonstrate in home page
 // It is a sub component of table-map
 export class CircleTableComponent implements OnInit {
-  tableUnavailable :boolean ;
+  tableUnavailable :boolean;
 
   constructor() { }
 
@@ -21,9 +21,7 @@ export class CircleTableComponent implements OnInit {
 
   ngDoCheck(){
     this.checkUnavailableTable()
-
   }
-
 
   checkUnavailableTable(){
     this.tableUnavailable = false;

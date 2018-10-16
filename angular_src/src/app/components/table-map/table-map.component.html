@@ -2,8 +2,6 @@
   <div class="entrance"><p>Entrance</p></div>
   <div class="live-kitchen"><p>Live kitchen</p></div>
 
-
-
   <div class="square-table-map-container" >
     <div class="square-table-container-1" (click)="changeSubmitState()" >
     <app-square-table class="square-table"  *ngFor="let tableInfo of allSmallTables" [tableNumber]="tableInfo['tableNumber']" [unAvailable]="unAvailableTables"></app-square-table>
@@ -14,13 +12,9 @@
     <div class="circle-table-container-1" (click)="changeSubmitState()">
       <app-circle-table class="circle-table" *ngFor="let tableInfo of allBigTables" [tableNumber]="tableInfo['tableNumber']" [unAvailable]="unAvailableTables" ></app-circle-table>
     </div>
-
   </div>
 
   <div class="submit-booking-form" [ngClass]="{'submit_form_State' : submitFormState}">
     <app-submit-booking-form ></app-submit-booking-form>
   </div>
-
-
-
 </div>

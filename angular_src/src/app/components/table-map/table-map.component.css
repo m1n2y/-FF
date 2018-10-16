@@ -1,12 +1,9 @@
 .restaurant-map-container{
-
   box-sizing: border-box;
-  width: 1240px;
   height: 660px;
   border: 2px solid lightslategray;
   margin: auto;
   position: relative;
-
 }
 
 .picker{

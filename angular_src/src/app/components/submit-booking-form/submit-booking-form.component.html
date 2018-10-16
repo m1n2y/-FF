@@ -1,9 +1,7 @@
 <div class="submit_container" >
   <div class="submit_top">
-
     <button class="submit_top_close" (click)="closeSubmit()">Close</button>
     <button class="submit_top_Submit" (click)="submitBooking()">Submit</button>
-
   </div>
 
   <div class="submit_content">
@@ -22,10 +20,9 @@
       <div class="submit_content_userinfo_button" (click)="editUserInfo()">
         <span >{{userInfoChangeButtonText}}</span>
       </div>
-
-
     </div>
-    <div class="submit_content_title">  Booking Info</div>
+
+    <div class="submit_content_title">Booking Info</div>
 
     <ul class="submit_content_bookinginfo">
       <li class="submit_date btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" [(ngModel)]="model">
@@ -58,18 +55,12 @@
         </div>
 
       </li>
-
-
-
-
     </ul>
 
-    <div class="submit_content_title">  Message</div>
+    <div class="submit_content_title">Message</div>
 
     <div class="submit_content_message">
       <textarea id="submit_message" placeholder="Input your message here!"></textarea>
-
     </div>
-
   </div>
 </div>

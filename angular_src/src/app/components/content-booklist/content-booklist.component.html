@@ -1,11 +1,8 @@
 <div class="booklist-container">
-
-
   <ngb-tabset>
     <ngb-tab title="Current" class="menu-title">
       <ng-template ngbTabContent>
         <div class="card-container">
-
               <div class="card" style="width: 18rem;" *ngFor="let booklist of currentBookList">
                 <img class="card-img-top" src="../../../assets/booking-list-imgag.jpg" alt="Card image cap">
                 <div class="card-body">
@@ -17,12 +14,9 @@
                   <p class="card-text"><b>Total number of people:</b>{{booklist['peopleNumber']}}</p>
                   <p class="card-text"><b>Message:</b>{{booklist['message']}}</p>
                   <a class="btn btn-danger" (click)="deleteBooking(booklist)">Cancel</a>
-
-
                 </div>
               </div>
         </div>
-
       </ng-template>
     </ngb-tab>
 
@@ -30,7 +24,6 @@
       <ng-template ngbTabTitle><b>History</b></ng-template>
       <ng-template ngbTabContent>
         <div class="card-container">
-
           <div class="card" style="width: 18rem;" *ngFor="let booklist of historyBookList">
             <img class="card-img-top" src="../../../assets/booking-list-imgag.jpg" alt="Card image cap">
             <div class="card-body">
@@ -48,6 +41,4 @@
       </ng-template>
     </ngb-tab>
   </ngb-tabset>
-
-
 </div>

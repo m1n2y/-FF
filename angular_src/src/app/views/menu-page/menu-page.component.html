@@ -1,8 +1,18 @@
+<app-head-banner></app-head-banner>
 
-<app-frame-top>
-  <app-frame-top-nav></app-frame-top-nav>
-</app-frame-top>
+<div class="container">
+  <ngb-tabset>
+    <ngb-tab title="Lunch" class="menu-title">
+      <ng-template ngbTabContent>
+        <img src="../../../assets/Lunch-new.jpg" alt="">
+      </ng-template>
+    </ngb-tab>
 
-<app-frame-bottom >
-  <app-content-menu></app-content-menu>
-</app-frame-bottom>
+    <ngb-tab>
+      <ng-template ngbTabTitle><b>Dinner</b></ng-template>
+      <ng-template ngbTabContent>
+        <img src="../../../assets/Dinner-new.jpg" alt="">
+      </ng-template>
+    </ngb-tab>
+  </ngb-tabset>
+</div>

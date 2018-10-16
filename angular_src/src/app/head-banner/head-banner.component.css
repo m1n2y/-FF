@@ -2,19 +2,23 @@
   margin: auto;
   background-color: #364248;
   display: flex;
-  width: 1240px;
   height: 80px;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-around;
-
 }
 .head-banner-container .banner-icon{
   flex: 0.5 50px;
   height: 50px;
   width: 50px;
+}
 
+.nav-link{
+  color: white;
+}
 
+.nav-link:hover{
+  color: #3e8e41;
 }
 
 .banner-icon img{
@@ -27,7 +31,8 @@
 .app-data-picker{
   flex:5 300px;
 }
-。app-data-picker-title{
+
+.app-data-picker-title{
   flex:5 300px;
   margin-left: 100px;
 }

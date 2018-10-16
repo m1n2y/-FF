@@ -7,20 +7,16 @@ import { AppComponent } from './app.component';
 import { DataPickerComponent } from './head-banner/data-picker/data-picker.component';
 import {FormsModule} from '@angular/forms';
 // import material css
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MyDatePickerModule} from 'mydatepicker';
 
 import { TableMapComponent } from './components/table-map/table-map.component';
 import { SquareTableComponent } from './tableType/square-table/square-table.component';
 import { CircleTableComponent } from './tableType/circle-table/circle-table.component';
 import { AlertComponent } from './Login_register/alert/alert.component';
-import { HomeComponent } from './Login_register/home/home.component';
 import { LoginComponent } from './Login_register/login/login.component';
 import { RegisterComponent } from './Login_register/register/register.component';
 // bootstrap
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-// used to create fake backend
-import {fakeBackendProvider} from './Login_register/~helpers/fake-backend';
 // login import
 import {AuthGuard} from './Login_register/~guards/auth.guard';
 import {AlertService} from './Login_register/~services/alert.service';
@@ -33,14 +29,9 @@ import { HomepageComponent } from './views/homepage/homepage.component';
 import { SubmitBookingFormComponent } from './components/submit-booking-form/submit-booking-form.component';
 import {HeadBannerComponent} from './head-banner/head-banner.component';
 import { BookListPageComponent } from './views/book-list-page/book-list-page.component';
-import { FrameTopComponent } from './components/frame-top/frame-top.component';
 import { FrameBottomComponent } from './components/frame-bottom/frame-bottom.component';
 import { ContentBooklistComponent } from './components/content-booklist/content-booklist.component';
-import { ContentMainpageComponent } from './components/content-mainpage/content-mainpage.component';
-import { MainPageComponent } from './views/main-page/main-page.component';
 import { MenuPageComponent } from './views/menu-page/menu-page.component';
-import { ContentMenuComponent } from './components/content-menu/content-menu.component';
-import { FrameTopNavComponent } from './components/frame-top-nav/frame-top-nav.component';
 import { RouterReturnComponent } from './components/router-return/router-return.component';
 
 @NgModule({
@@ -51,21 +42,15 @@ import { RouterReturnComponent } from './components/router-return/router-return.
     SquareTableComponent,
     CircleTableComponent,
     AlertComponent,
-    HomeComponent,
     LoginComponent,
     RegisterComponent,
     HomepageComponent,
     SubmitBookingFormComponent,
     HeadBannerComponent,
     BookListPageComponent,
-    FrameTopComponent,
     FrameBottomComponent,
     ContentBooklistComponent,
-    ContentMainpageComponent,
-    MainPageComponent,
     MenuPageComponent,
-    ContentMenuComponent,
-    FrameTopNavComponent,
     RouterReturnComponent
 
   ],
@@ -78,9 +63,6 @@ import { RouterReturnComponent } from './components/router-return/router-return.
     NgbModule,
     FormsModule
 
-
-
-
   ],
   providers: [
     AuthGuard,
@@ -91,8 +73,6 @@ import { RouterReturnComponent } from './components/router-return/router-return.
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
 
-    // provider used to create fake backend
-    fakeBackendProvider
   ],
   bootstrap: [AppComponent]
 })
