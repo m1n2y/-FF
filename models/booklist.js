@@ -9,9 +9,6 @@ const  BookingListSchema = mongoose.Schema({
     peopleNumber:{ type:Number ,required:true, },
     tableNumber:{ type:String ,required:true, },
     message:{ type:String },
-
-
-
 });
 
 const BookingList = module.exports = mongoose.model('BookingList',BookingListSchema);
