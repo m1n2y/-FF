@@ -3,7 +3,6 @@ import {Router, NavigationStart} from '@angular/router';
 import { Observable, Subject} from 'rxjs';
 /*The alert service enables any component in the application to display alert messages at the top of the page via the alert component.*/
 
-
 @Injectable({
   providedIn: 'root'
 })

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {DatePipe} from '@angular/common';
-import {TablelistService} from '../../services/tablelist.service';
-import {TableList} from '../../models/TableList';
+import {TablelistService} from '../../../services/tablelist.service';
+import {TableList} from '../../../models/TableList';
 
 @Component({
   selector: 'app-data-picker',

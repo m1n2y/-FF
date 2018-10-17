@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {BookinglistService} from '../services/bookinglist.service';
+import {BookinglistService} from '../../services/bookinglist.service';
 
 @Component({
   selector: 'app-head-banner',

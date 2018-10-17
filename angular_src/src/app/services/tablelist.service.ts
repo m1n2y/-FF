@@ -1,18 +1,13 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Observable} from 'rxjs';
-
 import {TableList} from '../models/TableList';
 import {DatePipe, formatDate} from '@angular/common';
-
 
 @Injectable({
   providedIn: 'root'
 })
 export class TablelistService {
-
   // private serverAPI = 'http://localhost:3000/api'
-
   private serverAPI = '/api'
   private headers = new HttpHeaders().set('Content-Type', 'application/json');
   datePipe = new DatePipe('en-US');
@@ -27,14 +22,10 @@ export class TablelistService {
     this.unAvailableList = tableList
   }
 
-
-
   public getAllTables(){
     let URI = `${this.serverAPI}/tablelist`;
     return this.http.get(URI)
   }
-
-
 
   public getAllSmallTables(){
     let URI = `${this.serverAPI}/tablelist/getsmalltables`;
@@ -46,13 +37,11 @@ export class TablelistService {
     return this.http.get(URI)
   }
 
-
   public getUnavailableTables(bookTime:number){
     let URI = `${this.serverAPI}/tablelist/getTableByBooktimeList`;
     let body = JSON.stringify({
       "booktimeList": bookTime
-    })
-
+    });
     return this.http.post(URI,body,{headers : this.headers})
   }
 
@@ -63,7 +52,6 @@ export class TablelistService {
       "tableType": postData.tableType,
     })
     return this.http.post(URI,body,{headers : this.headers})
-
   }
 
   public updateBookTimeForTable(postData){

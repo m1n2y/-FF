@@ -1,11 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Router, ActivatedRoute} from '@angular/router';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {first} from 'rxjs/operators';
-
-import {AlertService,} from '../~services/alert.service';
 import {AuthenticationService} from '../~services/authentication.service';
-import {UserService} from '../../services/user.service';
+import {UserService} from '../../../services/user.service';
 import {throwError} from 'rxjs';
 
 @Component({
@@ -24,8 +21,7 @@ export class LoginComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private authenticationService: AuthenticationService,
-    private userAu: UserService,
-    private alertService: AlertService) {
+    private userAu: UserService) {
   }
 
   ngOnInit() {
@@ -48,46 +44,25 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-
     // stop here if form is invalid
-    if (this.loginForm.invalid) {
-      return;
-    }
-
+    if (this.loginForm.invalid) return;
     this.loading = true;
-    // this.authenticationService.login(this.f.username.value, this.f.password.value)
-    // .pipe(first())
-    // .subscribe(
-    //   data => {
-    //     this.router.navigate([this.returnUrl]);
-    //   },
-    //   error => {
-    //     this.alertService.error(error);
-    //     this.loading = false;
-    //   });
-    // console.debug("dd")
-    let postDate={
+    let postDate = {
       username: this.f.username.value,
       password: this.f.password.value,
-
-    }
-   this.userAu.validateUser(postDate).subscribe(
+    };
+    this.userAu.validateUser(postDate).subscribe(
       response => {
         this.loading = false;
-        if (response['success'] == true){
-            // console.debug(response['users'][i]);
-
-                 localStorage.setItem('currentUser',JSON.stringify(response['userInfo']));
-
-                 this.router.navigate([this.returnUrl]);
-
-
-        }else{
-          return throwError({ error: { message: 'Username or password is incorrect' } });
+        if (response['success'] == true) {
+          localStorage.setItem('currentUser', JSON.stringify(response['userInfo']));
+          this.router.navigate([this.returnUrl]);
+        } else {
+          return throwError({error: {message: 'Username or password is incorrect'}});
         }
       },
       error => {
-        console.log(error)
+        console.log(error);
       }
     );
   }

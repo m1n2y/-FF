@@ -1,28 +1,27 @@
 <div class="head-banner-container">
   <nav class="navbar navbar-expand-lg col-3">
-    <a class="banner-icon" routerLink="/HomePage"><img src="../../assets/icons/homepage-icon.png" alt=""></a>
+    <a class="banner-icon" routerLink="/HomePage"><img src="../../../assets/icons/homepage-icon.png" alt=""></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
             aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/Menu">Menu</a>
-        </li>
+        <!--<li class="nav-item">-->
+          <!--<a class="nav-link" routerLink="/Menu">Menu</a>-->
+        <!--</li>-->
         <li class="nav-item">
           <a class="nav-link" routerLink="/BookList">BookingList</a>
         </li>
-        <!--<li class="nav-item">-->
-          <!--<a class="nav-link" routerLink="/">Login out</a>-->
-        <!--</li>-->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/">Login out</a>
+        </li>
       </ul>
     </div>
   </nav>
     <div class="timepiker col-7">
       <div class="app-data-picker-title"></div>
       <app-data-picker class="app-data-picker"></app-data-picker>
-
     </div>
   <div class="col-2"><button class="Book-btn" (click)="changeSubmit()"><span>Booking</span></button></div>
 </div>

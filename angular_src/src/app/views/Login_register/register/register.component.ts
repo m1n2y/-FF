@@ -1,25 +1,21 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { first } from 'rxjs/operators';
-
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AlertService} from '../~services/alert.service';
-// import {UserService} from '../~services/user.service';
-import {UserService} from '../../services/user.service';
+import {UserService} from '../../../services/user.service';
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-
   registerForm: FormGroup;
   loading = false;
   submitted = false;
 
   constructor(private formBuilder: FormBuilder,
               private router: Router,
-              // private userService: UserService,
               private userAu: UserService,
               private alertService: AlertService) {
   }
@@ -43,42 +39,17 @@ export class RegisterComponent implements OnInit {
     this.submitted = true;
 
     // stop here if form is invalid
-    if (this.registerForm.invalid) {
-      return;
-    }
-
+    if (this.registerForm.invalid) return;
     this.loading = true;
-    // this.userService.register(this.registerForm.value)
-    //   .pipe(first())
-    //   .subscribe(
-    //     data => {
-    //       this.alertService.success('Registration successful', true);
-    //       this.router.navigate(['/login']);
-    //     },
-    //     error => {
-    //       this.alertService.error(error);
-    //       this.loading = false;
-    //     });
-
-
     this.userAu.register(this.registerForm.value).subscribe(
       response => {
         this.loading = false;
-        if (response['success'] == true){
-
-
-
-              this.router.navigate(['/login']);
-
-
-
-
-
-
+        if (response['success'] == true) {
+          this.router.navigate(['/login']);
         }
       },
       error => {
-        console.log(error)
+        console.log(error);
       }
     );
   }

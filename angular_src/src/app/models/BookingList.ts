@@ -1,5 +1,4 @@
 export interface BookingList {
-
   username: string,
   customer: string,
   bookingTime: number,

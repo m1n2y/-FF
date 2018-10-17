@@ -11,8 +11,7 @@ const authenticate = require('./controllers/authenticate')
 const authenticateCheck = require('./Middleware/authenticateCheck')
 
 
-
-mongoose.connect(config.database,{useNewUrlParser: true});
+mongoose.connect(config.database, {useNewUrlParser: true});
 //Initialize our app variable
 const app = express();
 
@@ -23,7 +22,7 @@ const port = 3000;
 app.use(cors());
 
 //Middleware for bodyparsing using both json and urlencoding
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 /*express.static is a built in middleware function to serve static files.
@@ -31,21 +30,15 @@ app.use(bodyParser.json());
 */
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/api/user',users);
-app.use('/api/tablelist',authenticateCheck,tablelist);
-app.use('/api/booklist',authenticateCheck,booklist);
-app.use('/api/authenticate',authenticate);
-
+app.use('/api/user', users);
+app.use('/api/tablelist', authenticateCheck, tablelist);
+app.use('/api/booklist', authenticateCheck, booklist);
+app.use('/api/authenticate', authenticate);
 
 
 app.get('/*', function (req, res) {
-    console.log(111);
     res.sendFile(path.join(__dirname, 'public/index.html'));
 });
-
-// app.get('/', (req,res) => {
-//     res.send("Invalid page");
-// })
 
 //Listen to port 3000
 app.listen(port, () => {

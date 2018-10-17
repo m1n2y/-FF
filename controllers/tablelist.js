@@ -3,16 +3,14 @@ const express = require('express');
 const router = express.Router();
 const tableList = require('../models/table');
 
-
-
 //GET HTTP method to /table
-router.get('/',(req,res) => {
+router.get('/', (req, res) => {
 
-    tableList.getAllTable((err,tables)=>{
-        if(err){
-            res.json({success: false, message:`Failed to load all users. Error: ${err}`})
-        }else {
-            res.write(JSON.stringify({success: true, tables:tables},null,2));
+    tableList.getAllTable((err, tables) => {
+        if (err) {
+            res.json({success: false, message: `Failed to load all users. Error: ${err}`})
+        } else {
+            res.write(JSON.stringify({success: true, tables: tables}, null, 2));
             res.end();
         }
     })
@@ -20,13 +18,13 @@ router.get('/',(req,res) => {
 });
 
 //GET HTTP method to get all small tables
-router.get('/getsmalltables',(req,res) => {
+router.get('/getsmalltables', (req, res) => {
 
-    tableList.getAllSmallTables((err,tables)=>{
-        if(err){
-            res.json({success: false, message:`Failed to load all users. Error: ${err}`})
-        }else {
-            res.write(JSON.stringify({success: true, tables:tables},null,2));
+    tableList.getAllSmallTables((err, tables) => {
+        if (err) {
+            res.json({success: false, message: `Failed to load all users. Error: ${err}`})
+        } else {
+            res.write(JSON.stringify({success: true, tables: tables}, null, 2));
             res.end();
         }
     })
@@ -34,13 +32,13 @@ router.get('/getsmalltables',(req,res) => {
 });
 
 //GET HTTP method to get all big tables
-router.get('/getbigtables',(req,res) => {
+router.get('/getbigtables', (req, res) => {
 
-    tableList.getAllBigTables((err,tables)=>{
-        if(err){
-            res.json({success: false, message:`Failed to load all users. Error: ${err}`})
-        }else {
-            res.write(JSON.stringify({success: true, tables:tables},null,2));
+    tableList.getAllBigTables((err, tables) => {
+        if (err) {
+            res.json({success: false, message: `Failed to load all users. Error: ${err}`})
+        } else {
+            res.write(JSON.stringify({success: true, tables: tables}, null, 2));
             res.end();
         }
     })
@@ -48,97 +46,86 @@ router.get('/getbigtables',(req,res) => {
 });
 
 
-
-
-
-router.post('/', (req,res,next) => {
+router.post('/', (req, res, next) => {
     let newTable = new tableList({
         tableNumber: req.body.tableNumber,
         tableType: req.body.tableType,
         booktimeList: req.body.booktimeList,
     });
 
-    tableList.addTable(newTable,(err,table)=>{
-        if(err){
+    tableList.addTable(newTable, (err, table) => {
+        if (err) {
             res.json({success: false, message: `Failed to create a new user. Error: ${err}`})
-        }else {
-            res.json({success:true, message: table.tableNumber+" Added successfully."});
+        } else {
+            res.json({success: true, message: table.tableNumber + " Added successfully."});
         }
     });
 
 });
 
 
-
-router.post('/updateBooktime', (req,res,next) => {
-    let bookInfo ={
+router.post('/updateBooktime', (req, res, next) => {
+    let bookInfo = {
         tableNumber: req.body.tableNumber,
         booktimeList: req.body.booktimeList,
     }
 
-    tableList.updateBooktime(bookInfo,(err,table)=>{
-        if(err){
+    tableList.updateBooktime(bookInfo, (err, table) => {
+        if (err) {
             res.json({success: false, message: `Failed to create a new user. Error: ${err}`})
-        }else {
-            res.json({success:true, message: bookInfo.tableNumber+" new booking Added successfully."});
+        } else {
+            res.json({success: true, message: bookInfo.tableNumber + " new booking Added successfully."});
         }
     });
 });
 
 
-router.post('/deleteBooktime', (req,res,next) => {
-    let bookInfo ={
+router.post('/deleteBooktime', (req, res, next) => {
+    let bookInfo = {
         tableNumber: req.body.tableNumber,
         booktimeList: req.body.booktimeList,
     }
 
-    tableList.deleteBooktime(bookInfo,(err,table)=>{
-        if(err){
+    tableList.deleteBooktime(bookInfo, (err, table) => {
+        if (err) {
             res.json({success: false, message: `Failed to create a new user. Error: ${err}`})
-        }else {
-            res.json({success:true, message: bookInfo.tableNumber+"  booking deleted successfully."});
+        } else {
+            res.json({success: true, message: bookInfo.tableNumber + "  booking deleted successfully."});
         }
     });
 });
 
 
-router.post('/getTableByBooktimeList', (req,res,next) => {
-    let bookTime ={
+router.post('/getTableByBooktimeList', (req, res, next) => {
+    let bookTime = {
         booktimeList: req.body.booktimeList,
     }
 
-    tableList.getTableByBooktimeList(bookTime,(err,table)=>{
-        if(err){
+    tableList.getTableByBooktimeList(bookTime, (err, table) => {
+        if (err) {
             res.json({success: false, message: `Failed to create a new user. Error: ${err}`})
-        }else {
-            res.write(JSON.stringify({success: true, tables:table},null,2));
+        } else {
+            res.write(JSON.stringify({success: true, tables: table}, null, 2));
             res.end();
         }
     });
 });
 
-router.post('/getTableByBooktimeAndType', (req,res,next) => {
-    let postData ={
+router.post('/getTableByBooktimeAndType', (req, res, next) => {
+    let postData = {
         booktimeList: req.body.booktimeList,
         tableType: req.body.tableType
     }
 
-    tableList.getTableByBooktimeAndType(postData,(err,table)=>{
-        if(err){
+    tableList.getTableByBooktimeAndType(postData, (err, table) => {
+        if (err) {
             res.json({success: false, message: `Failed to create a new user. Error: ${err}`})
-        }else {
-            res.write(JSON.stringify({success: true, tables:table},null,2));
+        } else {
+            res.write(JSON.stringify({success: true, tables: table}, null, 2));
             res.end();
         }
     });
 });
-
-
-
-
-
-
-
 
 
 module.exports = router;

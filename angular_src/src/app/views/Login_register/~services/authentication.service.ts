@@ -1,25 +1,23 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import { map } from 'rxjs/operators';
-
-import { environment } from '../../../environments/environment';
-import {DatePipe} from '@angular/common';
+import {map} from 'rxjs/operators';
+import {environment} from '../../../../environments/environment';
 
 @Injectable()
 export class AuthenticationService {
-  constructor(private http: HttpClient) { }
-  private serverAPI = 'http://localhost:3000/api'
-  private headers = new HttpHeaders().set('Content-Type', 'application/json');
-  datePipe = new DatePipe('en-US');
+  constructor(private http: HttpClient) {
+  }
 
-  public getAllUsers (){
+  private serverAPI = 'http://localhost:3000/api';
+
+  public getAllUsers() {
     let URI = `${this.serverAPI}/user`;
-    return this.http.get(URI)
+    return this.http.get(URI);
   }
 
 
   login(username: string, password: string) {
-    return this.http.post<any>(`${environment.apiUrl}/users/authenticate`, { username: username, password: password })
+    return this.http.post<any>(`${environment.apiUrl}/users/authenticate`, {username: username, password: password})
       .pipe(map(user => {
         // login successful if there's a jwt token in the response
         if (user && user.token) {
